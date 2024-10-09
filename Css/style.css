@@ -1,5 +1,56 @@
 /* global */
 
+@import url(./app.css);
+
 body {
     font-family: 'Vazir', sans-serif !important;
+}
+
+/* header */
+
+/* .sub-menu {
+    top: 10% !important;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.navbar-links:hover>span,
+.sub-menu-links:hover>span,
+.sub-menu:hover .navbar-links>span {
+    color: var(--color-green1);
+}
+
+.sub-menu:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navbar-links:hover+.sub-menu,
+.sub-menu:hover {
+    visibility: visible;
+    opacity: 1;
+} */
+
+.sub-menu {
+    visibility: hidden;
+    opacity: 0;
+    width: 250px;
+    /* transition: opacity 0.3s ease, visibility 0s linear 0.3s; */
+}
+
+.navbar-links:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    /* transition: opacity 0.3s ease; */
+}
+
+.navbar-links:hover,
+.sub-menu-links:hover {
+    color: var(--color-green1) !important;
+}
+
+.sub-menu-links a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
