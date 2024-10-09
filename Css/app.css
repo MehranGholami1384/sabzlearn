@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url('./Fonts/Vazir.woff2') format('woff2'),
+        url('./Fonts/Vazir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+a:link,
+a:visited,
+a:active,
+a:focus {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.transition {
+    transition: all ease 0.3s !important;
+}
+
+.resize-none {
+    resize: none !important;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
