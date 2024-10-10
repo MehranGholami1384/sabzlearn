@@ -63,7 +63,12 @@ body::-webkit-scrollbar-thumb:hover {
     height: 52px !important;
 }
 
-.login-signup-link:hover {
+.w-52px {
+    width: 52px !important;
+}
+
+.login-signup-link:hover,
+.start-learning-link:hover {
     background-color: var(--color-blue2) !important;
 }
 
@@ -98,4 +103,12 @@ body::-webkit-scrollbar-thumb:hover {
 
 .active-side-navbar-links {
     color: var(--color-green1) !important;
+}
+
+/* main */
+
+/* section-1 */
+
+.play-btn:hover {
+    background-color: var(--color-green2) !important;
 }

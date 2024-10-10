@@ -19,6 +19,7 @@
     --color-black6: #555555;
     --color-white1: #ffffff;
     --color-green1: #22c55e;
+    --color-green2: #16a34a;
     --color-gray1: #9CA3AF;
     --color-gray2: #64748b;
     --color-gray3: rgba(255, 255, 255, 0.5);
@@ -48,6 +49,10 @@
 
 .bg-white1 {
     background-color: var(--color-white1) !important;
+}
+
+.bg-green1 {
+    background-color: var(--color-green1) !important;
 }
 
 .bg-blue1 {

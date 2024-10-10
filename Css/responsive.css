@@ -2,4 +2,34 @@
     .fs-14px {
         font-size: 14px !important;
     }
+
+    .responsive-hero-img {
+        width: 590px !important;
+        height: 380px !important;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .responsive-hero-img2 {
+        width: 500px !important;
+        height: 300px !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .responsive-hero-img3 {
+        width: 100% !important;
+        height: 450px !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .responsive-hero-img4 {
+        width: 100% !important;
+        height: 300px !important;
+    }
+
+    .fs-14px-2 {
+        font-size: 15.5px !important;
+    }
 }
