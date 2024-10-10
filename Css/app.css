@@ -98,6 +98,10 @@
     background-color: var(--color-black4) !important;
 }
 
+.border-green1 {
+    border: 1px solid var(--color-green1) !important;
+}
+
 a:link,
 a:visited,
 a:active,
