@@ -4,6 +4,7 @@
 
 body {
     font-family: 'Vazir', sans-serif !important;
+    scroll-behavior: smooth !important;
 }
 
 body::-webkit-scrollbar {
@@ -38,9 +39,13 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .line-clamp-1 {
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.radius-2px {
+    border-radius: 2px !important;
 }
 
 /* header */
@@ -144,10 +149,8 @@ body::-webkit-scrollbar-thumb:hover {
     color: var(--color-white1) !important;
 }
 
-.last-courses-yellow-box {
-    border-radius: 2px !important;
-}
-
 .teacher-links:hover>* {
     color: var(--color-green1) !important;
 }
+
+/* section-3 (roadmap2) */

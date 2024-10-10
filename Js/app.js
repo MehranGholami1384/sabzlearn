@@ -74,7 +74,7 @@ $(document).ready(function () {
 
     lastCourses.forEach(course => {
         let template = `<div class="px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3">
-                        <div class="bg-black2 col-12 rounded-4 d-flex flex-column gap-3 position-relative">
+                        <div class="bg-black2 col-12 rounded-4 d-flex flex-column gap-3 position-relative shadow-lg">
                             <div
                                 class="off-box color-white1 position-absolute bg-green1 px-3 py-1 rounded-pill top-0 end-0 mt-3 me-3">
                                 ${course.offPercent}%</div>
@@ -85,9 +85,7 @@ $(document).ready(function () {
                                 </a>
                             </div>
                             <div>
-                                <a href="#" class="d-inline-block">
-                                    <span class="color-white1 px-3 d-inline-block fw-bold line-clamp-1">${course.title}</span>
-                                </a>
+                                <a href="#" class="d-inline-block line-clamp-1 color-white1 px-3 m-0 fw-bold course-title w-100">${course.title}</a>
                             </div>
                             <div>
                                 <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-2">${course.info}</p>
@@ -163,7 +161,7 @@ $(document).ready(function () {
         });
     }
 
-    $('.off-price, .main-price, .course-students, .course-score, .off-box').each(function () {
+    $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count').each(function () {
         let $this = $(this);
         $this.html(englishToPersianNumbers($this.text()));
     });

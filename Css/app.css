@@ -21,12 +21,21 @@
     --color-green1: #22c55e;
     --color-green2: #16a34a;
     --color-gray1: #9CA3AF;
+    --color-red1: #ef4444;
     --color-yellow1: #fbbf24;
     --color-yellow2: #F59E0B;
     --color-gray2: #64748b;
     --color-gray3: rgba(255, 255, 255, 0.5);
     --color-blue1: #0ea5e9;
     --color-blue2: #0284c7;
+    --gradient1: #f2295b;
+    --gradient2: #ffb535;
+    --gradient3: #28e55d;
+    --gradient4: #30c5e4;
+    --gradient5: #9c33f7;
+    --gradient6: #2e9eff;
+    --gradient7: #880175;
+    --gradient8: #ff3571;
 }
 
 .color-gray3 {
@@ -65,6 +74,10 @@
     background-color: var(--color-blue1) !important;
 }
 
+.bg-red1 {
+    background-color: var(--color-red1) !important;
+}
+
 .bg-yellow1 {
     background-color: var(--color-yellow1) !important;
 }
@@ -89,7 +102,7 @@ a:link,
 a:visited,
 a:active,
 a:focus {
-    color: inherit !important;
+    color: inherit;
     text-decoration: none !important;
 }
 
@@ -107,4 +120,20 @@ a:focus {
 
 .pointer {
     cursor: pointer !important;
+}
+
+.linear-gradient1 {
+    background-image: linear-gradient(to right, var(--gradient2), var(--gradient1)) !important;
+}
+
+.linear-gradient2 {
+    background-image: linear-gradient(to right, var(--gradient4), var(--gradient3)) !important;
+}
+
+.linear-gradient3 {
+    background-image: linear-gradient(to right, var(--gradient6), var(--gradient5)) !important;
+}
+
+.linear-gradient4 {
+    background-image: linear-gradient(to right, var(--gradient8), var(--gradient7)) !important;
 }
