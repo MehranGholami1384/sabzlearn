@@ -22,6 +22,27 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-black6) !important;
 }
 
+.text-fs-14px {
+    font-size: 14px !important;
+}
+
+.opacity-70 {
+    opacity: 0.7 !important;
+}
+
+.line-clamp-2 {
+    -webkit-line-clamp: 2 !important;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.line-clamp-1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 /* header */
 
 .sub-menu {
@@ -107,8 +128,26 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* main */
 
-/* section-1 */
+/* section-1 (website-title) */
 
 .play-btn:hover {
     background-color: var(--color-green2) !important;
+}
+
+/* section-2 (last-courses) */
+
+.last-courses-link:hover {
+    background-color: var(--color-green1) !important;
+}
+
+.last-courses-link:hover>* {
+    color: var(--color-white1) !important;
+}
+
+.last-courses-yellow-box {
+    border-radius: 2px !important;
+}
+
+.teacher-links:hover>* {
+    color: var(--color-green1) !important;
 }

@@ -21,6 +21,8 @@
     --color-green1: #22c55e;
     --color-green2: #16a34a;
     --color-gray1: #9CA3AF;
+    --color-yellow1: #fbbf24;
+    --color-yellow2: #F59E0B;
     --color-gray2: #64748b;
     --color-gray3: rgba(255, 255, 255, 0.5);
     --color-blue1: #0ea5e9;
@@ -47,6 +49,10 @@
     color: var(--color-gray2) !important;
 }
 
+.color-yellow2 {
+    color: var(--color-yellow2) !important;
+}
+
 .bg-white1 {
     background-color: var(--color-white1) !important;
 }
@@ -57,6 +63,10 @@
 
 .bg-blue1 {
     background-color: var(--color-blue1) !important;
+}
+
+.bg-yellow1 {
+    background-color: var(--color-yellow1) !important;
 }
 
 .bg-black1 {
