@@ -1,4 +1,4 @@
-const lastCourses = [{
+const courses = [{
         imgSrc: './Pictures/Course-thumbnail-Algorithm.webp',
         title: 'آموزش الگوریتم و ساختمان داده به زبان ساده',
         info: 'ساختمان داده و الگوریتم، یک مهارت ضروری برای ورود به دنیای برنامه نویسیه که دیدگاه شما رو به مسائل مختلف…',
@@ -6,7 +6,9 @@ const lastCourses = [{
         score: 5,
         students: 497,
         price: 2300000,
-        offPercent: 30
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: false
     },
     {
         imgSrc: './Pictures/elec-1-768x432.webp',
@@ -16,7 +18,9 @@ const lastCourses = [{
         score: 5,
         students: 4,
         price: 2200000,
-        offPercent: 30
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: false
     },
     {
         imgSrc: './Pictures/nodejs.webp',
@@ -26,7 +30,9 @@ const lastCourses = [{
         score: 5,
         students: 705,
         price: 3300000,
-        offPercent: 30
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: false
     },
     {
         imgSrc: './Pictures/nestjs.webp',
@@ -36,7 +42,9 @@ const lastCourses = [{
         score: 5,
         students: 564,
         price: 1999000,
-        offPercent: 30
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: false
     },
     {
         imgSrc: './Pictures/python-data.webp',
@@ -46,7 +54,9 @@ const lastCourses = [{
         score: 5,
         students: 383,
         price: 619500,
-        offPercent: 30
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: false
     },
     {
         imgSrc: './Pictures/api-php.webp',
@@ -56,17 +66,9 @@ const lastCourses = [{
         score: 5,
         students: 101,
         price: 1200000,
-        offPercent: 30
-    },
-    {
-        imgSrc: './Pictures/nextjs.webp',
-        title: 'آموزش Next.js بصورت پروژه محور',
-        info: 'نکست یه فریمورک مبتنی بر ری‌اکت هست که امروزه تو بازار کار یکی از مهم‌ترین تکنولوژی‌ها برای توسعه دهنده های…',
-        teacer: 'محمدامین سعیدی راد',
-        score: 5,
-        students: 1637,
-        price: 3500000,
-        offPercent: 30
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: false
     },
     {
         imgSrc: './Pictures/gold-exp.webp',
@@ -76,7 +78,9 @@ const lastCourses = [{
         score: 5,
         students: 341,
         price: 375000,
-        offPercent: 30
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: false
     },
     {
         imgSrc: './Pictures/zero-hacker.webp',
@@ -86,7 +90,9 @@ const lastCourses = [{
         score: 5,
         students: 21471,
         price: 1500000,
-        offPercent: 100
+        offPercent: 100,
+        isLastCourses: true,
+        isPopularCourses: false
     },
     {
         imgSrc: './Pictures/Course-thumbnail-Dashboard2-1-768x432.webp',
@@ -96,7 +102,9 @@ const lastCourses = [{
         score: 5,
         students: 455,
         price: 1400000,
-        offPercent: 30
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: false
     },
     {
         imgSrc: './Pictures/Docker1-1-1-768x432.webp',
@@ -106,7 +114,9 @@ const lastCourses = [{
         score: 5,
         students: 141,
         price: 1499000,
-        offPercent: 30
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: false
     },
     {
         imgSrc: './Pictures/python-2.webp',
@@ -116,10 +126,156 @@ const lastCourses = [{
         score: 5,
         students: 821,
         price: 540000,
-        offPercent: 30
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: false
+    },
+    {
+        imgSrc: './Pictures/Com_template_html_css_flexbox-1-768x432.webp',
+        title: "آموزش حرفه ای طراحی قالب با Html Css FlexBox از صفر",
+        info: "بعد از یادگیری Html,Css&nbsp; افراد با یک چالش بزرگی رو به رو میشن، اونم اینه که نمیتونن توسط دانشی که…",
+        teacer: "حمیدرضا عبادی",
+        score: 5,
+        students: 2455,
+        price: 800000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/bootstrap.webp',
+        title: "آموزش بوت استرپ 5 مقدماتی تا پیشرفته (2023)",
+        info: "خوش اومدین به \"آموزش بوت استرپ\" 5 سبزلرن! حتما تا الان html و css رو کامل بلدی و گذرت به…",
+        teacer: "مهرشاد براتی",
+        score: 5,
+        students: 2405,
+        price: 422000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/Freelancer32-1-768x432.webp',
+        title: "مستر فریلنس - هنر همکاری موفق با کارفرماها",
+        info: "موفق بودن یک وکیل به تعداد بالای پرونده هاش نیست. بلکه به تعداد کیفیت پرونده هاییه که حل کرده. یک…",
+        teacer: "قدیر یلمه",
+        score: 5,
+        students: 2044,
+        price: 7100000,
+        offPercent: 0,
+        isLastCourses: false,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/Com_react-1-768x432.webp',
+        title: "آموزش ری اکت ( ReactJS ) در دنیای واقعی | از 0 تا استخدام [منتورشیپ]",
+        info: "حدود 99 ساعت آموزش جامع و تخصصی ری اکت!&nbsp; شما در دوره آموزش ری اکت ReactJS ، این کتابخانه قدرتمند…",
+        teacer: "محمدامین سعیدی راد",
+        score: 5,
+        students: 2036,
+        price: 4800000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/mini-project-python.webp',
+        title: "پروژه های کاربردی با پایتون",
+        info: "قبل از اینکه بخواین این دوره رو ببینید اگر دوره آموزش پایتون رو ندیدین حتما دوره رو ببینید که خیلی…",
+        teacer: "رضا دولتی",
+        score: 5,
+        students: 1734,
+        price: 990000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/tailwind.webp',
+        title: "آموزش جامع و پروژه محور Tailwind css",
+        info: "tailwind css یک فریمورک Utility First هست، این فریمورک متشکل از یکسری کلاس های آماده ای هست که شما برای…",
+        teacer: "حمیدرضا عبادی",
+        score: 5,
+        students: 1724,
+        price: 899000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/nextjs.webp',
+        title: 'آموزش Next.js بصورت پروژه محور',
+        info: 'نکست یه فریمورک مبتنی بر ری‌اکت هست که امروزه تو بازار کار یکی از مهم‌ترین تکنولوژی‌ها برای توسعه دهنده های…',
+        teacer: 'محمدامین سعیدی راد',
+        score: 5,
+        students: 1637,
+        price: 3500000,
+        offPercent: 30,
+        isLastCourses: true,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/Com_black_python-1-768x432.webp',
+        title: "آموزش پایتون با گرایش امنیت | پایتون سیاه",
+        info: "زبان برنامه نویسی پایتون بخاطر سادگی. قدرت. و جامعه اماری بالایی که داره تونسته جز محبوب ترین زبان های برنامه…",
+        teacer: "قدیر یلمه",
+        score: 5,
+        students: 1596,
+        price: 864000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/network-security.webp',
+        title: "آموزش شبکه با گرایش امنیت | Black Network",
+        info: "دنیای هک و امنیت به اندازه کافی پر چالش و جذاب هست و اگرشما بخواید وارد این حوزه بشید. حتما…",
+        teacer: "اشکان مقدس",
+        score: 5,
+        students: 1521,
+        price: 481500,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/react-libs.webp',
+        title: "آموزش ۲۰ کتابخانه کاربردی ReactJS برای بازارکار",
+        info: "‌کتابخانه‌ها باعث افزایش سرعت کدنویسی میشن. در حدی که تو بازار کار هم از کتابخانه های مختلفی برای توسعه پروژه‌ها…",
+        teacer: "محمدامین سعیدی راد",
+        score: 5,
+        students: 1504,
+        price: 570000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/redux.webp',
+        title: "آموزش تخصصی Redux مقدماتی تا پیشرفته",
+        info: "ریداکس یه کتابخونه پراستفاده واسه مدیریت حالت های مختلف یه برنامه جاوا اسکریپتیه که تو بازار کار ری‌اکت یکی از…",
+        teacer: "محمدامین سعیدی راد",
+        score: 5,
+        students: 1463,
+        price: 1400000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/git-github.webp',
+        title: "آموزش git و github",
+        info: "گیت یه Version Controller هست که نسخه های مختلف پروژه هامون رو مدیریت و نگهداری میکنن. گیت یکی از پراستفاده…",
+        teacer: "محمدامین سعیدی راد",
+        score: 5,
+        students: 1454,
+        price: 980000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: true
     },
 ]
 
 export {
-    lastCourses
+    courses
 }

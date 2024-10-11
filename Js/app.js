@@ -1,34 +1,7 @@
 import {
-    lastCourses
+    courses
 } from './database.js';
 $(document).ready(function () {
-
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 30,
-        nav: true,
-        rtl: true,
-        smartSpeed: 1000,
-        navText: [
-            `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg>`,
-            `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>`
-        ],
-        responsive: {
-            0: {
-                items: 1,
-            },
-            576: {
-                items: 2,
-            },
-            992: {
-                items: 3
-            },
-            1200: {
-                items: 4
-            }
-        }
-
-    })
 
     function slideToggle(className, elem, link) {
         let sideNavbarSubMenu = $(className);
@@ -99,8 +72,8 @@ $(document).ready(function () {
         return discountedPrice;
     }
 
-    lastCourses.forEach(course => {
-        let template = `<div class="px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3">
+    courses.forEach(course => {
+        let template = `
                         <div class="bg-black2 col-12 rounded-4 d-flex flex-column gap-3 position-relative shadow-lg">
                             <div
                                 class="off-box color-white1 position-absolute bg-green1 px-3 py-1 rounded-pill top-0 end-0 mt-3 me-3">
@@ -166,9 +139,47 @@ $(document).ready(function () {
                                 </div>
                             </div>
                         </div>
-                    </div>`
+                    `
+        if (course.isLastCourses) {
+            let layout = document.createElement('div')
+            layout.className = 'px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3'
+            layout.insertAdjacentHTML('beforeend', template)
+            $('.last-courses-box').append(layout)
+        }
+        if (course.isPopularCourses) {
+            $('.owl-carousel').append(template)
+        }
 
-        $('.last-courses-box').append(template)
+    })
+
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: true,
+        rtl: true,
+        autoplay: true,
+        autoplayTimeout: 3500,
+        autoplayHoverPause: true,
+        smartSpeed: 600,
+        navText: [
+            `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg>`,
+            `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>`
+        ],
+        responsive: {
+            0: {
+                items: 1,
+            },
+            576: {
+                items: 2,
+            },
+            992: {
+                items: 3
+            },
+            1200: {
+                items: 4
+            }
+        }
+
     })
 
     $('.course-score').each(function () {
@@ -199,6 +210,23 @@ $(document).ready(function () {
         if ($this.html() == '۰') {
             let $parent = $this.parent()
             $parent.html('<p class="m-0 color-green1 fw-bold off-price d-flex align-items-center justify-content-center col-12">رایگان!</p>')
+        }
+    })
+
+    $('.off-box').each(function () {
+        let $this = $(this);
+
+        if ($this.html().trim() == '۰%') {
+            $this.css('display', 'none')
+
+            let mainPrice = $this.parent().children()[6].children[1].children[0]
+            $(mainPrice).addClass('d-none')
+
+            let students = $this.parent().children()[6].children[0]
+            $(students).removeClass('pt-3')
+
+            let info = $this.parent().children()[3]
+            $(info).css('padding-bottom', '21px')
         }
     })
 });
