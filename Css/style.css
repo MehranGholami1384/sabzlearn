@@ -48,6 +48,14 @@ body::-webkit-scrollbar-thumb:hover {
     border-radius: 2px !important;
 }
 
+.h-52px {
+    height: 52px !important;
+}
+
+.h-94px {
+    height: 94px !important;
+}
+
 /* header */
 
 .sub-menu {
@@ -83,10 +91,6 @@ body::-webkit-scrollbar-thumb:hover {
 .search-icon {
     top: 30% !important;
     left: 8% !important;
-}
-
-.h-52px {
-    height: 52px !important;
 }
 
 .w-52px {
@@ -183,3 +187,5 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-green1) !important;
     color: var(--color-white1) !important;
 }
+
+/* section-5 (help) */

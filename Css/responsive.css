@@ -27,6 +27,18 @@
     }
 }
 
+@media only screen and (max-width: 991.5px) {
+    .help-icon-pos {
+        width: 94px !important;
+        height: 52px !important;
+    }
+
+    .help-icon-pos svg {
+        top: 100% !important;
+        left: 50% !important;
+    }
+}
+
 @media only screen and (max-width: 576px) {
     .responsive-hero-img4 {
         width: 100% !important;
