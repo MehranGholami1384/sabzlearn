@@ -67,4 +67,22 @@
     .text-fs-13px-md {
         font-size: 13px !important;
     }
+
+    .quick-access-links p {
+        font-size: 18px !important;
+    }
+
+    .quick-access-links a {
+        font-size: 14px !important;
+    }
+
+    .sabzlearn-footer-logo {
+        width: 50px !important;
+        height: 30px !important;
+    }
+
+    .sabzlearn-footer-logo2 {
+        width: 80px !important;
+        height: 40px !important;
+    }
 }

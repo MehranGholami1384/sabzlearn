@@ -228,3 +228,23 @@ body::-webkit-scrollbar-thumb:hover {
 .read-blog-links:hover>* {
     color: var(--color-green1) !important;
 }
+
+/* footer */
+
+.social-media-links:hover {
+    color: var(--color-blue2) !important;
+}
+
+.about-site-text {
+    max-width: 500px !important;
+}
+
+.quick-access-links a:hover,
+.sabzlearn-copyright-link:hover {
+    color: var(--color-green1) !important;
+}
+
+.contact-ways-links:hover {
+    color: var(--color-blue1) !important;
+    opacity: 1 !important;
+}

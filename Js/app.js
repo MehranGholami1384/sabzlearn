@@ -276,7 +276,7 @@ $(document).ready(function () {
         }
     })
 
-    $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date').each(function () {
+    $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone').each(function () {
         let $this = $(this);
         $this.html(englishToPersianNumbers($this.text()));
     });
