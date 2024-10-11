@@ -73,9 +73,17 @@ $(document).ready(function () {
         return discountedPrice;
     }
 
+    function createLayout(template) {
+        let layout = document.createElement('div')
+        layout.className = 'px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3'
+        layout.insertAdjacentHTML('beforeend', template)
+
+        return layout
+    }
+
     courses.forEach(course => {
         let template = `
-                        <div class="bg-black2 col-12 rounded-4 d-flex flex-column gap-3 position-relative shadow-lg">
+                        <div class="bg-black2 col-12 rounded-4 d-flex flex-column gap-3 justify-content-between h-100 position-relative shadow-lg">
                             <div
                                 class="off-box color-white1 position-absolute bg-green1 px-3 py-1 rounded-pill top-0 end-0 mt-3 me-3">
                                 ${course.offPercent}%</div>
@@ -86,7 +94,7 @@ $(document).ready(function () {
                                 </a>
                             </div>
                             <div>
-                                <a href="#" class="d-inline-block line-clamp-1 color-white1 px-3 m-0 fw-bold course-title w-100">${course.title}</a>
+                                <a href="#" class="d-inline-block color-white1 px-3 m-0 fw-bold course-title w-100">${course.title}</a>
                             </div>
                             <div>
                                 <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-2">${course.info}</p>
@@ -142,16 +150,16 @@ $(document).ready(function () {
                         </div>
                     `
         if (course.isLastCourses) {
-            let layout = document.createElement('div')
-            layout.className = 'px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3'
-            layout.insertAdjacentHTML('beforeend', template)
-            $('.last-courses-box').append(layout)
+            $('.last-courses-box').append(createLayout(template))
         }
         if (course.isPopularCourses) {
             $('.popular-courses').append(template)
         }
         if (course.isLatestCourses) {
             $('.latest-courses').append(template)
+        }
+        if (course.isMostPopularCourses) {
+            $('.most-popular-courses-box').append(createLayout(template))
         }
     })
 

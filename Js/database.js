@@ -9,7 +9,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/elec-1-768x432.webp',
@@ -22,7 +23,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/nodejs.webp',
@@ -35,7 +37,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/nestjs.webp',
@@ -48,7 +51,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/python-data.webp',
@@ -61,7 +65,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/api-php.webp',
@@ -74,7 +79,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/gold-exp.webp',
@@ -87,7 +93,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/zero-hacker.webp',
@@ -100,7 +107,8 @@ const courses = [{
         offPercent: 100,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/Course-thumbnail-Dashboard2-1-768x432.webp',
@@ -113,7 +121,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/Docker1-1-1-768x432.webp',
@@ -126,7 +135,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/python-2.webp',
@@ -139,7 +149,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: false,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/Com_template_html_css_flexbox-1-768x432.webp',
@@ -152,7 +163,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/bootstrap.webp',
@@ -165,7 +177,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/Freelancer32-1-768x432.webp',
@@ -178,7 +191,8 @@ const courses = [{
         offPercent: 0,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/Com_react-1-768x432.webp',
@@ -191,7 +205,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/mini-project-python.webp',
@@ -204,7 +219,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/tailwind.webp',
@@ -217,7 +233,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/nextjs.webp',
@@ -230,7 +247,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: true,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/Com_black_python-1-768x432.webp',
@@ -243,7 +261,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/network-security.webp',
@@ -256,7 +275,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/react-libs.webp',
@@ -269,7 +289,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/redux.webp',
@@ -282,7 +303,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/git-github.webp',
@@ -295,7 +317,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: true,
-        isLatestCourses: false
+        isLatestCourses: false,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/redis.webp',
@@ -308,7 +331,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/tel-bot-nodejs.webp',
@@ -321,7 +345,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/fastify.webp',
@@ -334,7 +359,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/api-1-768x432.webp',
@@ -347,7 +373,8 @@ const courses = [{
         offPercent: 100,
         isLastCourses: false,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/laravel-reverb.webp',
@@ -360,7 +387,8 @@ const courses = [{
         offPercent: 100,
         isLastCourses: false,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/webpack-1-768x432.webp',
@@ -373,7 +401,8 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
     {
         imgSrc: './Pictures/badusb-1-768x432.webp',
@@ -386,8 +415,121 @@ const courses = [{
         offPercent: 30,
         isLastCourses: false,
         isPopularCourses: false,
-        isLatestCourses: true
+        isLatestCourses: true,
+        isMostPopularCourses: false
     },
+    {
+        imgSrc: './Pictures/python.webp',
+        title: "آموزش پایتون رایگان مقدماتی تا پیشرفته + پروژه های جذاب",
+        info: "",
+        teacer: "رضا دولتی",
+        score: 5,
+        students: 93726,
+        price: 6000000,
+        offPercent: 100,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: false,
+        isMostPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/js.webp',
+        title: "آموزش جاوا اسکریپت رایگان مقدماتی تا پیشرفته + مینی پروژه",
+        info: "",
+        teacer: "محمدامین سعیدی راد",
+        score: 5,
+        students: 71003,
+        price: 4000000,
+        offPercent: 100,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: false,
+        isMostPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/html.webp',
+        title: "آموزش HTML رایگان مقدماتی تا پیشرفته",
+        info: "",
+        teacer: "حمیدرضا عبادی",
+        score: 5,
+        students: 61886,
+        price: 220000,
+        offPercent: 100,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: false,
+        isMostPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/css.webp',
+        title: "آموزش Css رایگان مقدماتی تا پیشرفته",
+        info: "",
+        teacer: "حمیدرضا عبادی",
+        score: 5,
+        students: 54027,
+        price: 150000,
+        offPercent: 100,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: false,
+        isMostPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/html-css.webp',
+        title: "پروژه های خلاقانه با Html و Css(آپدیت  ۲۰۲۳)",
+        info: "",
+        teacer: "مهرشاد براتی",
+        score: 5,
+        students: 35839,
+        price: 220000,
+        offPercent: 100,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: false,
+        isMostPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/css-grid.webp',
+        title: "آموزش پروژه محور CSS Grid + پروژه لندینگ رستوران",
+        info: "",
+        teacer: "مهرشاد براتی",
+        score: 5,
+        students: 32365,
+        price: 35000,
+        offPercent: 100,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: false,
+        isMostPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/flexbox.webp',
+        title: "آموزش FlexBox پروژه محور + پروژه سایت هاستینگ",
+        info: "",
+        teacer: "حمیدرضا عبادی",
+        score: 5,
+        students: 31895,
+        price: 196000,
+        offPercent: 100,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: false,
+        isMostPopularCourses: true
+    },
+    {
+        imgSrc: './Pictures/black-js.webp',
+        title: "آموزش جاوااسکریپت با گرایش امنیت | جاوااسکریپت سیاه",
+        info: "",
+        teacer: "قدیر یلمه",
+        score: 5,
+        students: 31114,
+        price: 150000,
+        offPercent: 100,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: false,
+        isMostPopularCourses: true
+    }
 ]
 
 const blogs = [{

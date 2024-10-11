@@ -71,6 +71,10 @@ body::-webkit-scrollbar-thumb:hover {
     height: 94px !important;
 }
 
+.owl-stage {
+    display: flex !important;
+}
+
 /* header */
 
 .sub-menu {
