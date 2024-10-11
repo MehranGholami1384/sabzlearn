@@ -8,7 +8,8 @@ const courses = [{
         price: 2300000,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/elec-1-768x432.webp',
@@ -20,7 +21,8 @@ const courses = [{
         price: 2200000,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: true
     },
     {
         imgSrc: './Pictures/nodejs.webp',
@@ -32,7 +34,8 @@ const courses = [{
         price: 3300000,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/nestjs.webp',
@@ -44,7 +47,8 @@ const courses = [{
         price: 1999000,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: true
     },
     {
         imgSrc: './Pictures/python-data.webp',
@@ -56,7 +60,8 @@ const courses = [{
         price: 619500,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/api-php.webp',
@@ -68,7 +73,8 @@ const courses = [{
         price: 1200000,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: true
     },
     {
         imgSrc: './Pictures/gold-exp.webp',
@@ -80,7 +86,8 @@ const courses = [{
         price: 375000,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/zero-hacker.webp',
@@ -92,7 +99,8 @@ const courses = [{
         price: 1500000,
         offPercent: 100,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: true
     },
     {
         imgSrc: './Pictures/Course-thumbnail-Dashboard2-1-768x432.webp',
@@ -104,7 +112,8 @@ const courses = [{
         price: 1400000,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/Docker1-1-1-768x432.webp',
@@ -116,7 +125,8 @@ const courses = [{
         price: 1499000,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: true
     },
     {
         imgSrc: './Pictures/python-2.webp',
@@ -128,7 +138,8 @@ const courses = [{
         price: 540000,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: false
+        isPopularCourses: false,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/Com_template_html_css_flexbox-1-768x432.webp',
@@ -140,7 +151,8 @@ const courses = [{
         price: 800000,
         offPercent: 30,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/bootstrap.webp',
@@ -152,7 +164,8 @@ const courses = [{
         price: 422000,
         offPercent: 30,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/Freelancer32-1-768x432.webp',
@@ -164,7 +177,8 @@ const courses = [{
         price: 7100000,
         offPercent: 0,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/Com_react-1-768x432.webp',
@@ -176,7 +190,8 @@ const courses = [{
         price: 4800000,
         offPercent: 30,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/mini-project-python.webp',
@@ -188,7 +203,8 @@ const courses = [{
         price: 990000,
         offPercent: 30,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/tailwind.webp',
@@ -200,7 +216,8 @@ const courses = [{
         price: 899000,
         offPercent: 30,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/nextjs.webp',
@@ -212,7 +229,8 @@ const courses = [{
         price: 3500000,
         offPercent: 30,
         isLastCourses: true,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/Com_black_python-1-768x432.webp',
@@ -224,7 +242,8 @@ const courses = [{
         price: 864000,
         offPercent: 30,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/network-security.webp',
@@ -236,7 +255,8 @@ const courses = [{
         price: 481500,
         offPercent: 30,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/react-libs.webp',
@@ -248,7 +268,8 @@ const courses = [{
         price: 570000,
         offPercent: 30,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/redux.webp',
@@ -260,7 +281,8 @@ const courses = [{
         price: 1400000,
         offPercent: 30,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
     },
     {
         imgSrc: './Pictures/git-github.webp',
@@ -272,7 +294,99 @@ const courses = [{
         price: 980000,
         offPercent: 30,
         isLastCourses: false,
-        isPopularCourses: true
+        isPopularCourses: true,
+        isLatestCourses: false
+    },
+    {
+        imgSrc: './Pictures/redis.webp',
+        title: "آموزش Redis برای توسعه دهندگان بک اند",
+        info: "ردیس یا Redis (مخفف Remote Dictionary Server) نوعی سیستم ذخیره‌سازی متن‌باز مبتنی بر کلید-مقدار (key-Value) NoSQL است که از حافظه…",
+        teacer: "معین باغشیخی",
+        score: 5,
+        students: 178,
+        price: 990000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: true
+    },
+    {
+        imgSrc: './Pictures/tel-bot-nodejs.webp',
+        title: "ساخت ربات تلگرام با NodeJS",
+        info: "دوره ربات تلگرام با Nodejs یه فرصت فوق‌العاده برای یادگیری نحوه‌ی ساخت ربات‌های تلگرامی با استفاده از یکی از قدرتمندترین…",
+        teacer: "معین باغشیخی",
+        score: 5,
+        students: 605,
+        price: 1100000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: true
+    },
+    {
+        imgSrc: './Pictures/fastify.webp',
+        title: "آموزش پروژه محور فریمورک Fastify",
+        info: "Fastify یه فریمورک وب سریع و کم‌ حجم برای ساخت برنامه‌های تحت وب با Node.js هست.Fastify یکی از فریم‌ورک‌های جدید…",
+        teacer: "معین باغشیخی",
+        score: 5,
+        students: 551,
+        price: 700000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: true
+    },
+    {
+        imgSrc: './Pictures/api-1-768x432.webp',
+        title: "درک عمیق مفاهیم API از صفر مطلق",
+        info: "تو این دوره، دانشجو ها با مفاهیم پایه و اساسی API آشنا میشن و روش های مختلف استفاده از اون…",
+        teacer: "معین باغشیخی",
+        score: 5,
+        students: 7378,
+        price: 150000,
+        offPercent: 100,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: true
+    },
+    {
+        imgSrc: './Pictures/laravel-reverb.webp',
+        title: "وب سوکت در لاراول با Reverb",
+        info: "وب سوکت یکی از نیازهای رایجِ نرم‌افزارهای مدرن است و حالا، به لطف Reverb شما این امکان را خواهید داشت…",
+        teacer: "آرمین هوشمند",
+        score: 5,
+        students: 5707,
+        price: 120000,
+        offPercent: 100,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: true
+    },
+    {
+        imgSrc: './Pictures/webpack-1-768x432.webp',
+        title: "آموزش جامع webpack",
+        info: "فرقی نمی‌کند که شما یک برنامه نویس تازه کار و یا حرفه‌ای باشید؛ در هرصورت به وب‌پک نیاز خواهید داشت.…",
+        teacer: "آرمین هوشمند",
+        score: 5,
+        students: 155,
+        price: 850000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: true
+    },
+    {
+        imgSrc: './Pictures/badusb-1-768x432.webp',
+        title: "تست نفوذ با BadUSB",
+        info: "در این دوره کاربردی ما به مفهوم HID ATTACK و چگونگی پیاده سازی سناریو های جذاب از طریق Post Exploitation…",
+        teacer: "اشکان مقدس",
+        score: 5,
+        students: 88,
+        price: 1300000,
+        offPercent: 30,
+        isLastCourses: false,
+        isPopularCourses: false,
+        isLatestCourses: true
     },
 ]
 

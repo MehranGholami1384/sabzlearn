@@ -147,7 +147,10 @@ $(document).ready(function () {
             $('.last-courses-box').append(layout)
         }
         if (course.isPopularCourses) {
-            $('.owl-carousel').append(template)
+            $('.popular-courses').append(template)
+        }
+        if (course.isLatestCourses) {
+            $('.latest-courses').append(template)
         }
 
     })
