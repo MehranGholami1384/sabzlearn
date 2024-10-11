@@ -63,4 +63,8 @@
     .owl-prev {
         margin-left: 40px !important;
     }
+
+    .text-fs-13px-md {
+        font-size: 13px !important;
+    }
 }

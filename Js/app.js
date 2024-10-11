@@ -1,5 +1,6 @@
 import {
-    courses
+    courses,
+    blogs
 } from './database.js';
 $(document).ready(function () {
 
@@ -152,7 +153,65 @@ $(document).ready(function () {
         if (course.isLatestCourses) {
             $('.latest-courses').append(template)
         }
+    })
 
+    blogs.forEach(blog => {
+        let template = `<div class="px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3 d-flex flex-column align-items-stretch">
+                        <div class="bg-black2 h-100 col-12 rounded-4 d-flex flex-column align-items-stretch justify-content-between gap-3 position-relative shadow-lg">
+                            <div>
+                                <a href="#">
+                                    <div class="blog-img-wrapper position-relative">
+                                        <img class="w-100 object-fit-cover rounded-top-4" height="170"
+                                            src="${blog.imgSrc}">
+                                    </div>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#"
+                                    class="d-inline-block color-white1 px-3 m-0 fw-bold course-title w-100">${blog.title}</a>
+                            </div>
+                            <div>
+                                <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-4">${blog.info}</p>
+                            </div>
+                            <div class="px-3 d-flex align-items-center justify-content-between">
+                                <a href="#" class="text-fs-14px teacher-links">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-person color-white1 opacity-75 transition" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z">
+                                        </path>
+                                    </svg>
+                                    <span class="color-white1 opacity-70 transition text-fs-12px text-fs-13px-md">${blog.author}</span>
+                                </a>
+                                <div>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-calendar color-white1 opacity-70"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                        </svg>
+                                        <span class="color-white1 opacity-70 text-fs-12px text-fs-13px-md blog-date" dir="ltr"><span class="blog-year">${blog.dateYear}</span>/<span class="blog-month">${blog.dateMonth}</span>/<span class="blog-date">${blog.dateDay}</span></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="px-3">
+                                <hr class="color-gray1 m-0">
+                            </div>
+                            <div class="px-3 pb-3 d-flex align-items-center justify-content-center">
+                                <a href="#" class="read-blog-links">
+                                    <span class="color-white1 transition ms-2">مطالعه مقاله</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-left-circle-fill color-white1 transition" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>`
+
+        $('.blog-box').append(template)
     })
 
     $('.owl-carousel').owlCarousel({
@@ -202,7 +261,14 @@ $(document).ready(function () {
         });
     }
 
-    $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count').each(function () {
+    $('.blog-month').each(function () {
+        let $this = $(this)
+        if (+$this.html() < 10) {
+            $this.html(`0${+$this.html()}`)
+        }
+    })
+
+    $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date').each(function () {
         let $this = $(this);
         $this.html(englishToPersianNumbers($this.text()));
     });
