@@ -286,11 +286,11 @@ body::-webkit-scrollbar-thumb:hover {
     color: var(--color-gray2) !important;
 }
 
-.continue-btn:hover {
+.submit-auth-btn:hover {
     background-color: var(--color-green2) !important;
 }
 
-.phone-icone {
+.auth-input-icons {
     left: 15px !important;
 }
 

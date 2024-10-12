@@ -329,6 +329,185 @@ $(document).ready(function () {
     // auth page
     let searchParams = new URLSearchParams(location.search)
     let searchActionParam = searchParams.get('action')
+    let searchMethodParam = searchParams.get('method')
 
-    console.log(searchActionParam)
+
+    if (searchActionParam === 'login') {
+        let template
+        if (searchMethodParam === 'email') {
+            template = `<div class="w-100 d-flex flex-column align-items-center justify-content-center bg-black2 rounded-4">
+                    <div class="my-3">
+                        <h4 class="color-white1 fw-bold pt-2">ورود با ایمیل</h4>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center my-3 gap-2">
+                        <p class="m-0 color-white1">حساب کاربری ندارید؟</p>
+                        <a href="./auth.html?action=signup" class="color-green1">ثبت نام کنید</a>
+                    </div>
+                    <form
+                        class="form-control bg-black2 border-0 my-3 d-flex gap-4 px-3 px-sm-5 flex-column align-items-center justify-content-center">
+                        <div class="w-100 position-relative">
+                            <input
+                                class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 phone-number-input color-white1"
+                                type="text" name="phone_number" placeholder="آدرس ایمیل">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
+                                class="bi bi-envelope color-white1 opacity-70 h-100 position-absolute top-0 color-gray2 auth-input-icons"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                            </svg>
+                        </div>
+                        <div class="w-100 position-relative">
+                            <input
+                                class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 phone-number-input color-white1"
+                                type="text" name="phone_number" placeholder="رمز عبور">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
+                                class="bi bi-lock color-white1 opacity-70 h-100 position-absolute top-0 color-gray2 auth-input-icons"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1" />
+                            </svg>
+                        </div>
+                        <button
+                            class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition">ورود</button>
+                    </form>
+                    <div class="w-100 d-flex align-items-center justify-content-between px-3 px-sm-5 mb-3">
+                        <a href="./auth.html?action=login&method=phone_number" class="color-gray2">ورود با موبایل</a>
+                        <a href="#">
+                            <span class="color-gray2 text-decoration-underline">فراموشی رمز عبور</span>
+                        </a>
+                    </div>
+                </div>`
+            $('title').html('ورود با ایمیل')
+        } else if (searchMethodParam === 'phone_number') {
+            template = `<div class="w-100 d-flex flex-column align-items-center justify-content-center bg-black2 rounded-4">
+                    <div class="my-3">
+                        <h4 class="color-white1 fw-bold pt-2">ورود با موبایل</h4>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center my-3 gap-2">
+                        <p class="m-0 color-white1">حساب کاربری ندارید؟</p>
+                        <a href="./auth.html?action=signup" class="color-green1">ثبت نام کنید</a>
+                    </div>
+                    <form
+                        class="form-control bg-black2 border-0 my-3 d-flex gap-4 px-3 px-sm-5 flex-column align-items-center justify-content-center">
+                        <div class="w-100 position-relative">
+                            <input
+                                class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 phone-number-input color-white1"
+                                type="text" name="phone_number" placeholder="شماره موبایل">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="currentColor"
+                                class="bi bi-telephone color-white1 opacity-70 h-100 position-absolute top-0 color-gray2 auth-input-icons"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                            </svg>
+                        </div>
+                        <button
+                            class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition">ادامه</button>
+                    </form>
+                    <div class="w-100 d-flex align-items-center justify-content-between px-3 px-sm-5 mb-3">
+                        <a href="./auth.html?action=login&method=email" class="color-gray2">ورود با ایمیل</a>
+                        <a href="./terms.html">
+                            <span class="color-gray2 text-decoration-underline">حریم خصوصی</span>
+                        </a>
+                    </div>
+                </div>`
+            $('title').html('ورود با شماره موبایل')
+        }
+        $('.auth-box').append(template)
+    } else if (searchActionParam === 'signup') {
+        let template = `<div class="w-100 d-flex flex-column align-items-center justify-content-center bg-black2 rounded-4">
+                        <div class="mt-3">
+                            <h4 class="color-white1 fw-bold pt-2">عضویت</h4>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mt-3 gap-2">
+                            <p class="m-0 color-white1">قبلا ثبت نام کرده اید؟</p>
+                            <a href="./auth.html?action=login&method=phone_number" class="color-green1">وارد شوید</a>
+                        </div>
+                        <form
+                            class="form-control bg-black2 border-0 my-3 d-flex gap-3 px-3 px-sm-5 flex-column align-items-center justify-content-center">
+                            <div class="w-100 position-relative">
+                                <input
+                                    class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 phone-number-input color-white1"
+                                    type="text" name="phone_number" placeholder="نام کاربری">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
+                                    class="bi bi-person color-white1 opacity-70 h-100 position-absolute top-0 color-gray2 auth-input-icons" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                                </svg>
+                            </div>
+                            <div class="w-100 position-relative">
+                                <input
+                                    class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 phone-number-input color-white1"
+                                    type="text" name="phone_number" placeholder="شماره موبایل">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="currentColor"
+                                    class="bi bi-telephone color-white1 opacity-70 h-100 position-absolute top-0 color-gray2 auth-input-icons"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                                </svg>
+                            </div>
+                            <div class="w-100 position-relative">
+                                <input
+                                    class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 phone-number-input color-white1"
+                                    type="text" name="phone_number" placeholder="آدرس ایمیل">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
+                                    class="bi bi-envelope color-white1 opacity-70 h-100 position-absolute top-0 color-gray2 auth-input-icons"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="w-100 position-relative">
+                                <input
+                                    class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 phone-number-input color-white1"
+                                    type="text" name="phone_number" placeholder="رمز عبور">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
+                                    class="bi bi-lock color-white1 opacity-70 h-100 position-absolute top-0 color-gray2 auth-input-icons"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1">
+                                    </path>
+                                </svg>
+                            </div>
+                            <button
+                                class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition">ورود</button>
+                        </form>
+                    </div>`
+        $('title').html('ثبت نام')
+        $('.auth-box').append(template)
+    } else if (!(searchParams.size)) {
+        let template = `<div class="w-100 d-flex flex-column align-items-center justify-content-center bg-black2 rounded-4">
+                    <div class="my-3">
+                        <h4 class="color-white1 fw-bold pt-2">ورود با موبایل</h4>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center my-3 gap-2">
+                        <p class="m-0 color-white1">حساب کاربری ندارید؟</p>
+                        <a href="./auth.html?action=signup" class="color-green1">ثبت نام کنید</a>
+                    </div>
+                    <form
+                        class="form-control bg-black2 border-0 my-3 d-flex gap-4 px-3 px-sm-5 flex-column align-items-center justify-content-center">
+                        <div class="w-100 position-relative">
+                            <input
+                                class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 phone-number-input color-white1"
+                                type="text" name="phone_number" placeholder="شماره موبایل">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="currentColor"
+                                class="bi bi-telephone color-white1 opacity-70 h-100 position-absolute top-0 color-gray2 auth-input-icons"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                            </svg>
+                        </div>
+                        <button
+                            class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition">ادامه</button>
+                    </form>
+                    <div class="w-100 d-flex align-items-center justify-content-between px-3 px-sm-5 mb-3">
+                        <a href="./auth.html?action=login&method=email" class="color-gray2">ورود با ایمیل</a>
+                        <a href="./terms.html">
+                            <span class="color-gray2 text-decoration-underline">حریم خصوصی</span>
+                        </a>
+                    </div>
+                </div>`
+        $('title').html('ورود با شماره موبایل')
+        $('.auth-box').append(template)
+    }
 });
