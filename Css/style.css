@@ -144,6 +144,10 @@ body::-webkit-scrollbar-thumb:hover {
     display: block !important;
 }
 
+.deg180 {
+    transform: rotate(180deg) !important;
+}
+
 .deg90 {
     transform: rotate(90deg) !important;
 }
@@ -301,4 +305,72 @@ body::-webkit-scrollbar-thumb:hover {
 
 .main-box {
     width: 380px !important;
+}
+
+
+/* courses page */
+
+.courses-search-input::placeholder {
+    color: var(--color-gray2) !important;
+}
+
+.courses-search-icon {
+    top: 30% !important;
+    left: 30px !important;
+}
+
+.sort-btn {
+    border: 1.8px solid var(--color-black2);
+}
+
+.active-sort {
+    border-color: var(--color-blue1);
+    color: var(--color-blue1) !important;
+}
+
+.toggle-btn {
+    width: 50px !important;
+    height: 25px !important;
+}
+
+.toggle-marker {
+    width: 20px !important;
+    height: 20px !important;
+    right: -5px !important;
+    top: 50% !important;
+}
+
+.active-toggle-btn {
+    background-color: var(--color-blue1) !important;
+}
+
+.active-toggle-marker {
+    right: 15px !important;
+}
+
+.category-filter-slide {
+    border-top: 1px solid var(--color-black5) !important;
+    display: flex;
+}
+
+.courses-category-filter-checkbox {
+    position: absolute !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+}
+
+.checkbox-marker {
+    width: 17px !important;
+    height: 17px !important;
+}
+
+.select-none {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    user-select: none !important;
+}
+
+.active-checkbox-marker {
+    background-color: var(--color-blue1) !important;
 }
