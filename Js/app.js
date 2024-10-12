@@ -325,4 +325,10 @@ $(document).ready(function () {
     $('.blur-overlay').click(() => {
         hideCartBox()
     })
+
+    // auth page
+    let searchParams = new URLSearchParams(location.search)
+    let searchActionParam = searchParams.get('action')
+
+    console.log(searchActionParam)
 });

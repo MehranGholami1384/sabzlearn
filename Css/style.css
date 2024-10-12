@@ -279,3 +279,26 @@ body::-webkit-scrollbar-thumb:hover {
     color: var(--color-blue1) !important;
     opacity: 1 !important;
 }
+
+/* auth page */
+
+.phone-number-input::placeholder {
+    color: var(--color-gray2) !important;
+}
+
+.continue-btn:hover {
+    background-color: var(--color-green2) !important;
+}
+
+.phone-icone {
+    left: 15px !important;
+}
+
+.text-decoration-underline {
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+}
+
+.main-box {
+    width: 380px !important;
+}
