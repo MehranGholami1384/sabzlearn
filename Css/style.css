@@ -35,6 +35,10 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: 12px !important;
 }
 
+.text-fs-18px {
+    font-size: 18px !important;
+}
+
 .opacity-70 {
     opacity: 0.7 !important;
 }

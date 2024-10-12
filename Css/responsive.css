@@ -90,4 +90,8 @@
         width: 290px !important;
         left: -65px !important;
     }
+
+    .text-fs-18px {
+        font-size: 16px !important;
+    }
 }

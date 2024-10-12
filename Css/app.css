@@ -29,11 +29,13 @@
     --color-yellow2: #F59E0B;
     --color-yellow3: #fbbf2433;
     --color-gray2: #64748b;
-    --color-gray3: rgba(255, 255, 255, 0.5);
+    --color-gray3: #ffffff80;
+    --color-gray4: #333c4c;
     --color-blue1: #0ea5e9;
     --color-blue2: #0284c7;
     --color-blue3: #0284c733;
     --color-blue4: #0ea5e91a;
+    --color-orange1: #ff6600;
     --gradient1: #f2295b;
     --gradient2: #ffb535;
     --gradient3: #28e55d;
@@ -46,6 +48,10 @@
 
 .color-blue1 {
     color: var(--color-blue1) !important;
+}
+
+.color-orange1 {
+    color: var(--color-orange1) !important;
 }
 
 .color-red1 {
@@ -86,6 +92,10 @@
 
 .bg-gray1 {
     background-color: var(--color-gray1) !important;
+}
+
+.bg-gray4 {
+    background-color: var(--color-gray4) !important;
 }
 
 .bg-green1 {
@@ -191,4 +201,12 @@ a:focus {
 
 .linear-gradient4 {
     background-image: linear-gradient(to right, var(--gradient8), var(--gradient7)) !important;
+}
+
+.list-style-disc li {
+    list-style-type: disc !important;
+}
+
+.list-style-disc li::marker {
+    color: var(--color-blue1) !important;
 }
