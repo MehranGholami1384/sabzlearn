@@ -85,4 +85,9 @@
         width: 80px !important;
         height: 40px !important;
     }
+
+    .cart-box {
+        width: 290px !important;
+        left: -65px !important;
+    }
 }

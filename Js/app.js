@@ -276,7 +276,7 @@ $(document).ready(function () {
         }
     })
 
-    $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone').each(function () {
+    $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count').each(function () {
         let $this = $(this);
         $this.html(englishToPersianNumbers($this.text()));
     });
@@ -305,5 +305,24 @@ $(document).ready(function () {
             let info = $this.parent().children()[3]
             $(info).css('padding-bottom', '21px')
         }
+    })
+
+    function hideCartBox() {
+        $('.cart-box').removeClass('active-cart-box');
+        $('.blur-overlay').removeClass('active-blur-overlay');
+    }
+
+    $('.cart-btn').click((event) => {
+        event.stopPropagation();
+        $('.cart-box').toggleClass('active-cart-box');
+        $('.blur-overlay').toggleClass('active-blur-overlay');
+    })
+
+    $('.cart-box').click((event) => {
+        event.stopPropagation();
+    })
+
+    $('.blur-overlay').click(() => {
+        hideCartBox()
     })
 });
