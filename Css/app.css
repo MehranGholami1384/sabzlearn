@@ -210,3 +210,7 @@ a:focus {
 .list-style-disc li::marker {
     color: var(--color-blue1) !important;
 }
+
+.no-scroll {
+    overflow: hidden !important;
+}

@@ -130,7 +130,8 @@ body::-webkit-scrollbar-thumb:hover {
     z-index: 10 !important;
 }
 
-.overlay {
+.overlay,
+.bottom-sheet-overlay {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9 !important;
     display: none;
@@ -373,4 +374,27 @@ body::-webkit-scrollbar-thumb:hover {
 
 .active-checkbox-marker {
     background-color: var(--color-blue1) !important;
+}
+
+.bottom-sheet {
+    z-index: 15 !important;
+    bottom: -500px !important;
+}
+
+.bottom-sheet-icon {
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.active-bottom-sheet-link {
+    color: var(--color-green1) !important;
+}
+
+.active-bottom-sheet-icon {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.open-bottom-sheet {
+    bottom: 0 !important; 
 }

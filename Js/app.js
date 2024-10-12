@@ -312,6 +312,35 @@ $(document).ready(function () {
         $(this).toggleClass('active-checkbox-marker')
     })
 
+    function closeBottomSheet() {
+        $('.bottom-sheet-overlay').removeClass('active-overlay')
+        $('.bottom-sheet').removeClass('open-bottom-sheet')
+        $('body').removeClass('no-scroll')
+    }
+
+    $('.bottom-sheet-btn').click(function () {
+        $('.bottom-sheet').addClass('open-bottom-sheet')
+        $('body').addClass('no-scroll')
+        $('.bottom-sheet-overlay').addClass('active-overlay')
+    })
+
+    $('.bottom-sheet-overlay').click(function () {
+        closeBottomSheet()
+    })
+
+    $('.close-bottom-sheet').click(function () {
+        closeBottomSheet()
+    })
+
+    $('.bottom-sheet-link').click(function () {
+        $('.bottom-sheet-link').removeClass('active-bottom-sheet-link')
+        $('.bottom-sheet-icon').removeClass('active-bottom-sheet-icon')
+
+        $(this).addClass('active-bottom-sheet-link')
+        let icon = $(this).children()[0].children[1]
+        $(icon).addClass('active-bottom-sheet-icon')
+    })
+    
     function englishToPersianNumbers(str) {
         const persianNumbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
         return str.replace(/\d/g, function (digit) {

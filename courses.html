@@ -630,6 +630,33 @@
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                             </svg>
                         </div>
+                        <div class="col-12 d-block d-md-none px-3 my-3">
+                            <div class="d-flex color-white1">
+                                <div class="col-6 ps-3">
+                                    <div
+                                        class="col-12 pointer bg-black2 rounded-pill d-flex align-items-center gap-3 py-3 justify-content-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor" class="bi bi-funnel color-white1" viewBox="0 0 16 16">
+                                            <path
+                                                d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2z" />
+                                        </svg>
+                                        <span>فیلتر</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 pe-3">
+                                    <div
+                                        class="col-12 bottom-sheet-btn pointer bg-black2 rounded-pill d-flex align-items-center gap-3 py-3 justify-content-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor" class="bi bi-arrow-down-up color-white1"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5" />
+                                        </svg>
+                                        <span>همه دوره‌ها</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-12 d-none d-md-block px-3 my-3">
                             <div
                                 class="d-flex align-items-center justify-content-between color-white1 bg-black2 rounded-3 py-4 px-3 fw-bold">
@@ -667,46 +694,73 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="col-12 flex-column align-items-start fs justify-content-center gap-4 category-filter-slide pt-3">
-                                    <div class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
-                                        <input class="courses-category-filter-checkbox" value="front-end-category" type="checkbox" id="front-end-checkbox">
+                                <div
+                                    class="col-12 flex-column align-items-start fs justify-content-center gap-4 category-filter-slide pt-3">
+                                    <div
+                                        class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
+                                        <input class="courses-category-filter-checkbox" value="front-end-category"
+                                            type="checkbox" id="front-end-checkbox">
                                         <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                        <label for="front-end-checkbox" class="pointer col select-none fw-light text-fs-14px">فرانت اند</label>
+                                        <label for="front-end-checkbox"
+                                            class="pointer col select-none fw-light text-fs-14px">فرانت اند</label>
                                     </div>
-                                    <div class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
-                                        <input class="courses-category-filter-checkbox" value="skills-category" type="checkbox" id="skills-checkbox">
+                                    <div
+                                        class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
+                                        <input class="courses-category-filter-checkbox" value="skills-category"
+                                            type="checkbox" id="skills-checkbox">
                                         <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                        <label for="skills-checkbox" class="pointer col select-none fw-light text-fs-14px">ارتقای مهارت‌ها</label>
+                                        <label for="skills-checkbox"
+                                            class="pointer col select-none fw-light text-fs-14px">ارتقای
+                                            مهارت‌ها</label>
                                     </div>
-                                    <div class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
-                                        <input class="courses-category-filter-checkbox" value="back-end-category" type="checkbox" id="back-end-checkbox">
+                                    <div
+                                        class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
+                                        <input class="courses-category-filter-checkbox" value="back-end-category"
+                                            type="checkbox" id="back-end-checkbox">
                                         <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                        <label for="back-end-checkbox" class="pointer col select-none fw-light text-fs-14px">بک اند</label>
+                                        <label for="back-end-checkbox"
+                                            class="pointer col select-none fw-light text-fs-14px">بک اند</label>
                                     </div>
-                                    <div class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
-                                        <input class="courses-category-filter-checkbox" value="security-category" type="checkbox" id="security-checkbox">
+                                    <div
+                                        class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
+                                        <input class="courses-category-filter-checkbox" value="security-category"
+                                            type="checkbox" id="security-checkbox">
                                         <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                        <label for="security-checkbox" class="pointer col select-none fw-light text-fs-14px">امنیت</label>
+                                        <label for="security-checkbox"
+                                            class="pointer col select-none fw-light text-fs-14px">امنیت</label>
                                     </div>
-                                    <div class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
-                                        <input class="courses-category-filter-checkbox" value="python-category" type="checkbox" id="python-checkbox">
+                                    <div
+                                        class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
+                                        <input class="courses-category-filter-checkbox" value="python-category"
+                                            type="checkbox" id="python-checkbox">
                                         <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                        <label for="python-checkbox" class="pointer col select-none fw-light text-fs-14px">پایتون</label>
+                                        <label for="python-checkbox"
+                                            class="pointer col select-none fw-light text-fs-14px">پایتون</label>
                                     </div>
-                                    <div class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
-                                        <input class="courses-category-filter-checkbox" value="soft-skills-category" type="checkbox" id="soft-skills-checkbox">
+                                    <div
+                                        class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
+                                        <input class="courses-category-filter-checkbox" value="soft-skills-category"
+                                            type="checkbox" id="soft-skills-checkbox">
                                         <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                        <label for="soft-skills-checkbox" class="pointer col select-none fw-light text-fs-14px">مهارت‌های نرم</label>
+                                        <label for="soft-skills-checkbox"
+                                            class="pointer col select-none fw-light text-fs-14px">مهارت‌های نرم</label>
                                     </div>
-                                    <div class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
-                                        <input class="courses-category-filter-checkbox" value="php-category" type="checkbox" id="php-checkbox">
+                                    <div
+                                        class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
+                                        <input class="courses-category-filter-checkbox" value="php-category"
+                                            type="checkbox" id="php-checkbox">
                                         <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                        <label for="php-checkbox" class="pointer col select-none fw-light text-fs-14px">پی اچ پی</label>
+                                        <label for="php-checkbox"
+                                            class="pointer col select-none fw-light text-fs-14px">پی اچ پی</label>
                                     </div>
-                                    <div class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
-                                        <input class="courses-category-filter-checkbox" value="ai-category" type="checkbox" id="ai-checkbox">
+                                    <div
+                                        class="w-100 d-flex align-items-center justify-content-start gap-2 pointer position-relative">
+                                        <input class="courses-category-filter-checkbox" value="ai-category"
+                                            type="checkbox" id="ai-checkbox">
                                         <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                        <label for="ai-checkbox" class="pointer col select-none fw-light text-fs-14px fw-light">هوش مصنوعی</label>
+                                        <label for="ai-checkbox"
+                                            class="pointer col select-none fw-light text-fs-14px fw-light">هوش
+                                            مصنوعی</label>
                                     </div>
                                 </div>
                             </div>
@@ -742,6 +796,68 @@
             </div>
         </section>
     </main>
+
+    <div class="bottom-sheet-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event transition"></div>
+    <div class="w-100 bottom-sheet position-fixed bg-gray4 rounded-top-4 d-block d-md-none transition">
+        <div class="d-flex flex-column align-items-stretch justify-content-center h-100">
+            <div class="color-white1 d-flex align-items-center justify-content-between px-3 py-4">
+                <span>مرتب سازی بر اساس</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-x-circle close-bottom-sheet pointer" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </div>
+            <div
+                class="color-white1 bg-black2 d-flex flex-column gap-3 align-items-center justify-content-between px-3">
+                <a href="#" class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25 active-bottom-sheet-link">
+                    <div class="col-12 d-flex align-items-stretch justify-content-between">
+                        <span>همه دوره‌ها</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-check-circle active-bottom-sheet-icon bottom-sheet-icon" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
+                    <div class="col-12 d-flex align-items-stretch justify-content-between">
+                        <span>ارزان ترین</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-check-circle bottom-sheet-icon" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
+                    <div class="col-12 d-flex align-items-stretch justify-content-between">
+                        <span>گران ترین</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-check-circle bottom-sheet-icon" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
+                    <div class="col-12 d-flex align-items-stretch justify-content-between">
+                        <span>پر مخاطب‌ها</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-check-circle bottom-sheet-icon" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-black2" id="footer">
         <div class="mt-5 mx-auto col-12 col-xl-11 d-flex flex-column align-items-center justify-content-center">
