@@ -611,7 +611,7 @@
                     <div class="d-flex flex-column align-items-start justify-content-center gap-3 pe-0 pe-sm-3">
                         <div class="d-flex align-items-center justify-content-center gap-3 col-12">
                             <div class="bg-yellow1 p-2 d-none d-sm-inline-block radius-2px"></div>
-                            <p class="color-white1 m-0 fs-3 fw-bold text-center text-sm-end">دوره‌ها</p>
+                            <p class="color-white1 m-0 fs-3 fw-bold text-center text-sm-end mb-3 mb-sm-0">دوره‌ها</p>
                         </div>
                     </div>
                     <div>
@@ -634,7 +634,7 @@
                             <div class="d-flex color-white1">
                                 <div class="col-6 ps-3">
                                     <div
-                                        class="col-12 pointer bg-black2 rounded-pill d-flex align-items-center gap-3 py-3 justify-content-center">
+                                        class="col-12 pointer open-filter-btn bg-black2 rounded-pill d-flex align-items-center gap-3 py-3 justify-content-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             fill="currentColor" class="bi bi-funnel color-white1" viewBox="0 0 16 16">
                                             <path
@@ -811,7 +811,8 @@
             </div>
             <div
                 class="color-white1 bg-black2 d-flex flex-column gap-3 align-items-center justify-content-between px-3">
-                <a href="#" class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25 active-bottom-sheet-link">
+                <a href="#"
+                    class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25 active-bottom-sheet-link">
                     <div class="col-12 d-flex align-items-stretch justify-content-between">
                         <span>همه دوره‌ها</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -822,7 +823,8 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
+                <a href="#"
+                    class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
                     <div class="col-12 d-flex align-items-stretch justify-content-between">
                         <span>ارزان ترین</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -833,7 +835,8 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
+                <a href="#"
+                    class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
                     <div class="col-12 d-flex align-items-stretch justify-content-between">
                         <span>گران ترین</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -844,7 +847,8 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
+                <a href="#"
+                    class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
                     <div class="col-12 d-flex align-items-stretch justify-content-between">
                         <span>پر مخاطب‌ها</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -856,6 +860,158 @@
                     </div>
                 </a>
             </div>
+        </div>
+    </div>
+    <div
+        class="w-100 filter transition overflow-auto h-100 bg-black2 position-fixed top-0 d-flex flex-column align-items-center justify-content-between">
+        <div class="w-100">
+            <div class="px-3 bg-gray4">
+                <div class="color-white1 d-flex align-items-center justify-content-between py-4">
+                    <div class="d-flex align-items-center justify-content-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-x-circle pointer close-fitler-btn" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                        <span class="fs-5">فیلترها</span>
+                    </div>
+                    <div class="color-red1 d-flex align-items-center justify-content-center gap-2">
+                        <span class="fs-5">حذف فیلترها</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-trash3 close-fitler-btn" viewBox="0 0 16 16">
+                            <path
+                                d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 px-3 my-3">
+                <div
+                    class="d-flex align-items-center justify-content-between color-white1 bg-black2 py-4 px-3 border-bottom border-secondary border-opacity-25">
+                    <div>
+                        <span>فقط دوره‌های رایگان</span>
+                    </div>
+                    <div class="toggle-btn transition bg-black3 rounded-pill position-relative pointer">
+                        <div
+                            class="toggle-marker transition position-absolute bg-black2 rounded-circle translate-middle pointer-event">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 px-3 my-3">
+                <div
+                    class="d-flex gap-4 flex-column align-items-center justify-content-between color-white1 bg-black2 rounded-3 py-4 px-3 fw-bold">
+                    <div class="d-flex align-items-center justify-content-between col-12 filter-slide-chevron-down">
+                        <div class="d-flex align-items-center justify-content-center gap-2">
+                            <svg width="25" height="25" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" color="#fff">
+                                <path
+                                    d="M2 11V4.6C2 4.26863 2.26863 4 2.6 4H8.77805C8.92127 4 9.05977 4.05124 9.16852 4.14445L12.3315 6.85555C12.4402 6.94876 12.5787 7 12.722 7H21.4C21.7314 7 22 7.26863 22 7.6V11M2 11V19.4C2 19.7314 2.26863 20 2.6 20H21.4C21.7314 20 22 19.7314 22 19.4V11M2 11H22"
+                                    stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                                </path>
+                            </svg>
+                            <span>دسته بندی دوره‌ها</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chevron-down filter-slide-chevron-down-icon pointer pointer-event transition deg0"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-12 flex-column align-items-start fs justify-content-center gap-4 filter-slide">
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                            <div class="d-flex align-items-center justify-content-center gap-2 w-100">
+                                <input class="courses-category-filter-checkbox" value="front-end-category"
+                                    type="checkbox" id="front-end">
+                                <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
+                                <label for="front-end" class="pointer col select-none fw-light text-fs-14px">فرانت
+                                    اند</label>
+                            </div>
+                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">28</span>
+                        </div>
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                            <div class="d-flex align-items-center justify-content-center gap-2 w-100">
+                                <input class="courses-category-filter-checkbox" value="front-end-category"
+                                    type="checkbox" id="skills">
+                                <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
+                                <label for="skills" class="pointer col select-none fw-light text-fs-14px">ارتقای مهارت‌ها</label>
+                            </div>
+                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">14</span>
+                        </div>
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                            <div class="d-flex align-items-center justify-content-center gap-2 w-100">
+                                <input class="courses-category-filter-checkbox" value="front-end-category"
+                                    type="checkbox" id="back-end">
+                                <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
+                                <label for="back-end" class="pointer col select-none fw-light text-fs-14px">بک اند</label>
+                            </div>
+                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">12</span>
+                        </div>
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                            <div class="d-flex align-items-center justify-content-center gap-2 w-100">
+                                <input class="courses-category-filter-checkbox" value="front-end-category"
+                                    type="checkbox" id="security">
+                                <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
+                                <label for="security" class="pointer col select-none fw-light text-fs-14px">امنیت</label>
+                            </div>
+                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">9</span>
+                        </div>
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                            <div class="d-flex align-items-center justify-content-center gap-2 w-100">
+                                <input class="courses-category-filter-checkbox" value="front-end-category"
+                                    type="checkbox" id="python">
+                                <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
+                                <label for="python" class="pointer col select-none fw-light text-fs-14px">پایتون</label>
+                            </div>
+                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">6</span>
+                        </div>
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                            <div class="d-flex align-items-center justify-content-center gap-2 w-100">
+                                <input class="courses-category-filter-checkbox" value="front-end-category"
+                                    type="checkbox" id="soft-skills">
+                                <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
+                                <label for="soft-skills" class="pointer col select-none fw-light text-fs-14px">مهارت‌های نرم</label>
+                            </div>
+                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">6</span>
+                        </div>
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                            <div class="d-flex align-items-center justify-content-center gap-2 w-100">
+                                <input class="courses-category-filter-checkbox" value="front-end-category"
+                                    type="checkbox" id="php">
+                                <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
+                                <label for="php" class="pointer col select-none fw-light text-fs-14px">پی اچ پی</label>
+                            </div>
+                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">5</span>
+                        </div>
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                            <div class="d-flex align-items-center justify-content-center gap-2 w-100">
+                                <input class="courses-category-filter-checkbox" value="front-end-category"
+                                    type="checkbox" id="ai">
+                                <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
+                                <label for="ai" class="pointer col select-none fw-light text-fs-14px">هوش مصنوعی</label>
+                            </div>
+                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-3 w-100 mb-4">
+            <button class="w-100 btn color-white1 bg-green1 py-3 rounded-pill apply-filters-btn transition">اعمال
+                فیلتر</button>
         </div>
     </div>
 

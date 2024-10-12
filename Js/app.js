@@ -296,11 +296,11 @@ $(document).ready(function () {
         if (sideNavbarSubMenu.is(':visible')) {
             sideNavbarSubMenu.slideUp(450, function () {
                 sideNavbarSubMenu.css('display', 'none');
-                $(elem).addClass('deg180').removeClass('deg0')
+                $(elem).addClass('deg0').removeClass('deg180')
             });
         } else {
             sideNavbarSubMenu.css('display', 'flex').hide().slideDown(450);
-            $(elem).addClass('deg0').removeClass('deg180')
+            $(elem).addClass('deg180').removeClass('deg0')
         }
     }
 
@@ -340,7 +340,31 @@ $(document).ready(function () {
         let icon = $(this).children()[0].children[1]
         $(icon).addClass('active-bottom-sheet-icon')
     })
-    
+
+    $('.open-filter-btn').click(function () {
+        $('.filter').addClass('open-filter')
+        $('body').addClass('no-scroll')
+    })
+
+    $('.close-fitler-btn').click(function () {
+        $('.filter').removeClass('open-filter')
+        $('body').removeClass('no-scroll')
+    })
+
+    $('.filter-slide-chevron-down').click(function () {
+        let sideNavbarSubMenu = $('.filter-slide');
+
+        if (sideNavbarSubMenu.is(':visible')) {
+            sideNavbarSubMenu.slideUp(450, function () {
+                sideNavbarSubMenu.css('display', 'none');
+                $('.filter-slide-chevron-down-icon').addClass('deg0').removeClass('deg180')
+            });
+        } else {
+            sideNavbarSubMenu.css('display', 'flex').hide().slideDown(450);
+            $('.filter-slide-chevron-down-icon').addClass('deg180').removeClass('deg0')
+        }
+    })
+
     function englishToPersianNumbers(str) {
         const persianNumbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
         return str.replace(/\d/g, function (digit) {
@@ -355,7 +379,7 @@ $(document).ready(function () {
         }
     })
 
-    $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count').each(function () {
+    $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count').each(function () {
         let $this = $(this);
         $this.html(englishToPersianNumbers($this.text()));
     });
