@@ -445,10 +445,17 @@ $(document).ready(function () {
                 array = courses
             }
         }
+
         $('.courses-count').html(`${array.length} عنوان آموزشی`)
     }
 
     coursesCountModifier()
+
+    if (getLocalStorage('value')) {
+        $('.bottom-sheet-btn span').html(getLocalStorage('value'))
+    } else {
+        $('.bottom-sheet-btn span').html('همه دوره‌ها')
+    }
 
     $('.sort-btn').each(function () {
         if ($(this).data('id') === getLocalStorage('sort-type')) {
@@ -525,7 +532,10 @@ $(document).ready(function () {
         icon.addClass('active-bottom-sheet-icon')
 
         let sort = $(this).data('id')
+        let value = $(this).data('value')
+        console.log(value)
         setLocalStorage('sort-type', sort)
+        setLocalStorage('value', value)
 
         if (sort === 'cheap') {
             const sortedNonFreeCourses = courses
@@ -557,6 +567,7 @@ $(document).ready(function () {
             setLocalStorage(sort, JSON.stringify(sortedCourses))
         }
 
+        $('.bottom-sheet-btn span').html(value)
         coursesCountModifier()
         setupPagination()
         renderCourses(1);
@@ -620,6 +631,20 @@ $(document).ready(function () {
             disableOnlyFreeCourses($this)
             removeLocalStorageItem('show-type')
         }
+    })
+
+    $('.remove-filters').click(function () {
+        $('.filter').removeClass('open-filter')
+        $('body').removeClass('no-scroll')
+
+        removeLocalStorageItem('show-type')
+        if (!getLocalStorage('show-type')) {
+            disableOnlyFreeCourses($('.toggle-btn'))
+            disableOnlyFreeCourses($('.mobile-toggle-btn'))
+        }
+        coursesCountModifier()
+        setupPagination()
+        renderCourses(1);
     })
 
     $('.apply-filters-btn').click(function () {
