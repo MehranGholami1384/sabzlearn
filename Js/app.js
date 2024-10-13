@@ -4,6 +4,14 @@ import {
 } from './database.js';
 $(document).ready(function () {
 
+    function setLocalStorage(key, value) {
+        localStorage.setItem(key, value)
+    }
+
+    function getLocalStorage(key) {
+        return localStorage.getItem(key)
+    }
+
     function slideToggle(className, elem, link) {
         let sideNavbarSubMenu = $(className);
 
@@ -180,9 +188,15 @@ $(document).ready(function () {
     }
 
     function renderCourses(page) {
+        let array = null
+        if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
+            array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
+        } else {
+            array = courses
+        }
         const start = (page - 1) * coursesPerPage;
         const end = start + coursesPerPage;
-        const currentCourses = courses.slice(start, end);
+        const currentCourses = array.slice(start, end);
 
         $('.courses-box').empty();
         setTimeout(function () {
@@ -264,13 +278,19 @@ $(document).ready(function () {
             priceModifier2()
         }, 100)
 
-        $('html, body').animate({
-            scrollTop: $('.courses-container').offset().top
-        }, 100);
+        // $('html, body').animate({
+        //     scrollTop: $('.courses-container').offset().top
+        // }, 100);
     }
 
     function setupPagination() {
-        const pageCount = Math.ceil(courses.length / coursesPerPage);
+        let array = null
+        if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
+            array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
+        } else {
+            array = courses
+        }
+        const pageCount = Math.ceil(array.length / coursesPerPage);
         $('.btns-list-container').empty();
 
         for (let i = 1; i <= pageCount; i++) {
@@ -289,6 +309,10 @@ $(document).ready(function () {
             englishToPersianNumbers2()
             priceModifier()
             priceModifier2()
+
+            $('html, body').animate({
+                scrollTop: $('.courses-container').offset().top
+            }, 100);
         });
     }
 
@@ -402,12 +426,68 @@ $(document).ready(function () {
 
     priceModifier3()
 
-    $('.courses-count').html(`${courses.length} عنوان آموزشی`)
+    function coursesCountModifier() {
+        let array = null
+        if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
+            array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
+        } else {
+            array = courses
+        }
+        $('.courses-count').html(`${array.length} عنوان آموزشی`)
+    }
+
+    coursesCountModifier()
+
+    $('.sort-btn').each(function () {
+        if ($(this).data('id') === getLocalStorage('sort-type')) {
+            $('.sort-btn').removeClass('active-sort')
+            $(this).addClass('active-sort')
+        } else if (!getLocalStorage('sort-type')) {
+            $('.sort-btn').removeClass('active-sort')
+            $('.sort-btn:first').addClass('active-sort')
+        }
+    })
 
     $('.sort-btn').click(function () {
-        console.log($(this))
         $('.sort-btn').removeClass('active-sort')
         $(this).addClass('active-sort')
+
+        let sort = $(this).data('id')
+        setLocalStorage('sort-type', sort)
+
+        if (sort === 'cheap') {
+            const sortedNonFreeCourses = courses
+                .filter(course => course.offPercent < 100)
+                .sort((a, b) => {
+                    const finalPriceA = a.price - (a.price * (a.offPercent / 100));
+                    const finalPriceB = b.price - (b.price * (b.offPercent / 100));
+
+                    return finalPriceA - finalPriceB;
+                });
+
+            setLocalStorage(sort, JSON.stringify(sortedNonFreeCourses))
+        } else if (sort === 'default') {
+            setLocalStorage(sort, JSON.stringify(courses))
+        } else if (sort === 'expensive') {
+            const sortedCourses = courses
+                .filter(course => course.offPercent < 100)
+                .sort((a, b) => {
+                    const finalPriceA = a.price - (a.price * (a.offPercent / 100));
+                    const finalPriceB = b.price - (b.price * (b.offPercent / 100));
+
+                    return finalPriceB - finalPriceA;
+                })
+                .concat(courses.filter(course => course.offPercent === 100));
+
+            setLocalStorage(sort, JSON.stringify(sortedCourses))
+        } else if (sort === 'popular') {
+            const sortedCourses = courses.slice().sort((a, b) => b.students - a.students);
+            setLocalStorage(sort, JSON.stringify(sortedCourses))
+        }
+
+        coursesCountModifier()
+        setupPagination()
+        renderCourses(1);
     })
 
     $('.toggle-btn').click(function () {
