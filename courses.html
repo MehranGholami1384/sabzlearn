@@ -766,7 +766,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-9 d-flex flex-wrap p-0 courses-box align-items-stretch">
+                    <div class="col-12 col-lg-9 courses-container">
                         <div class="px-3 col-12 my-3 color-white1 d-none d-md-block">
                             <div class="px-3 d-flex align-items-center justify-content-start gap-4 bg-black2 rounded-3">
                                 <div class="d-flex align-items-center justify-content-center gap-2 py-4">
@@ -790,6 +790,8 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 courses-box d-flex flex-wrap p-0 align-items-stretch"></div>
+                        <div class="btns-list-container col-12 d-flex align-items-center justify-content-center gap-3 mt-3"></div>
                     </div>
                 </div>
 
@@ -924,8 +926,7 @@
                         </div>
                     </div>
                     <div class="col-12 flex-column align-items-start fs justify-content-center gap-4 filter-slide">
-                        <div
-                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                        <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
                                 <input class="courses-category-filter-checkbox" value="front-end-category"
                                     type="checkbox" id="front-end">
@@ -933,77 +934,82 @@
                                 <label for="front-end" class="pointer col select-none fw-light text-fs-14px">فرانت
                                     اند</label>
                             </div>
-                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">28</span>
+                            <span
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">28</span>
                         </div>
-                        <div
-                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                        <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
                                 <input class="courses-category-filter-checkbox" value="front-end-category"
                                     type="checkbox" id="skills">
                                 <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                <label for="skills" class="pointer col select-none fw-light text-fs-14px">ارتقای مهارت‌ها</label>
+                                <label for="skills" class="pointer col select-none fw-light text-fs-14px">ارتقای
+                                    مهارت‌ها</label>
                             </div>
-                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">14</span>
+                            <span
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">14</span>
                         </div>
-                        <div
-                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                        <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
                                 <input class="courses-category-filter-checkbox" value="front-end-category"
                                     type="checkbox" id="back-end">
                                 <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                <label for="back-end" class="pointer col select-none fw-light text-fs-14px">بک اند</label>
+                                <label for="back-end" class="pointer col select-none fw-light text-fs-14px">بک
+                                    اند</label>
                             </div>
-                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">12</span>
+                            <span
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">12</span>
                         </div>
-                        <div
-                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                        <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
                                 <input class="courses-category-filter-checkbox" value="front-end-category"
                                     type="checkbox" id="security">
                                 <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                <label for="security" class="pointer col select-none fw-light text-fs-14px">امنیت</label>
+                                <label for="security"
+                                    class="pointer col select-none fw-light text-fs-14px">امنیت</label>
                             </div>
-                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">9</span>
+                            <span
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">9</span>
                         </div>
-                        <div
-                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                        <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
                                 <input class="courses-category-filter-checkbox" value="front-end-category"
                                     type="checkbox" id="python">
                                 <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
                                 <label for="python" class="pointer col select-none fw-light text-fs-14px">پایتون</label>
                             </div>
-                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">6</span>
+                            <span
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">6</span>
                         </div>
-                        <div
-                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                        <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
                                 <input class="courses-category-filter-checkbox" value="front-end-category"
                                     type="checkbox" id="soft-skills">
                                 <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
-                                <label for="soft-skills" class="pointer col select-none fw-light text-fs-14px">مهارت‌های نرم</label>
+                                <label for="soft-skills" class="pointer col select-none fw-light text-fs-14px">مهارت‌های
+                                    نرم</label>
                             </div>
-                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">6</span>
+                            <span
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">6</span>
                         </div>
-                        <div
-                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                        <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
                                 <input class="courses-category-filter-checkbox" value="front-end-category"
                                     type="checkbox" id="php">
                                 <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
                                 <label for="php" class="pointer col select-none fw-light text-fs-14px">پی اچ پی</label>
                             </div>
-                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">5</span>
+                            <span
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">5</span>
                         </div>
-                        <div
-                            class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
+                        <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
                                 <input class="courses-category-filter-checkbox" value="front-end-category"
                                     type="checkbox" id="ai">
                                 <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
                                 <label for="ai" class="pointer col select-none fw-light text-fs-14px">هوش مصنوعی</label>
                             </div>
-                            <span class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">1</span>
+                            <span
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">1</span>
                         </div>
                     </div>
                 </div>

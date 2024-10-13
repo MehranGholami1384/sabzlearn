@@ -422,3 +422,11 @@ body::-webkit-scrollbar-thumb:hover {
     visibility: visible !important;
     opacity: 1 !important;
 }
+
+.page-btn:hover {
+    background-color: var(--color-green2) !important;
+}
+
+.active-page-btn {
+    background-color: var(--color-green1) !important;
+}
