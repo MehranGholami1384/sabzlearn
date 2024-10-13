@@ -12,6 +12,10 @@ $(document).ready(function () {
         return localStorage.getItem(key)
     }
 
+    function removeLocalStorageItem(key) {
+        localStorage.removeItem(key)
+    }
+
     function slideToggle(className, elem, link) {
         let sideNavbarSubMenu = $(className);
 
@@ -189,10 +193,14 @@ $(document).ready(function () {
 
     function renderCourses(page) {
         let array = null
-        if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
-            array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
+        if (JSON.parse(getLocalStorage(getLocalStorage('show-type')))) {
+            array = JSON.parse(getLocalStorage(getLocalStorage('show-type')))
         } else {
-            array = courses
+            if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
+                array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
+            } else {
+                array = courses
+            }
         }
         const start = (page - 1) * coursesPerPage;
         const end = start + coursesPerPage;
@@ -281,10 +289,14 @@ $(document).ready(function () {
 
     function setupPagination() {
         let array = null
-        if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
-            array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
+        if (JSON.parse(getLocalStorage(getLocalStorage('show-type')))) {
+            array = JSON.parse(getLocalStorage(getLocalStorage('show-type')))
         } else {
-            array = courses
+            if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
+                array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
+            } else {
+                array = courses
+            }
         }
         const pageCount = Math.ceil(array.length / coursesPerPage);
         $('.btns-list-container').empty();
@@ -426,6 +438,8 @@ $(document).ready(function () {
         let array = null
         if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
             array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
+        } else if (JSON.parse(getLocalStorage(getLocalStorage('show-type')))) {
+            array = JSON.parse(getLocalStorage(getLocalStorage('show-type')))
         } else {
             array = courses
         }
@@ -551,9 +565,42 @@ $(document).ready(function () {
         }, 100);
     })
 
+    function activeOnlyFreeCourses(elem) {
+        elem.addClass('active-toggle-btn')
+        $('.toggle-marker').addClass('active-toggle-marker')
+    }
+
+    function disableOnlyFreeCourses(elem) {
+        elem.removeClass('active-toggle-btn')
+        $('.toggle-marker').removeClass('active-toggle-marker')
+    }
+
+    if (getLocalStorage('show-type')) {
+        activeOnlyFreeCourses($('.toggle-btn'))
+    }
+
     $('.toggle-btn').click(function () {
-        $(this).toggleClass('active-toggle-btn')
-        $('.toggle-marker').toggleClass('active-toggle-marker')
+        let $this = $(this)
+        if (!$this.hasClass('active-toggle-btn')) {
+            activeOnlyFreeCourses($this)
+
+            setLocalStorage('show-type', $this.data('id'))
+
+            const freeCourses = courses.filter(course => course.offPercent === 100);
+
+            setLocalStorage($this.data('id'), JSON.stringify(freeCourses))
+
+            coursesCountModifier()
+            setupPagination()
+            renderCourses(1);
+        } else {
+            disableOnlyFreeCourses($this)
+            removeLocalStorageItem('show-type')
+
+            coursesCountModifier()
+            setupPagination()
+            renderCourses(1);
+        }
     })
 
     $('.courses-category-filter-checkbox').change(function () {
