@@ -277,10 +277,6 @@ $(document).ready(function () {
             priceModifier()
             priceModifier2()
         }, 100)
-
-        // $('html, body').animate({
-        //     scrollTop: $('.courses-container').offset().top
-        // }, 100);
     }
 
     function setupPagination() {
@@ -488,6 +484,71 @@ $(document).ready(function () {
         coursesCountModifier()
         setupPagination()
         renderCourses(1);
+    })
+
+    $('.bottom-sheet-link').each(function () {
+        let icon = $(this).find('.bottom-sheet-icon')
+        if ($(this).data('id') === getLocalStorage('sort-type')) {
+            $('.bottom-sheet-link').removeClass('active-bottom-sheet-link')
+            $('.bottom-sheet-icon').removeClass('active-bottom-sheet-icon')
+            $(this).addClass('active-bottom-sheet-link')
+            icon.addClass('active-bottom-sheet-icon')
+        } else if (!getLocalStorage('sort-type')) {
+            $('.bottom-sheet-link').removeClass('active-bottom-sheet-link')
+            $('.bottom-sheet-icon').removeClass('active-bottom-sheet-icon')
+            $('.bottom-sheet-link:first').addClass('active-bottom-sheet-link')
+            $('.bottom-sheet-icon:first').addClass('active-bottom-sheet-icon')
+        }
+    })
+
+    $('.bottom-sheet-link').click(function () {
+        let icon = $(this).find('.bottom-sheet-icon')
+        $('.bottom-sheet-link').removeClass('active-bottom-sheet-link')
+        $('.bottom-sheet-icon').removeClass('active-bottom-sheet-icon')
+        $(this).addClass('active-bottom-sheet-link')
+        icon.addClass('active-bottom-sheet-icon')
+
+        let sort = $(this).data('id')
+        setLocalStorage('sort-type', sort)
+
+        if (sort === 'cheap') {
+            const sortedNonFreeCourses = courses
+                .filter(course => course.offPercent < 100)
+                .sort((a, b) => {
+                    const finalPriceA = a.price - (a.price * (a.offPercent / 100));
+                    const finalPriceB = b.price - (b.price * (b.offPercent / 100));
+
+                    return finalPriceA - finalPriceB;
+                });
+
+            setLocalStorage(sort, JSON.stringify(sortedNonFreeCourses))
+        } else if (sort === 'default') {
+            setLocalStorage(sort, JSON.stringify(courses))
+        } else if (sort === 'expensive') {
+            const sortedCourses = courses
+                .filter(course => course.offPercent < 100)
+                .sort((a, b) => {
+                    const finalPriceA = a.price - (a.price * (a.offPercent / 100));
+                    const finalPriceB = b.price - (b.price * (b.offPercent / 100));
+
+                    return finalPriceB - finalPriceA;
+                })
+                .concat(courses.filter(course => course.offPercent === 100));
+
+            setLocalStorage(sort, JSON.stringify(sortedCourses))
+        } else if (sort === 'popular') {
+            const sortedCourses = courses.slice().sort((a, b) => b.students - a.students);
+            setLocalStorage(sort, JSON.stringify(sortedCourses))
+        }
+
+        coursesCountModifier()
+        setupPagination()
+        renderCourses(1);
+        closeBottomSheet()
+
+        $('html, body').animate({
+            scrollTop: $('.filter-container').offset().top - 30
+        }, 100);
     })
 
     $('.toggle-btn').click(function () {

@@ -630,7 +630,7 @@
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                             </svg>
                         </div>
-                        <div class="col-12 d-block d-md-none px-3 my-3">
+                        <div class="col-12 d-block d-md-none px-3 my-3 filter-container">
                             <div class="d-flex color-white1">
                                 <div class="col-6 ps-3">
                                     <div
@@ -778,13 +778,17 @@
                                     <span>مرتب سازی بر اساس :</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center gap-4">
-                                    <div data-id="default" class="pointer py-4 sort-btn border-end-0 border-start-0 transition">همه
+                                    <div data-id="default"
+                                        class="pointer py-4 sort-btn border-end-0 border-start-0 transition">همه
                                         دوره‌ها</div>
-                                    <div data-id="cheap" class="pointer py-4 sort-btn border-end-0 border-start-0 transition">ارزان
+                                    <div data-id="cheap"
+                                        class="pointer py-4 sort-btn border-end-0 border-start-0 transition">ارزان
                                         ترین</div>
-                                    <div data-id="expensive" class="pointer py-4 sort-btn border-end-0 border-start-0 transition">گران
+                                    <div data-id="expensive"
+                                        class="pointer py-4 sort-btn border-end-0 border-start-0 transition">گران
                                         ترین</div>
-                                    <div data-id="popular" class="pointer py-4 sort-btn border-end-0 border-start-0 transition">پر
+                                    <div data-id="popular"
+                                        class="pointer py-4 sort-btn border-end-0 border-start-0 transition">پر
                                         مخاطب‌ها</div>
                                 </div>
                             </div>
@@ -814,7 +818,7 @@
             </div>
             <div
                 class="color-white1 bg-black2 d-flex flex-column gap-3 align-items-center justify-content-between px-3">
-                <a href="#"
+                <div data-id="default"
                     class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25 active-bottom-sheet-link">
                     <div class="col-12 d-flex align-items-stretch justify-content-between">
                         <span>همه دوره‌ها</span>
@@ -825,8 +829,8 @@
                                 d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
                         </svg>
                     </div>
-                </a>
-                <a href="#"
+                </div>
+                <div data-id="cheap"
                     class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
                     <div class="col-12 d-flex align-items-stretch justify-content-between">
                         <span>ارزان ترین</span>
@@ -837,8 +841,8 @@
                                 d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
                         </svg>
                     </div>
-                </a>
-                <a href="#"
+                </div>
+                <div data-id="expensive"
                     class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
                     <div class="col-12 d-flex align-items-stretch justify-content-between">
                         <span>گران ترین</span>
@@ -849,8 +853,8 @@
                                 d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
                         </svg>
                     </div>
-                </a>
-                <a href="#"
+                </div>
+                <div data-id="popular"
                     class="d-flex align-items-center justify-content-center w-100 py-4 border-bottom border-secondary bottom-sheet-link border-opacity-25">
                     <div class="col-12 d-flex align-items-stretch justify-content-between">
                         <span>پر مخاطب‌ها</span>
@@ -861,7 +865,7 @@
                                 d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
                         </svg>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
