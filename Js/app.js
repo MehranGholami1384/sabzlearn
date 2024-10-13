@@ -436,12 +436,14 @@ $(document).ready(function () {
 
     function coursesCountModifier() {
         let array = null
-        if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
-            array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
-        } else if (JSON.parse(getLocalStorage(getLocalStorage('show-type')))) {
+        if (JSON.parse(getLocalStorage(getLocalStorage('show-type')))) {
             array = JSON.parse(getLocalStorage(getLocalStorage('show-type')))
         } else {
-            array = courses
+            if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
+                array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
+            } else {
+                array = courses
+            }
         }
         $('.courses-count').html(`${array.length} عنوان آموزشی`)
     }
@@ -577,6 +579,7 @@ $(document).ready(function () {
 
     if (getLocalStorage('show-type')) {
         activeOnlyFreeCourses($('.toggle-btn'))
+        activeOnlyFreeCourses($('.mobile-toggle-btn'))
     }
 
     $('.toggle-btn').click(function () {
@@ -601,6 +604,31 @@ $(document).ready(function () {
             setupPagination()
             renderCourses(1);
         }
+    })
+
+    $('.mobile-toggle-btn').click(function () {
+        let $this = $(this)
+        if (!$this.hasClass('active-toggle-btn')) {
+            activeOnlyFreeCourses($this)
+
+            setLocalStorage('show-type', $this.data('id'))
+
+            const freeCourses = courses.filter(course => course.offPercent === 100);
+
+            setLocalStorage($this.data('id'), JSON.stringify(freeCourses))
+        } else {
+            disableOnlyFreeCourses($this)
+            removeLocalStorageItem('show-type')
+        }
+    })
+
+    $('.apply-filters-btn').click(function () {
+        $('.filter').removeClass('open-filter')
+        $('body').removeClass('no-scroll')
+
+        coursesCountModifier()
+        setupPagination()
+        renderCourses(1);
     })
 
     $('.courses-category-filter-checkbox').change(function () {
@@ -662,6 +690,9 @@ $(document).ready(function () {
     $('.open-filter-btn').click(function () {
         $('.filter').addClass('open-filter')
         $('body').addClass('no-scroll')
+        if (getLocalStorage('show-type')) {
+            activeOnlyFreeCourses($('.mobile-toggle-btn'))
+        }
     })
 
     $('.close-fitler-btn').click(function () {
