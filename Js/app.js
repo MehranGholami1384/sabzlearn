@@ -238,7 +238,7 @@ $(document).ready(function () {
                                     </a>
                                     <div>
                                         <span>
-                                            <span class="color-yellow2 course-score">${course.score}</span>
+                                            <span class="color-yellow2 course-score-courses-page">${course.score}</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-star-fill color-yellow2"
                                                 viewBox="0 0 16 16">
@@ -261,10 +261,10 @@ $(document).ready(function () {
                                         <span class="color-white1 opacity-70 course-students">${course.students}</span>
                                     </div>
                                     <div>
-                                        <p class="main-price m-0 color-white1 opacity-70 text-fs-14px text-decoration-line-through">
+                                        <p class="main-price-courses-page m-0 color-white1 opacity-70 text-fs-14px text-decoration-line-through">
                                             ${course.price}</p>
                                         <div class="d-flex">
-                                            <p class="m-0 color-green1 fw-bold off-price">${calculateDiscountedPrice(course.price, course.offPercent)}</p>
+                                            <p class="m-0 color-green1 fw-bold off-price-courses-page">${calculateDiscountedPrice(course.price, course.offPercent)}</p>
                                             <svg class="me-1 color-green1" width="20" height="20" viewBox="0 0 14 16" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path class="text-gray-880 dark:text-white"
@@ -279,8 +279,8 @@ $(document).ready(function () {
                 $('.courses-box').append(createLayou2(template));
             });
 
-            priceModifier3()
-            scoreModifier()
+            priceModifier4()
+            scoreModifier2()
             englishToPersianNumbers2()
             priceModifier()
             priceModifier2()
@@ -312,8 +312,8 @@ $(document).ready(function () {
             const page = $(this).data('page');
             renderCourses(page);
 
-            priceModifier3()
-            scoreModifier()
+            priceModifier4()
+            scoreModifier2()
             englishToPersianNumbers2()
             priceModifier()
             priceModifier2()
@@ -423,10 +423,24 @@ $(document).ready(function () {
         });
     }
 
+    function scoreModifier2() {
+        $('.course-score-courses-page').each(function () {
+            let score = parseFloat($(this).text());
+            $(this).text(score.toFixed(1));
+        });
+    }
+
     scoreModifier()
 
     function priceModifier3() {
         $('.off-price, .main-price').each(function () {
+            let price = parseInt($(this).text());
+            $(this).text(price.toLocaleString('en-US'));
+        });
+    }
+
+    function priceModifier4() {
+        $('.off-price-courses-page, .main-price-courses-page').each(function () {
             let price = parseInt($(this).text());
             $(this).text(price.toLocaleString('en-US'));
         });
@@ -754,7 +768,7 @@ $(document).ready(function () {
     })
 
     function englishToPersianNumbers2() {
-        $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count').each(function () {
+        $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page').each(function () {
             let $this = $(this);
             $this.html(englishToPersianNumbers($this.text()));
         });
