@@ -282,7 +282,7 @@ $(document).ready(function () {
             priceModifier4()
             scoreModifier2()
             englishToPersianNumbers2()
-            priceModifier()
+            priceModifier5()
             priceModifier2()
         }, 100)
     }
@@ -315,7 +315,7 @@ $(document).ready(function () {
             priceModifier4()
             scoreModifier2()
             englishToPersianNumbers2()
-            priceModifier()
+            priceModifier5()
             priceModifier2()
 
             $('html, body').animate({
@@ -778,6 +778,17 @@ $(document).ready(function () {
 
     function priceModifier() {
         $('.off-price').each(function () {
+            let $this = $(this);
+
+            if ($this.html() == '۰') {
+                let $parent = $this.parent()
+                $parent.html('<p class="m-0 color-green1 fw-bold off-price d-flex align-items-center justify-content-center col-12">رایگان!</p>')
+            }
+        })
+    }
+
+    function priceModifier5() {
+        $('.off-price-courses-page').each(function () {
             let $this = $(this);
 
             if ($this.html() == '۰') {
