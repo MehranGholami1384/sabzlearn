@@ -24,6 +24,7 @@
 
     <header class="bg-black2">
         <div class="blur-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event z-2 transition"></div>
+        <div class="user-profile-box-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event transition"></div>
         <div class="overlay position-fixed top-0 end-0 w-100 h-100 pointer-event transition"></div>
         <div
             class="side-navbar d-block d-xl-none overflow-auto shadow-lg position-fixed bg-black2 top-0 end-0 h-100 col-10 col-sm-6 col-md-5 col-lg-4 end-0 p-3 transition">
@@ -550,7 +551,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="d-flex align-items-center justify-content-center gap-3">
+            <div class="d-flex align-items-center justify-content-center gap-3 navbar-wrapper">
                 <div class="position-relative d-none d-xl-block">
                     <input type="text" placeholder="چیو میخوای یاد بگیری؟"
                         class="search-input ps-5 h-52px rounded-pill form-control shadow-none bg-black3 border-0 color-white1 fs-6">
@@ -568,13 +569,15 @@
                             d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
                     </svg>
                 </button>
-                <button class="btn bg-black3 rounded-circle h-52px px-3 pointer position-relative cart-btn z-3 transition">
+                <button
+                    class="btn bg-black3 rounded-circle h-52px px-3 pointer position-relative cart-btn transition">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         class="bi bi-bag color-white1" viewBox="0 0 16 16">
                         <path
                             d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
                     </svg>
-                    <div class="bg-black2 rounded-3 overflow-hidden position-absolute w-250px cart-box z-3 transition pointer-event cursor-initial">
+                    <div
+                        class="bg-black2 rounded-3 overflow-hidden position-absolute cart-box z-3 transition pointer-event cursor-initial">
                         <div class="bg-blue4 d-flex align-items-center justify-content-between p-3">
                             <p class="m-0 color-blue1 cursor-text">سبد خرید من</p>
                             <p class="m-0 color-gray2 cart-box-courses-count cursor-text">0 دوره</p>
@@ -584,25 +587,6 @@
                         </div>
                     </div>
                 </button>
-                <a href="./auth.html?action=login&method=phone_number"
-                    class="btn bg-black3 rounded-circle h-52px px-3 pointer d-flex align-items-center justify-content-center d-xl-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi bi-box-arrow-right color-white1" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
-                        <path fill-rule="evenodd"
-                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
-                    </svg>
-                </a>
-                <a href="./auth.html?action=login&method=phone_number"
-                    class="h-52px login-signup-link d-none d-xl-flex align-items-center justify-content-center bg-blue1 rounded-pill pe-3 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                        class="bi bi-person color-white1" viewBox="0 0 16 16">
-                        <path
-                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-                    </svg>
-                    <span class="color-white1 px-3">ورود | عضویت</span>
-                </a>
             </div>
         </div>
     </header>
@@ -1026,8 +1010,10 @@
                 <div class="d-flex col-12 align-items-center justify-content-between my-3">
                     <div>
                         <a href="#">
-                            <img class="sabzlearn-footer-logo object-fit-cover" width="75" height="50" src="./Pictures/sabzlearn-logo.webp" alt="Sabzlearn Logo">
-                            <img class="sabzlearn-footer-logo2 object-fit-cover" width="120" height="70" src="./Pictures/sabzlearn-logo-2.png" alt="Sabzlearn Logo 2">
+                            <img class="sabzlearn-footer-logo object-fit-cover" width="75" height="50"
+                                src="./Pictures/sabzlearn-logo.webp" alt="Sabzlearn Logo">
+                            <img class="sabzlearn-footer-logo2 object-fit-cover" width="120" height="70"
+                                src="./Pictures/sabzlearn-logo-2.png" alt="Sabzlearn Logo 2">
                         </a>
                     </div>
                     <div class="d-flex align-items-center justify-content-center gap-3">
@@ -1058,7 +1044,8 @@
                                 <path
                                     d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
                             </svg>
-                            <span class="color-white1 opacity-70 telephone contact-ways-links transition">02191030926</span>
+                            <span
+                                class="color-white1 opacity-70 telephone contact-ways-links transition">02191030926</span>
                         </a>
                         <a href="mailto:info@sabzlearn.ir" target="_blank"
                             class="d-inline-flex align-items-center justify-content-center gap-2">
@@ -1077,7 +1064,8 @@
                                     stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 </path>
                             </svg>
-                            <span class="color-white1 opacity-70 contact-ways-links transition" dir="ltr">@sabzlearn_support</span>
+                            <span class="color-white1 opacity-70 contact-ways-links transition"
+                                dir="ltr">@sabzlearn_support</span>
                         </a>
                     </div>
                 </div>
@@ -1086,22 +1074,27 @@
                 <hr class="color-gray1 col-12">
             </div>
             <div class="col-12 px-3 d-flex align-items-stretch justify-content-between flex-wrap">
-                <div class="my-3 my-xl-0 color-white1 col-12 col-xl-5 d-flex flex-column align-items-start align-items-sm-center align-items-xl-start justify-content-start gap-3">
+                <div
+                    class="my-3 my-xl-0 color-white1 col-12 col-xl-5 d-flex flex-column align-items-start align-items-sm-center align-items-xl-start justify-content-start gap-3">
                     <p class="m-0 fs-4 fw-bold">درباره سبزلرن</p>
-                    <p class="m-0 opacity-70 about-site-text">شروع هرچیزی سخته، ولی وقتی مسیر درستی رو انتخاب کنی، با خیال
+                    <p class="m-0 opacity-70 about-site-text">شروع هرچیزی سخته، ولی وقتی مسیر درستی رو انتخاب کنی، با
+                        خیال
                         راحت و بدون استرس میتونی از مسیر لذت ببری. ما در سبزلرن، توی سفر به دنیای برنامه نویسی کنارت
                         هستیم تا باهم رشد کنیم و از نتیجه زحمات مون لذت ببریم.
                     </p>
                 </div>
-                <div class="my-3 my-xl-0 d-flex align-items-stretch justify-content-start justify-content-sm-center gap-5 col-12 col-sm-8 col-xl-5">
-                    <div class="color-white1 d-flex flex-column align-items-start justify-content-start gap-3 quick-access-links">
+                <div
+                    class="my-3 my-xl-0 d-flex align-items-stretch justify-content-start justify-content-sm-center gap-5 col-12 col-sm-8 col-xl-5">
+                    <div
+                        class="color-white1 d-flex flex-column align-items-start justify-content-start gap-3 quick-access-links">
                         <p class="m-0 fs-4 fw-bold">دوره های پرطرفدار</p>
                         <a href="#" class="transition">آموزش پایتون</a>
                         <a href="#" class="transition">آموزش جاوااسکریپت</a>
                         <a href="#" class="transition">آموزش Html</a>
                         <a href="#" class="transition">آموزش Css</a>
                     </div>
-                    <div class="color-white1 d-flex flex-column align-items-start justify-content-start gap-3 quick-access-links">
+                    <div
+                        class="color-white1 d-flex flex-column align-items-start justify-content-start gap-3 quick-access-links">
                         <p class="m-0 fs-4 fw-bold">دسترسی سریع</p>
                         <a href="./terms.html" class="transition">قوانین و مقررات</a>
                         <a href="#" class="transition">ارسال تیکت</a>
@@ -1114,9 +1107,12 @@
                     </a>
                 </div>
             </div>
-            <div class="col-12 px-3 color-white1 my-3 d-flex flex-column flex-md-row align-items-center justify-content-between">
-                <p class="text-center">کلیه حقوق مادی و معنوی سایت برای <span class="text-nowrap">سبز لرن</span> محفوظ است.</p>
-                <p>ساخته شده با ❤️ در <a href="https://sabzlearn.ir/" target="_blank" class="sabzlearn-copyright-link transition">سبزلرن</a></p>
+            <div
+                class="col-12 px-3 color-white1 my-3 d-flex flex-column flex-md-row align-items-center justify-content-between">
+                <p class="text-center">کلیه حقوق مادی و معنوی سایت برای <span class="text-nowrap">سبز لرن</span> محفوظ
+                    است.</p>
+                <p>ساخته شده با ❤️ در <a href="https://sabzlearn.ir/" target="_blank"
+                        class="sabzlearn-copyright-link transition">سبزلرن</a></p>
             </div>
         </div>
     </footer>

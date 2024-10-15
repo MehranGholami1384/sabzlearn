@@ -768,7 +768,7 @@ $(document).ready(function () {
     })
 
     function englishToPersianNumbers2() {
-        $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page').each(function () {
+        $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance').each(function () {
             let $this = $(this);
             $this.html(englishToPersianNumbers($this.text()));
         });
@@ -828,8 +828,9 @@ $(document).ready(function () {
 
     $('.cart-btn').click((event) => {
         event.stopPropagation();
-        $('.cart-box').toggleClass('active-cart-box');
-        $('.blur-overlay').toggleClass('active-blur-overlay');
+        $('.cart-btn').toggleClass('z-index-50')
+        $('.cart-box').toggleClass('active-cart-box z-index-50');
+        $('.blur-overlay').toggleClass('active-blur-overlay z-index-50');
     })
 
     $('.cart-box').click((event) => {
@@ -861,7 +862,7 @@ $(document).ready(function () {
                         class="form-control bg-black2 border-0 my-3 d-flex gap-4 px-3 px-sm-5 flex-column align-items-center justify-content-center">
                         <div class="w-100 position-relative">
                             <input
-                                class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 phone-number-input color-white1"
+                                class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 email-input color-white1"
                                 type="text" name="phone_number" placeholder="آدرس ایمیل">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
                                 class="bi bi-envelope color-white1 opacity-70 h-100 position-absolute top-0 color-gray2 auth-input-icons"
@@ -872,7 +873,7 @@ $(document).ready(function () {
                         </div>
                         <div class="w-100 position-relative">
                             <input
-                                class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 phone-number-input color-white1"
+                                class="form-control shadow-none bg-gray4 py-3 rounded-3 border-0 password-input color-white1"
                                 type="text" name="phone_number" placeholder="رمز عبور">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
                                 class="bi bi-lock color-white1 opacity-70 h-100 position-absolute top-0 color-gray2 auth-input-icons"
@@ -882,7 +883,7 @@ $(document).ready(function () {
                             </svg>
                         </div>
                         <button
-                            class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition">ورود</button>
+                            class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition login-btn">ورود</button>
                     </form>
                     <div class="w-100 d-flex align-items-center justify-content-between px-3 px-sm-5 mb-3">
                         <a href="./auth.html?action=login&method=phone_number" class="color-gray2">ورود با موبایل</a>
@@ -915,7 +916,7 @@ $(document).ready(function () {
                             </svg>
                         </div>
                         <button
-                            class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition">ادامه</button>
+                            class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition login-btn">ادامه</button>
                     </form>
                     <div class="w-100 d-flex align-items-center justify-content-between px-3 px-sm-5 mb-3">
                         <a href="./auth.html?action=login&method=email" class="color-gray2">ورود با ایمیل</a>
@@ -984,7 +985,7 @@ $(document).ready(function () {
                                 </svg>
                             </div>
                             <button
-                                class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition">ورود</button>
+                                class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition login-btn">ادامه</button>
                         </form>
                     </div>`
         $('title').html('ثبت نام')
@@ -1013,7 +1014,7 @@ $(document).ready(function () {
                                 </svg>
                             </div>
                             <button
-                                class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition">ادامه</button>
+                                class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition login-btn">ادامه</button>
                         </form>
                         <div class="w-100 d-flex align-items-center justify-content-between px-3 px-sm-5 mb-3">
                             <a href="./auth.html?action=login&method=email" class="color-gray2">ورود با ایمیل</a>
@@ -1025,5 +1026,144 @@ $(document).ready(function () {
             $('title').html('ورود با شماره موبایل')
             $('.auth-box').append(template)
         }
+    }
+
+    $('.login-btn').click(function (event) {
+        event.preventDefault()
+        setLocalStorage('login', true)
+
+        if (!JSON.parse(getLocalStorage('user'))) {
+            let user = null
+            fetch('https://randomuser.me/api/?gender=male')
+                .then(res => res.json())
+                .then(data => {
+                    user = {
+                        id: data.results[0].login.uuid,
+                        firstName: data.results[0].name.first,
+                        lastName: data.results[0].name.last,
+                        phoneNumber: data.results[0].cell,
+                        email: data.results[0].email,
+                        username: data.results[0].login.username,
+                        password: data.results[0].login.password,
+                        profilePicture: data.results[0].picture.medium
+                    }
+
+                    setLocalStorage('user', JSON.stringify(user))
+                })
+                .then(() => window.location.href = './index.html')
+        }
+    })
+
+    let isLogin = getLocalStorage('login')
+
+    if (isLogin) {
+        $('.navbar-wrapper').append(`<button
+                    class="btn bg-black3 rounded-circle h-52px px-3 pointer position-relative user-profile-btn transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-person color-white1" viewBox="0 0 16 16">
+                        <path
+                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                    </svg>
+                    <div
+                        class="bg-black2 start-0 shadow-lg rounded-3 color-white1 overflow-hidden position-absolute w-300px user-profile-box z-3 transition pointer-event cursor-initial p-3 d-flex flex-column align-items-start justify-content-center">
+                        <div
+                            class="d-flex align-items-center justify-content-start gap-4 border-bottom w-100 pb-3 border-secondary border-opacity-25">
+                            <a href="#"
+                                class="rounded-circle pointer z-3 transition overflow-hidden">
+                                <img width="56" height="56" class="user-profile-picture" alt="Profile Picture">
+                            </a>
+                            <div class="d-flex flex-column align-items-start justify-content-center gap-2">
+                                <span class="user-profile-username"></span>
+                                <span class="color-green1 text-fs-14px balance">موجودی: 0 تومان</span>
+                            </div>
+                        </div>
+                        <a href="#"
+                            class="mt-2 mb-1 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded user-profile-box-links transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-house" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                            </svg>
+                            <span>پیشخوان</span>
+                        </a>
+                        <a href="#"
+                            class="my-1 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded user-profile-box-links transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-folder" viewBox="0 0 16 16">
+                                <path
+                                    d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z" />
+                            </svg>
+                            <span>دوره‌های من</span>
+                        </a>
+                        <a href="#"
+                            class="my-1 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded user-profile-box-links transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>تیکت‌ها</span>
+                        </a>
+                        <a href="#"
+                            class="mt-1 mb-2 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded user-profile-box-links transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-person" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                            </svg>
+                            <span>جزئیات حساب</span>
+                        </a>
+                        <div class="w-100 pt-2 border-top border-secondary border-opacity-25">
+                            <a href="#"
+                                class="w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded user-profile-box-logout-btn transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-power" viewBox="0 0 16 16">
+                                    <path d="M7.5 1v7h1V1z" />
+                                    <path
+                                        d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
+                                </svg>
+                                <span>خروج</span>
+                            </a>
+                        </div>
+                    </div>
+                </button>`)
+
+        $('.user-profile-btn').click(function () {
+            $(this).toggleClass('z-index-50')
+            $('.user-profile-box').toggleClass('active-user-profile-box z-index-50')
+            $('.user-profile-box-overlay').toggleClass('active-user-profile-box-overlay z-index-50')
+        })
+
+        $('.user-profile-box-overlay').click(function () {
+            $('.user-profile-btn').removeClass('z-index-50')
+            $('.user-profile-box').removeClass('active-user-profile-box z-index-50')
+            $('.user-profile-box-overlay').removeClass('active-user-profile-box-overlay z-index-50')
+        })
+
+        if (JSON.parse(getLocalStorage('user'))) {
+            let user = JSON.parse(getLocalStorage('user'))
+            $('.user-profile-picture').attr('src', user.profilePicture)
+            $('.user-profile-username').html(`${user.firstName} ${user.lastName}`)
+        }
+    } else {
+        $('.navbar-wrapper').append(`<a href="./auth.html?action=login&method=phone_number"
+                    class="btn bg-black3 rounded-circle h-52px px-3 pointer d-flex align-items-center justify-content-center d-xl-none login-signup-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-box-arrow-right color-white1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                        <path fill-rule="evenodd"
+                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                    </svg>
+                </a>
+                <a href="./auth.html?action=login&method=phone_number"
+                    class="h-52px login-signup-link d-none d-xl-flex align-items-center justify-content-center bg-blue1 rounded-pill pe-3 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-person color-white1" viewBox="0 0 16 16">
+                        <path
+                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                    </svg>
+                    <span class="color-white1 px-3">ورود | عضویت</span>
+                </a>`)
     }
 });
