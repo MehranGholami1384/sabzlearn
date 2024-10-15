@@ -14,7 +14,25 @@
     <title>شرایط و قوانین سبزلرن</title>
 </head>
 
-<body class="bg-black1 position-relative">
+<body class="bg-black1 position-relative no-scroll">
+
+    <div class="loading-overlay w-100 h-100 position-fixed flex-column gap-3 align-items-center justify-content-center">
+        <div class="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p class="color-white1 fs-5">در حال بارگذاری . . .</p>
+    </div>
 
     <header class="bg-black2">
         <div class="blur-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event z-2 transition"></div>
@@ -544,7 +562,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="d-flex align-items-center justify-content-center gap-3">
+            <div class="d-flex align-items-center justify-content-center gap-3 navbar-wrapper">
                 <div class="position-relative d-none d-xl-block">
                     <input type="text" placeholder="چیو میخوای یاد بگیری؟"
                         class="search-input ps-5 h-52px rounded-pill form-control shadow-none bg-black3 border-0 color-white1 fs-6">
@@ -580,25 +598,6 @@
                         </div>
                     </div>
                 </button>
-                <a href="./auth.html?action=login&method=phone_number"
-                    class="btn bg-black3 rounded-circle h-52px px-3 pointer d-flex align-items-center justify-content-center d-xl-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi bi-box-arrow-right color-white1" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
-                        <path fill-rule="evenodd"
-                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
-                    </svg>
-                </a>
-                <a href="./auth.html?action=login&method=phone_number"
-                    class="h-52px login-signup-link d-none d-xl-flex align-items-center justify-content-center bg-blue1 rounded-pill pe-3 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                        class="bi bi-person color-white1" viewBox="0 0 16 16">
-                        <path
-                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-                    </svg>
-                    <span class="color-white1 px-3">ورود | عضویت</span>
-                </a>
             </div>
         </div>
     </header>
