@@ -5,11 +5,9 @@ import {
 $(document).ready(function () {
 
     mainFunction().then(() => {
-        // setTimeout(function () {
         $('.loading-overlay').fadeOut(500, function () {
-            $('body').removeClass('no-scroll')
+            $('html, body').removeClass('no-scroll')
         });
-        // }, 1000);
     })
 
 });
