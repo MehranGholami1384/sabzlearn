@@ -25,6 +25,16 @@
         width: 100% !important;
         height: 450px !important;
     }
+
+    .success-custom-alert,
+    .error-custom-alert {
+        top: 10% !important;
+        transform: translate(-50%, -50%);
+    }
+
+    .active-custom-alert {
+        left: 50% !important;
+    }
 }
 
 @media only screen and (max-width: 991.5px) {
@@ -112,10 +122,19 @@
     .main-box div:last-of-type a {
         font-size: 14px !important;
     }
+
+    .w-h-sm-48px {
+        width: 48px !important;
+        height: 48px !important;
+    }
 }
 
 @media only screen and (max-width: 450px) {
     .account-aside-navbar {
         width: 75% !important;
+    }
+
+    .w-280px {
+        width: 280px !important;
     }
 }

@@ -1054,7 +1054,7 @@ function mainFunction() {
 
                     if (!JSON.parse(getLocalStorage('user'))) {
                         let user = null
-                        fetch('https://randomuser.me/api/')
+                        fetch('https://randomuser.me/api/?gender=male')
                             .then(res => res.json())
                             .then(data => {
                                 user = {
@@ -1090,7 +1090,7 @@ function mainFunction() {
                             class="bg-black2 start-0 shadow-lg rounded-3 color-white1 overflow-hidden position-absolute w-300px user-profile-box z-3 transition pointer-event cursor-initial p-3 d-flex flex-column align-items-start justify-content-center">
                             <div
                                 class="d-flex align-items-center justify-content-start gap-4 border-bottom w-100 pb-3 border-secondary border-opacity-25">
-                                <a href="#"
+                                <a href="./account.html"
                                     class="rounded-circle pointer z-3 transition overflow-hidden">
                                     <img width="56" height="56" class="user-profile-picture object-fit-cover" alt="Profile Picture">
                                 </a>
@@ -1099,7 +1099,7 @@ function mainFunction() {
                                     <span class="color-green1 text-fs-14px balance">موجودی: 0 تومان</span>
                                 </div>
                             </div>
-                            <a href="#"
+                            <a href="./account.html"
                                 class="mt-2 mb-1 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded user-profile-box-links transition">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                     class="bi bi-house" viewBox="0 0 16 16">
@@ -1165,14 +1165,16 @@ function mainFunction() {
             if (JSON.parse(getLocalStorage('user'))) {
                 let user = JSON.parse(getLocalStorage('user'))
                 $('.user-profile-picture').attr('src', user.profilePicture)
+                $('.account-user-profile-btn').css('background-image', `url(${user.profilePicture})`)
                 $('.user-profile-username').html(`${user.firstName} ${user.lastName}`)
+                $('.user-fullname-span').html(`${user.firstName} ${user.lastName}`)
             }
 
-            $('.user-profile-box-logout-btn').click(function () {
+            $('.user-profile-box-logout-btn, .account-user-profile-box-logout-btn').click(function () {
                 removeLocalStorageItem('login')
                 removeLocalStorageItem('user')
 
-                window.location.reload()
+                window.location.href = './'
             })
         } else {
             $('.navbar-wrapper').append(`<a href="./auth.html?action=login&method=phone_number"
@@ -1196,6 +1198,11 @@ function mainFunction() {
                     </a>`)
         }
 
+        $('.account-burger-menu-btn').click(function () {
+            $('.account-aside-navbar').addClass('open-account-aside-navbar')
+            $('.account-overlay').addClass('active-account-overlay')
+        })
+
         $('.close-account-aside-navbar-btn').click(function (event) {
             event.preventDefault()
             $('.account-aside-navbar').removeClass('open-account-aside-navbar')
@@ -1203,7 +1210,20 @@ function mainFunction() {
         })
 
         $('.account-overlay').click(function () {
+            $('.account-aside-navbar').removeClass('open-account-aside-navbar')
             $('.account-overlay').removeClass('active-account-overlay')
+        })
+
+        $('.account-user-profile-btn').click(function () {
+            $(this).toggleClass('z-index-50')
+            $('.account-user-profile-box').toggleClass('active-account-user-profile-box z-index-50')
+            $('.account-user-profile-box-overlay').toggleClass('active-account-user-profile-box-overlay z-index-50')
+        })
+
+        $('.account-user-profile-box-overlay').click(function () {
+            $(this).removeClass('z-index-50')
+            $('.account-user-profile-box').removeClass('active-account-user-profile-box z-index-50')
+            $('.account-user-profile-box-overlay').removeClass('active-account-user-profile-box-overlay z-index-50')
         })
 
         resolve()

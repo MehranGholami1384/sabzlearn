@@ -308,10 +308,6 @@ body::-webkit-scrollbar-thumb:hover {
     z-index: 50 !important;
 }
 
-/* .active-user-profile-btn {
-    display: inline-block !important;
-} */
-
 .user-profile-box-overlay {
     background-color: #0000004d !important;
     backdrop-filter: blur(10px) !important;
@@ -340,12 +336,14 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .user-profile-box-links:hover,
-.account-links:hover {
+.account-links:hover,
+.account-user-profile-box-links:hover {
     background-color: var(--color-green1) !important;
 }
 
 .user-profile-box-logout-btn:hover,
-.account-logout-btn:hover {
+.account-logout-btn:hover,
+.account-user-profile-box-logout-btn:hover {
     background-color: var(--color-red1) !important;
 }
 
@@ -620,4 +618,27 @@ body::-webkit-scrollbar-thumb:hover {
 
 .active-account-overlay {
     display: block !important;
+}
+
+.account-user-profile-btn {
+    background-size: cover !important;
+}
+
+.account-user-profile-box-overlay {
+    background-color: #0000004d !important;
+    backdrop-filter: blur(10px) !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.account-user-profile-box {
+    top: 120% !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.active-account-user-profile-box-overlay,
+.active-account-user-profile-box {
+    visibility: visible !important;
+    opacity: 1 !important;
 }
