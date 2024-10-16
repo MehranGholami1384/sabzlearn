@@ -1196,6 +1196,16 @@ function mainFunction() {
                     </a>`)
         }
 
+        $('.close-account-aside-navbar-btn').click(function (event) {
+            event.preventDefault()
+            $('.account-aside-navbar').removeClass('open-account-aside-navbar')
+            $('.account-overlay').removeClass('active-account-overlay')
+        })
+
+        $('.account-overlay').click(function () {
+            $('.account-overlay').removeClass('active-account-overlay')
+        })
+
         resolve()
     })
 }

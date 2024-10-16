@@ -604,3 +604,20 @@ body::-webkit-scrollbar-thumb:hover {
 .active-account-link {
     background-color: var(--color-green1) !important;
 }
+
+.account-aside-navbar {
+    right: -100% !important;
+}
+
+.open-account-aside-navbar {
+    right: 0 !important;
+}
+
+.account-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.active-account-overlay {
+    display: block !important;
+}

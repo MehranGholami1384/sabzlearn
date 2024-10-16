@@ -37,6 +37,16 @@
         top: 100% !important;
         left: 50% !important;
     }
+
+    .position-lg-fixed {
+        position: fixed !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .account-home-img {
+        width: 150px !important;
+    }
 }
 
 @media only screen and (max-width: 576px) {
@@ -100,6 +110,12 @@
     }
 
     .main-box div:last-of-type a {
-        font-size: 14px !important; 
+        font-size: 14px !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .account-aside-navbar {
+        width: 75% !important;
     }
 }
