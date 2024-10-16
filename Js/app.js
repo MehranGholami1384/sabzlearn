@@ -1040,27 +1040,39 @@ function mainFunction() {
 
         $('.login-btn').click(function (event) {
             event.preventDefault()
-            setLocalStorage('login', true)
+            if (getLocalStorage('login')) {
+                $('.error-custom-alert').addClass('active-custom-alert')
+                setTimeout(() => {
+                    $('.error-custom-alert').removeClass('active-custom-alert')
 
-            if (!JSON.parse(getLocalStorage('user'))) {
-                let user = null
-                fetch('https://randomuser.me/api/')
-                    .then(res => res.json())
-                    .then(data => {
-                        user = {
-                            id: data.results[0].login.uuid,
-                            firstName: data.results[0].name.first,
-                            lastName: data.results[0].name.last,
-                            phoneNumber: data.results[0].cell,
-                            email: data.results[0].email,
-                            username: data.results[0].login.username,
-                            password: data.results[0].login.password,
-                            profilePicture: data.results[0].picture.medium
-                        }
+                }, 1200);
+            } else {
+                $('.success-custom-alert').addClass('active-custom-alert')
+                setTimeout(() => {
+                    $('.success-custom-alert').removeClass('active-custom-alert')
+                    setLocalStorage('login', true)
 
-                        setLocalStorage('user', JSON.stringify(user))
-                    })
-                    .then(() => window.location.href = './')
+                    if (!JSON.parse(getLocalStorage('user'))) {
+                        let user = null
+                        fetch('https://randomuser.me/api/')
+                            .then(res => res.json())
+                            .then(data => {
+                                user = {
+                                    id: data.results[0].login.uuid,
+                                    firstName: data.results[0].name.first,
+                                    lastName: data.results[0].name.last,
+                                    phoneNumber: data.results[0].cell,
+                                    email: data.results[0].email,
+                                    username: data.results[0].login.username,
+                                    password: data.results[0].login.password,
+                                    profilePicture: data.results[0].picture.medium
+                                }
+
+                                setLocalStorage('user', JSON.stringify(user))
+                            })
+                            .then(() => window.location.href = './')
+                    }
+                }, 1200);
             }
         })
 

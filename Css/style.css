@@ -467,6 +467,17 @@ body::-webkit-scrollbar-thumb:hover {
     width: 380px !important;
 }
 
+.success-custom-alert,
+.error-custom-alert {
+    top: 5% !important;
+    left: -100% !important;
+}
+
+.active-custom-alert {
+    z-index: 999 !important;
+    left: 3% !important;
+}
+
 
 /* courses page */
 
