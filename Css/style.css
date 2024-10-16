@@ -339,11 +339,13 @@ body::-webkit-scrollbar-thumb:hover {
     width: 300px !important;
 }
 
-.user-profile-box-links:hover {
+.user-profile-box-links:hover,
+.account-links:hover {
     background-color: var(--color-green1) !important;
 }
 
-.user-profile-box-logout-btn:hover {
+.user-profile-box-logout-btn:hover,
+.account-logout-btn:hover {
     background-color: var(--color-red1) !important;
 }
 
@@ -594,5 +596,11 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .active-page-btn {
+    background-color: var(--color-green1) !important;
+}
+
+/* account page */
+
+.active-account-link {
     background-color: var(--color-green1) !important;
 }
