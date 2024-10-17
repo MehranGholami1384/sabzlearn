@@ -843,9 +843,13 @@ function mainFunction() {
             $('.blur-overlay').toggleClass('active-blur-overlay z-index-50');
         })
 
-        $('.cart-box, .account-notif-box, .account-user-profile-box').click((event) => {
-            event.stopPropagation();
-        })
+        function disableHideWithClick(className) {
+            $(className).click((event) => {
+                event.stopPropagation();
+            })
+        }
+
+        disableHideWithClick('.cart-box, .account-notif-box, .account-user-profile-box')
 
         $('.blur-overlay').click(() => {
             hideCartBox()
@@ -1047,36 +1051,43 @@ function mainFunction() {
 
                 }, 1200);
             } else {
-                $('.success-custom-alert').addClass('active-custom-alert')
-
                 $(this).addClass('d-flex align-items-center justify-content-center')
                 $(this).append('<svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-arrow-clockwise me-4 rotating-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/><path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/></svg>')
 
-                setTimeout(() => {
-                    $('.success-custom-alert').removeClass('active-custom-alert')
-                    setLocalStorage('login', true)
+                if (!JSON.parse(getLocalStorage('user'))) {
+                    let user = null
+                    fetch('https://randomuser.me/api/?gender=male')
+                        .then(res => res.json())
+                        .then(data => {
+                            user = {
+                                id: data.results[0].login.uuid,
+                                firstName: data.results[0].name.first,
+                                lastName: data.results[0].name.last,
+                                phoneNumber: data.results[0].cell,
+                                email: data.results[0].email,
+                                username: data.results[0].login.username,
+                                password: data.results[0].login.password,
+                                profilePicture: data.results[0].picture.medium
+                            }
 
-                    if (!JSON.parse(getLocalStorage('user'))) {
-                        let user = null
-                        fetch('https://randomuser.me/api/?gender=male')
-                            .then(res => res.json())
-                            .then(data => {
-                                user = {
-                                    id: data.results[0].login.uuid,
-                                    firstName: data.results[0].name.first,
-                                    lastName: data.results[0].name.last,
-                                    phoneNumber: data.results[0].cell,
-                                    email: data.results[0].email,
-                                    username: data.results[0].login.username,
-                                    password: data.results[0].login.password,
-                                    profilePicture: data.results[0].picture.medium
-                                }
-
-                                setLocalStorage('user', JSON.stringify(user))
-                            })
-                            .then(() => window.location.href = './')
-                    }
-                }, 1000);
+                            setLocalStorage('login', true)
+                            setLocalStorage('user', JSON.stringify(user))
+                        })
+                        .then(() => {
+                            $('.success-custom-alert').addClass('active-custom-alert')
+                            setTimeout(() => {
+                                $('.success-custom-alert').removeClass('active-custom-alert')
+                                window.location.href = './'
+                            }, 1200);
+                        })
+                        .catch(() => {
+                            $(this).find('.rotating-icon').hide()
+                            $('.error-custom-alert').addClass('active-custom-alert')
+                            setTimeout(() => {
+                                $('.error-custom-alert').removeClass('active-custom-alert')
+                            }, 1200);
+                        })
+                }
             }
         })
 
@@ -1153,6 +1164,8 @@ function mainFunction() {
                             </div>
                         </div>
                     </button>`)
+
+            disableHideWithClick('.user-profile-box')
 
             $('.user-profile-btn').click(function () {
                 $(this).toggleClass('z-index-50')
