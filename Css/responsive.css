@@ -55,6 +55,10 @@
     .radius-none {
         border-radius: 0 !important;
     }
+
+    .account-aside-navbar {
+        background-color: var(--color-gray5) !important;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -130,6 +134,11 @@
     .w-h-sm-48px {
         width: 48px !important;
         height: 48px !important;
+    }
+
+    .account-notif-box {
+        width: 300px !important;
+        left: -123.5px !important;
     }
 }
 

@@ -698,3 +698,24 @@ svg.close-account-modal-btn:hover {
 .account-modal-no-btn:hover {
     background-color: var(--color-green2) !important;
 }
+
+.account-notif-box {
+    top: 130% !important;
+    left: 0 !important;
+    width: 350px !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.account-notif-box-overlay {
+    background-color: #0000004d !important;
+    backdrop-filter: blur(10px) !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.active-account-notif-box,
+.active-account-notif-box-overlay {
+    visibility: visible !important;
+    opacity: 1 !important;
+}

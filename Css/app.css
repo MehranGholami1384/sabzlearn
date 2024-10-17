@@ -38,6 +38,7 @@
     --color-gray3: #ffffff80;
     --color-gray4: #333c4c;
     --color-gray5: #28293d;
+    --color-gray6: #32334d;
     --color-blue1: #0ea5e9;
     --color-blue2: #0284c7;
     --color-blue3: #0284c733;
@@ -120,6 +121,10 @@
 
 .bg-gray5 {
     background-color: var(--color-gray5) !important;
+}
+
+.bg-gray6 {
+    background-color: var(--color-gray6) !important;
 }
 
 .bg-green1 {

@@ -843,7 +843,7 @@ function mainFunction() {
             $('.blur-overlay').toggleClass('active-blur-overlay z-index-50');
         })
 
-        $('.cart-box').click((event) => {
+        $('.cart-box, .account-notif-box, .account-user-profile-box').click((event) => {
             event.stopPropagation();
         })
 
@@ -1236,9 +1236,9 @@ function mainFunction() {
         })
 
         $('.account-user-profile-box-overlay').click(function () {
-            $(this).removeClass('z-index-50')
+            $('.account-user-profile-btn').removeClass('z-index-50')
             $('.account-user-profile-box').removeClass('active-account-user-profile-box z-index-50')
-            $('.account-user-profile-box-overlay').removeClass('active-account-user-profile-box-overlay z-index-50')
+            $(this).removeClass('active-account-user-profile-box-overlay z-index-50')
         })
 
         $('.account-logout-btn').click(function () {
@@ -1249,6 +1249,18 @@ function mainFunction() {
         $('.close-account-modal-btn , .account-modal-no-btn , .account-logout-modal-overlay').click(function () {
             $('.account-logout-modal').removeClass('active-account-logout-modal')
             $('.account-logout-modal-overlay').removeClass('active-account-logout-modal-overlay')
+        })
+
+        $('.account-notif-btn').click(function () {
+            $(this).toggleClass('z-index-50')
+            $('.account-notif-box').toggleClass('active-account-notif-box z-index-50')
+            $('.account-notif-box-overlay').toggleClass('active-account-notif-box-overlay z-index-50')
+        })
+
+        $('.account-notif-box-overlay').click(function () {
+            $('.account-notif-btn').removeClass('z-index-50')
+            $('.account-notif-box').removeClass('active-account-notif-box z-index-50')
+            $(this).removeClass('active-account-notif-box-overlay z-index-50')
         })
 
         resolve()
