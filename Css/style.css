@@ -79,6 +79,15 @@ body::-webkit-scrollbar-thumb:hover {
     display: flex !important;
 }
 
+.w-150px {
+    width: 150px !important;
+}
+
+.w-h-60px {
+    width: 60px !important;
+    height: 60px !important;
+}
+
 /* loading */
 
 .lds-spinner,

@@ -443,7 +443,7 @@ function mainFunction() {
         scoreModifier()
 
         function priceModifier3() {
-            $('.off-price, .main-price').each(function () {
+            $('.off-price, .main-price, .account-total-payment').each(function () {
                 let price = parseInt($(this).text());
                 $(this).text(price.toLocaleString('en-US'));
             });
@@ -778,7 +778,7 @@ function mainFunction() {
         })
 
         function englishToPersianNumbers2() {
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance').each(function () {
                 let $this = $(this);
                 $this.html(englishToPersianNumbers($this.text()));
             });
@@ -1099,7 +1099,7 @@ function mainFunction() {
                                     <img width="56" height="56" class="user-profile-picture object-fit-cover" alt="Profile Picture">
                                 </a>
                                 <div class="d-flex flex-column align-items-start justify-content-center gap-2">
-                                    <span class="user-profile-username"></span>
+                                    <span class="user-profile-username line-clamp-1 w-150px text-end"></span>
                                     <span class="color-green1 text-fs-14px balance">موجودی: 0 تومان</span>
                                 </div>
                             </div>
