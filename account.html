@@ -35,6 +35,26 @@
         <p class="color-white1 fs-5">در حال بارگذاری . . .</p>
     </div>
 
+    <div
+        class="account-logout-modal d-flex flex-column rounded-4 gap-2 align-items-start justify-content-center p-3 pe-0 pe-sm-3 pt-1 pt-sm-3 position-fixed start-50 translate-middle bg-black4 color-white1 shadow-lg transition">
+        <div class="col-12 d-flex align-items-center justify-content-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" fill="currentColor"
+                class="bi bi-x color-white1 opacity-70 pointer close-account-modal-btn transition" viewBox="0 0 16 16">
+                <path class="pe-none"
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+            </svg>
+        </div>
+        <div>
+            <p class="pe-3">آیا مطمئن هستید که می‌خواهید خارج شوید؟</p>
+        </div>
+        <div class="d-flex align-items-center justify-content-end col-12 gap-3">
+            <button class="btn color-white1 bg-red1 account-modal-yes-btn transition">بله</button>
+            <button class="btn color-white1 bg-green1 account-modal-no-btn transition">بستن</button>
+        </div>
+    </div>
+
+    <div class="account-logout-modal-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event transition"></div>
+
     <div class="account-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event transition z-2"></div>
     <div class="account-user-profile-box-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event transition"></div>
 
@@ -95,11 +115,12 @@
                         </a>
                         <a
                             class="mt-2 color-white1 text-decoration-none w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-logout-btn pointer transition">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                class="bi bi-power" viewBox="0 0 16 16">
-                                <path d="M7.5 1v7h1V1z" />
-                                <path
-                                    d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                class="bi bi-box-arrow-right color-white1" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
                             </svg>
                             <span>خروج</span>
                         </a>
@@ -111,7 +132,8 @@
                         <div class="col-12 d-flex flex-column align-items-center justify-content-center">
                             <div class="col-12 d-flex align-items-center justify-content-between">
                                 <div class="d-none d-lg-block">
-                                    <span class="fs-4"><span class="fs-3 user-fullname-span">Mehran Gholami</span> عزیز؛ خوش
+                                    <span class="fs-4"><span class="fs-3 user-fullname-span">Mehran Gholami</span> عزیز؛
+                                        خوش
                                         اومدی 🙌</span>
                                 </div>
                                 <div class="d-block d-lg-none">
@@ -143,7 +165,8 @@
                                         </svg>
                                     </button>
                                     <button
-                                        class="account-user-profile-btn p-0 border-0 rounded-circle pointer transition position-relative" style="width: 56px; height: 56px;">
+                                        class="account-user-profile-btn p-0 border-0 rounded-circle pointer transition position-relative"
+                                        style="width: 56px; height: 56px;">
                                         <div
                                             class="bg-gray5 start-0 shadow-lg rounded-4 color-white1 position-absolute w-300px account-user-profile-box z-3 transition pointer-event cursor-initial p-3 d-flex flex-column align-items-start justify-content-center w-280px">
                                             <div
@@ -200,11 +223,13 @@
                                             <div class="w-100 pt-2 border-top border-secondary border-opacity-25">
                                                 <a
                                                     class="color-white1 text-decoration-none w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-user-profile-box-logout-btn pointer transition">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                                        fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
-                                                        <path d="M7.5 1v7h1V1z" />
-                                                        <path
-                                                            d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                                        fill="currentColor" class="bi bi-box-arrow-right color-white1"
+                                                        viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd"
+                                                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
                                                     </svg>
                                                     <span>خروج</span>
                                                 </a>

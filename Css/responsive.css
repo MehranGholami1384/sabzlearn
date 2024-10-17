@@ -137,4 +137,8 @@
     .w-280px {
         width: 280px !important;
     }
+    
+    .account-logout-modal {
+        width: 300px !important;
+    }
 }

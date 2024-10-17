@@ -478,6 +478,20 @@ body::-webkit-scrollbar-thumb:hover {
     left: 3% !important;
 }
 
+.rotating-icon {
+    animation: rotating 1s linear infinite;
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 /* courses page */
 
@@ -611,12 +625,18 @@ body::-webkit-scrollbar-thumb:hover {
     right: 0 !important;
 }
 
-.account-overlay {
+.account-overlay,
+.account-logout-modal-overlay {
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
 }
 
-.active-account-overlay {
+.active-account-logout-modal-overlay {
+    z-index: 998 !important;
+}
+
+.active-account-overlay,
+.active-account-logout-modal-overlay {
     display: block !important;
 }
 
@@ -641,4 +661,31 @@ body::-webkit-scrollbar-thumb:hover {
 .active-account-user-profile-box {
     visibility: visible !important;
     opacity: 1 !important;
+}
+
+.account-logout-modal {
+    top: -100% !important;
+    width: 400px !important;
+    z-index: 999 !important;
+}
+
+.active-account-logout-modal {
+    top: 20% !important;
+}
+
+svg.close-account-modal-btn:hover {
+    opacity: 1 !important;
+}
+
+.account-modal-yes-btn,
+.account-modal-no-btn {
+    width: 100px !important;
+}
+
+.account-modal-yes-btn:hover {
+    background-color: var(--color-red3) !important;
+}
+
+.account-modal-no-btn:hover {
+    background-color: var(--color-green2) !important;
 }

@@ -26,6 +26,7 @@
     --color-gray1: #9CA3AF;
     --color-red1: #ef4444;
     --color-red2: #ef444433;
+    --color-red3: rgba(239, 68, 68, 0.85);
     --color-yellow1: #fbbf24;
     --color-yellow2: #F59E0B;
     --color-yellow3: #fbbf2433;
@@ -101,6 +102,10 @@
     background-color: var(--color-gray1) !important;
 }
 
+.bg-gray2 {
+    background-color: var(--color-gray2) !important;
+}
+
 .bg-gray4 {
     background-color: var(--color-gray4) !important;
 }
@@ -159,6 +164,10 @@
 
 .bg-black4 {
     background-color: var(--color-black4) !important;
+}
+
+.bg-black5 {
+    background-color: var(--color-black5) !important;
 }
 
 .bg-black7 {
