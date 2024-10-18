@@ -1,3 +1,9 @@
+@media only screen and (max-width: 1400px) {
+    .recent-courses-width {
+        width: 100% !important;
+    }
+}
+
 @media only screen and (max-width: 1366px) {
     .fs-14px {
         font-size: 14px !important;
@@ -9,7 +15,7 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1199.5px) {
     .responsive-hero-img2 {
         width: 500px !important;
         height: 300px !important;
@@ -17,6 +23,10 @@
 
     .owl-nav {
         padding-left: 1rem !important;
+    }
+
+    .recent-courses-width {
+        width: calc(50% - 10px) !important;
     }
 }
 
@@ -162,7 +172,7 @@
     .w-280px {
         width: 280px !important;
     }
-    
+
     .account-logout-modal {
         width: 300px !important;
     }
@@ -170,7 +180,8 @@
     .account-detail-box,
     .account-recent-seen-courses-box,
     .recent-courses-box,
-    .recent-tickets-box {
+    .recent-tickets-box,
+    .recent-questions-box {
         width: 100% !important;
     }
 }

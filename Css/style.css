@@ -724,6 +724,10 @@ svg.close-account-modal-btn:hover {
     width: calc(50% - 5px) !important;
 }
 
+.max-w-max-content {
+    max-width: max-content !important;
+}
+
 .ticket-group:hover {
     background-color: var(--color-gray6) !important;
 }
