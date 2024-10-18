@@ -778,7 +778,7 @@ function mainFunction() {
         })
 
         function englishToPersianNumbers2() {
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses').each(function () {
                 let $this = $(this);
                 $this.html(englishToPersianNumbers($this.text()));
             });
@@ -1123,7 +1123,7 @@ function mainFunction() {
                                 </svg>
                                 <span>پیشخوان</span>
                             </a>
-                            <a href="#"
+                            <a href="./account.html?page=my-courses" data-title="دوره‌های من - پنل کاربری" data-search="my-courses" data-href="./my-courses.html"
                                 class="my-1 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded user-profile-box-links transition">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                     class="bi bi-folder" viewBox="0 0 16 16">
@@ -1132,7 +1132,7 @@ function mainFunction() {
                                 </svg>
                                 <span>دوره‌های من</span>
                             </a>
-                            <a href="#"
+                            <a href="./account.html?page=tickets" data-title="تیکت‌ها - پنل کاربری" data-search="tickets" data-href="./tickets.html"
                                 class="my-1 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded user-profile-box-links transition">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                     class="bi bi-chat" viewBox="0 0 16 16">
@@ -1141,7 +1141,7 @@ function mainFunction() {
                                 </svg>
                                 <span>تیکت‌ها</span>
                             </a>
-                            <a href="#"
+                            <a href="./account.html?page=account-details" data-title="جزئیات حساب - پنل کاربری" data-search="account-details" data-href="./account-details.html"
                                 class="mt-1 mb-2 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded user-profile-box-links transition">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                     class="bi bi-person" viewBox="0 0 16 16">
@@ -1276,9 +1276,9 @@ function mainFunction() {
             $(this).removeClass('active-account-notif-box-overlay z-index-50')
         })
 
-        function accountRecentCourses(array) {
+        function accountRecentCourses(array, parentElem, startIndex, endIndex) {
             let template = null
-            for (let i = 30; i < 34; i++) {
+            for (let i = startIndex; i < endIndex; i++) {
                 template = `<div class="recent-courses-width my-2">
                                                 <div class="bg-gray5 col-12 rounded-4 d-flex flex-column gap-3 justify-content-between h-100 position-relative shadow-lg">
                                                     <div>
@@ -1303,11 +1303,52 @@ function mainFunction() {
                                                     </div>
                                                 </div>
                                             </div>`
-                $('.recent-courses-box').append(template)
+                $(parentElem).append(template)
             }
         }
 
-        accountRecentCourses(courses)
+        accountRecentCourses(courses, '.recent-courses-box', 30, 34)
+
+        $('.account-aside-navbar-links').click(function (event) {
+            event.preventDefault()
+
+            let pageName = $(this).data('search')
+
+            window.location.href = `./account.html?page=${pageName}`
+        })
+
+        function loadPageContent() {
+            let accountSearchParams = new URLSearchParams(location.search)
+            let searchPageParam = accountSearchParams.get('page')
+            let link = $(`a[data-search="${searchPageParam}"]`)[0]
+
+            $('.account-links').removeClass('active-account-link')
+
+            if (searchPageParam) {
+                let pageContent = $(link).data('href')
+                let pageTitle = $(link).data('title')
+
+
+                $('title').html(pageTitle)
+                $(link).addClass('active-account-link')
+
+                $('.content-area').load(pageContent, function (response, status, xhr) {
+                    if (status == "error") {
+                        console.log("Error: " + xhr.status + " " + xhr.statusText);
+                    } else {
+                        accountRecentCourses(courses, '.my-courses-box', 22, 34)
+                        $($('.my-courses-box').children()).each(function (indexInArray, valueOfElement) {
+                            $(valueOfElement).removeClass('recent-courses-width').addClass('my-courses-width')
+                        });
+                    }
+                })
+            } else {
+                $('title').html('پیشخوان - پنل کاربری')
+                $(`a.account-links[href="./account.html"]`).addClass('active-account-link')
+            }
+        }
+
+        loadPageContent()
 
         resolve()
     })

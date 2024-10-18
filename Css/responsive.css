@@ -2,6 +2,10 @@
     .recent-courses-width {
         width: 100% !important;
     }
+
+    .my-courses-width {
+        width: calc(34% - 16px) !important;
+    }
 }
 
 @media only screen and (max-width: 1366px) {
@@ -26,6 +30,10 @@
     }
 
     .recent-courses-width {
+        width: calc(50% - 10px) !important;
+    }
+
+    .my-courses-width {
         width: calc(50% - 10px) !important;
     }
 }
@@ -162,6 +170,10 @@
     .recent-courses-width {
         width: 100% !important;
     }
+
+    .my-courses-width {
+        width: 100% !important;
+    }
 }
 
 @media only screen and (max-width: 450px) {
@@ -181,7 +193,9 @@
     .account-recent-seen-courses-box,
     .recent-courses-box,
     .recent-tickets-box,
-    .recent-questions-box {
+    .recent-questions-box,
+    .my-courses-detail-box,
+    .my-courses-box {
         width: 100% !important;
     }
 }

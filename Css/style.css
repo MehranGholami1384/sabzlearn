@@ -731,3 +731,7 @@ svg.close-account-modal-btn:hover {
 .ticket-group:hover {
     background-color: var(--color-gray6) !important;
 }
+
+.my-courses-width {
+    width: calc(25% - 16px) !important;
+}
