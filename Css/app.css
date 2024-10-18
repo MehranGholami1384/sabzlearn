@@ -34,6 +34,7 @@
     --color-yellow2: #F59E0B;
     --color-yellow3: #fbbf2433;
     --color-yellow4: #facc15;
+    --color-yellow5: #facc151a;
     --color-gray2: #64748b;
     --color-gray3: #ffffff80;
     --color-gray4: #333c4c;
@@ -98,6 +99,10 @@
 
 .color-yellow2 {
     color: var(--color-yellow2) !important;
+}
+
+.color-yellow4 {
+    color: var(--color-yellow4) !important;
 }
 
 .bg-white1 {
@@ -186,6 +191,10 @@
 
 .bg-yellow4 {
     background-color: var(--color-yellow4) !important;
+}
+
+.bg-yellow5 {
+    background-color: var(--color-yellow5) !important;
 }
 
 .bg-black1 {

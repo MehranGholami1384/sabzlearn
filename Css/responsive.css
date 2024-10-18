@@ -169,7 +169,8 @@
 
     .account-detail-box,
     .account-recent-seen-courses-box,
-    .recent-courses-box {
+    .recent-courses-box,
+    .recent-tickets-box {
         width: 100% !important;
     }
 }

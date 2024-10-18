@@ -770,7 +770,7 @@ function mainFunction() {
             });
         }
 
-        $('.blog-month').each(function () {
+        $('.blog-month, .ticket-date-month, .ticket-date-day').each(function () {
             let $this = $(this)
             if (+$this.html() < 10) {
                 $this.html(`0${+$this.html()}`)
@@ -778,7 +778,7 @@ function mainFunction() {
         })
 
         function englishToPersianNumbers2() {
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day').each(function () {
                 let $this = $(this);
                 $this.html(englishToPersianNumbers($this.text()));
             });
