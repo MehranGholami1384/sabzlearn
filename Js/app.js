@@ -778,7 +778,7 @@ function mainFunction() {
         })
 
         function englishToPersianNumbers2() {
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate').each(function () {
                 let $this = $(this);
                 $this.html(englishToPersianNumbers($this.text()));
             });
@@ -1275,6 +1275,39 @@ function mainFunction() {
             $('.account-notif-box').removeClass('active-account-notif-box z-index-50')
             $(this).removeClass('active-account-notif-box-overlay z-index-50')
         })
+
+        function accountRecentCourses(array) {
+            let template = null
+            for (let i = 30; i < 34; i++) {
+                template = `<div class="recent-courses-width my-2">
+                                                <div class="bg-gray5 col-12 rounded-4 d-flex flex-column gap-3 justify-content-between h-100 position-relative shadow-lg">
+                                                    <div>
+                                                        <a href="#">
+                                                            <img class="w-100 object-fit-cover rounded-4" height="170" src="${array[i].imgSrc}">
+                                                        </a>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" class="d-inline-block color-white1 px-2 m-0 fw-bold course-title w-100">${array[i].title}</a>
+                                                    </div>
+                                                    <div class="px-2">
+                                                        <hr class="color-gray2 m-0">
+                                                    </div>
+                                                    <div class="px-2 pb-3 d-flex flex-column gap-2 align-items-center justify-content-center">
+                                                        <div class="d-flex align-items-center justify-content-between w-100">
+                                                            <p class="m-0 text-fs-12px">میزان مشاهده</p>
+                                                            <p class="m-0 text-fs-12px"><span class="account-view-rate">30</span>%</p>
+                                                        </div>
+                                                        <div class="progress bg-gray6 w-100 rounded-pill" role="progressbar" style="height: 5px !important;">
+                                                            <div class="progress-bar bg-green1 rounded-pill" style="width: 30% !important;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>`
+                $('.recent-courses-box').append(template)
+            }
+        }
+
+        accountRecentCourses(courses)
 
         resolve()
     })

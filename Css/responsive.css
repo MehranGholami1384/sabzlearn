@@ -59,15 +59,23 @@
     .account-aside-navbar {
         background-color: var(--color-gray5) !important;
     }
-}
 
-@media only screen and (max-width: 768px) {
-    .account-home-img {
-        width: 150px !important;
+    .recent-courses-width {
+        width: 100% !important;
     }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 767.5px) {
+    .account-home-img {
+        width: 150px !important;
+    }
+
+    .recent-courses-width {
+        width: calc(50% - 10px) !important;
+    }
+}
+
+@media only screen and (max-width: 575.5px) {
     .responsive-hero-img4 {
         width: 100% !important;
         height: 300px !important;
@@ -140,6 +148,10 @@
         width: 300px !important;
         left: -123.5px !important;
     }
+
+    .recent-courses-width {
+        width: 100% !important;
+    }
 }
 
 @media only screen and (max-width: 450px) {
@@ -155,7 +167,9 @@
         width: 300px !important;
     }
 
-    .account-detail-box {
+    .account-detail-box,
+    .account-recent-seen-courses-box,
+    .recent-courses-box {
         width: 100% !important;
     }
 }

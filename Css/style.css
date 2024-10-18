@@ -719,3 +719,7 @@ svg.close-account-modal-btn:hover {
     visibility: visible !important;
     opacity: 1 !important;
 }
+
+.recent-courses-width {
+    width: calc(50% - 5px) !important;
+}
