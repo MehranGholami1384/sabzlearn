@@ -1343,7 +1343,9 @@ function mainFunction() {
                     }
                 })
             } else {
-                $('title').html('پیشخوان - پنل کاربری')
+                if (window.location.href.endsWith('account.html')) {
+                    $('title').html('پیشخوان - پنل کاربری')
+                }
                 $(`a.account-links[href="./account.html"]`).addClass('active-account-link')
             }
         }
