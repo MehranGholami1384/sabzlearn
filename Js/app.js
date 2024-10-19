@@ -777,13 +777,34 @@ function mainFunction() {
             }
         })
 
+        String.prototype.toPersianDigit = function () {
+            var find = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+            var replace = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+            var replaceString = this;
+            var regex;
+            for (var i = 0; i < find.length; i++) {
+                regex = new RegExp(find[i], "g");
+                replaceString = replaceString.replace(regex, replace[i]);
+            }
+            return replaceString;
+        };
+
         function englishToPersianNumbers2() {
+            // $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
+            //     let $this = $(this);
+            //     if ($this.is('input')) {
+            //         $this.val(englishToPersianNumbers($this.val()));
+            //     } else {
+            //         $this.html(englishToPersianNumbers($this.text()));
+            //     }
+            // });
+
             $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
                 let $this = $(this);
                 if ($this.is('input')) {
-                    $this.val(englishToPersianNumbers($this.val()));
+                    $this.val($this.val().trim().toPersianDigit());
                 } else {
-                    $this.html(englishToPersianNumbers($this.text()));
+                    $this.html($this.text().trim().toPersianDigit());
                 }
             });
         }
@@ -1384,6 +1405,8 @@ function mainFunction() {
                                 }, 2000);
                             }
                         })
+
+                        englishToPersianNumbers2()
                     }
                 })
             } else {
