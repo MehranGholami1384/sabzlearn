@@ -1324,7 +1324,6 @@ function mainFunction() {
                 let pageContent = $(link).data('href')
                 let pageTitle = $(link).data('title')
 
-
                 $('title').html(pageTitle)
                 $(link).addClass('active-account-link')
 
@@ -1390,8 +1389,11 @@ function mainFunction() {
             } else {
                 if (window.location.href.endsWith('account.html')) {
                     $('title').html('پیشخوان - پنل کاربری')
+                    $(`a.account-links[href="./account.html"]`).addClass('active-account-link')
+                } else if (window.location.href.endsWith('add-ticket.html')) {
+                    $('title').html('ارسال تیکت - پنل کاربری')
+                    $(`a.account-links[href="./account.html?page=tickets"]`).addClass('active-account-link')
                 }
-                $(`a.account-links[href="./account.html"]`).addClass('active-account-link')
             }
         }
 

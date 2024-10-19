@@ -749,12 +749,19 @@ svg.close-account-modal-btn:hover {
 }
 
 .register-info-btn:hover,
-.change-password-btn:hover {
+.change-password-btn:hover,
+.add-new-ticket-btn:hover {
     background-color: var(--color-green1) !important;
 }
 
-.account-details-current-password-input::placeholder {
+.account-details-current-password-input::placeholder,
+.add-ticket-topic::placeholder,
+.add-ticket-text::placeholder {
     color: var(--color-gray7) !important;
+}
+
+.add-ticket-text {
+    height: 250px !important;
 }
 
 .change-password-btn {
@@ -765,4 +772,15 @@ svg.close-account-modal-btn:hover {
 .account-user-profile-box-links:hover,
 .account-user-profile-box-logout-btn:hover {
     background-color: var(--color-gray6) !important;
+}
+
+.department-chevron-down {
+    top: 50% !important;
+    left: 10px !important;
+    transform: translate(50%, -50%) !important;
+}
+
+.add-new-ticket-btn {
+    width: 100px !important;
+    height: 45px !important;
 }
