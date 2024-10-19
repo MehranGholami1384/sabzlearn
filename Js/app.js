@@ -778,9 +778,13 @@ function mainFunction() {
         })
 
         function englishToPersianNumbers2() {
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
                 let $this = $(this);
-                $this.html(englishToPersianNumbers($this.text()));
+                if ($this.is('input')) {
+                    $this.val(englishToPersianNumbers($this.val()));
+                } else {
+                    $this.html(englishToPersianNumbers($this.text()));
+                }
             });
         }
 
@@ -1337,6 +1341,48 @@ function mainFunction() {
                             let $this = $(this)
                             if (+$this.html() < 10) {
                                 $this.html(`0${+$this.html()}`)
+                            }
+                        })
+
+                        if (JSON.parse(getLocalStorage('user'))) {
+                            let user = JSON.parse(getLocalStorage('user'))
+                            $('.account-details-user-profile-picture').attr('src', user.profilePicture)
+                            $('.account-details-phone-input').val(user.phoneNumber)
+                            $('.account-details-first-name-input').val(user.firstName)
+                            $('.account-details-last-name-input').val(user.lastName)
+                            $('.account-details-username-input').val(user.username)
+                            $('.account-details-email-input').val(user.email)
+                        }
+
+                        $('.register-info-btn').click(function () {
+                            try {
+                                let user = JSON.parse(getLocalStorage('user'))
+
+                                let newFirstName = $('.account-details-first-name-input').val()
+                                let newLastName = $('.account-details-last-name-input').val()
+
+                                user.firstName = newFirstName
+                                user.lastName = newLastName
+
+                                $(this).empty()
+                                $(this).append($(this).append('<svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-arrow-clockwise rotating-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/><path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/></svg>'))
+
+                                setLocalStorage('user', JSON.stringify(user))
+
+                                $('.success-custom-alert').addClass('active-custom-alert')
+                                setTimeout(() => {
+                                    $('.success-custom-alert').removeClass('active-custom-alert')
+                                    window.location.reload()
+                                }, 1000);
+                            } catch (error) {
+                                console.error(error)
+
+                                $(this).find('.rotating-icon').hide()
+                                $(this).text('ثبت اطلاعات')
+                                $('.error-custom-alert').addClass('active-custom-alert')
+                                setTimeout(() => {
+                                    $('.error-custom-alert').removeClass('active-custom-alert')
+                                }, 2000);
                             }
                         })
                     }

@@ -739,3 +739,16 @@ svg.close-account-modal-btn:hover {
 .ticket-title {
     max-width: 200px !important;
 }
+
+.account-details-input-box {
+    width: calc(50% - 10px) !important;
+}
+
+.register-info-btn {
+    width: 155px !important;
+    height: 60px !important;
+}
+
+.register-info-btn:hover {
+    background-color: var(--color-green1) !important;
+}

@@ -285,3 +285,7 @@ a:focus {
 .no-scroll {
     overflow: hidden !important;
 }
+
+.cursor-not-allowed {
+    cursor: not-allowed !important;
+}
