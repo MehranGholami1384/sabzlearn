@@ -778,7 +778,7 @@ function mainFunction() {
         })
 
         function englishToPersianNumbers2() {
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id').each(function () {
                 let $this = $(this);
                 $this.html(englishToPersianNumbers($this.text()));
             });
@@ -1309,14 +1309,6 @@ function mainFunction() {
 
         accountRecentCourses(courses, '.recent-courses-box', 30, 34)
 
-        $('.account-aside-navbar-links').click(function (event) {
-            event.preventDefault()
-
-            let pageName = $(this).data('search')
-
-            window.location.href = `./account.html?page=${pageName}`
-        })
-
         function loadPageContent() {
             let accountSearchParams = new URLSearchParams(location.search)
             let searchPageParam = accountSearchParams.get('page')
@@ -1340,6 +1332,13 @@ function mainFunction() {
                         $($('.my-courses-box').children()).each(function (indexInArray, valueOfElement) {
                             $(valueOfElement).removeClass('recent-courses-width').addClass('my-courses-width')
                         });
+
+                        $('.ticket-time-minute, .ticket-time-hour, .all-tickets-date-day, .all-tickets-date-month, .all-tickets-date-day').each(function () {
+                            let $this = $(this)
+                            if (+$this.html() < 10) {
+                                $this.html(`0${+$this.html()}`)
+                            }
+                        })
                     }
                 })
             } else {

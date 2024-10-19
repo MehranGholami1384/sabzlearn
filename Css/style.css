@@ -735,3 +735,7 @@ svg.close-account-modal-btn:hover {
 .my-courses-width {
     width: calc(25% - 16px) !important;
 }
+
+.ticket-title {
+    max-width: 200px !important;
+}

@@ -195,7 +195,8 @@
     .recent-tickets-box,
     .recent-questions-box,
     .my-courses-detail-box,
-    .my-courses-box {
+    .my-courses-box,
+    .all-tickets-box {
         width: 100% !important;
     }
 }
