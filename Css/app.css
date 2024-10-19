@@ -40,6 +40,7 @@
     --color-gray4: #333c4c;
     --color-gray5: #28293d;
     --color-gray6: #32334d;
+    --color-gray7: #94a3b8;
     --color-blue1: #0ea5e9;
     --color-blue2: #0284c7;
     --color-blue3: #0284c733;
@@ -91,6 +92,10 @@
 
 .color-gray2 {
     color: var(--color-gray2) !important;
+}
+
+.color-gray7 {
+    color: var(--color-gray7) !important;
 }
 
 .color-yellow1 {

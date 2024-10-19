@@ -98,7 +98,8 @@
     }
 
     .account-details-input-box,
-    .register-info-btn {
+    .register-info-btn,
+    .change-password-btn {
         width: 100% !important;
     }
 }

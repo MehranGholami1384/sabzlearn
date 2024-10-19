@@ -345,8 +345,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .user-profile-box-links:hover,
-.account-links:hover,
-.account-user-profile-box-links:hover {
+.account-links:hover {
     background-color: var(--color-green1) !important;
 }
 
@@ -749,6 +748,21 @@ svg.close-account-modal-btn:hover {
     height: 60px !important;
 }
 
-.register-info-btn:hover {
+.register-info-btn:hover,
+.change-password-btn:hover {
     background-color: var(--color-green1) !important;
+}
+
+.account-details-current-password-input::placeholder {
+    color: var(--color-gray7) !important;
+}
+
+.change-password-btn {
+    width: 130px !important;
+    height: 60px !important;
+}
+
+.account-user-profile-box-links:hover,
+.account-user-profile-box-logout-btn:hover {
+    background-color: var(--color-gray6) !important;
 }
