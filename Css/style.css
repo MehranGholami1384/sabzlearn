@@ -11,15 +11,26 @@ body::-webkit-scrollbar {
     width: 0.5em;
 }
 
-body::-webkit-scrollbar-thumb {
+textarea::-webkit-scrollbar {
+    width: 0.7em;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    cursor: auto !important;
+}
+
+body::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb {
     background-color: var(--color-black5) !important;
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track {
     background-color: var(--color-black2) !important;
 }
 
-body::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover,
+textarea::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-black6) !important;
 }
 
@@ -507,7 +518,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* courses page */
 
-.courses-search-input::placeholder, 
+.courses-search-input::placeholder,
 .blogs-search-input::placeholder {
     color: var(--color-gray2) !important;
 }
@@ -795,4 +806,18 @@ svg.close-account-modal-btn:hover {
 
 .see-courses-link {
     width: 300px !important;
+}
+
+/* teacher page */
+
+.teacher-social-links {
+    width: 50px !important;
+    height: 50px !important;
+    border-color: var(--color-green1) !important;
+}
+
+.teacher-social-links:hover,
+.teacher-social-links:hover svg * {
+    background-color: var(--color-green1) !important;
+    fill: var(--color-white1) !important;
 }

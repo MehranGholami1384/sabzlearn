@@ -58,6 +58,14 @@
     --gradient8: #ff3571;
 }
 
+.fill-white1 * {
+    fill: var(--color-white1) !important;
+}
+
+.fill-green1 * {
+    fill: var(--color-green1) !important;
+}
+
 .color-blue1 {
     color: var(--color-blue1) !important;
 }

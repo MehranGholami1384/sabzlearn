@@ -879,7 +879,106 @@ const blogs = [{
     }
 ]
 
+const teachers = [{
+        imgSrc: "./Pictures/amin-saeedi-rad-profile.png",
+        name: 'محمدامین سعیدی راد',
+        bio: 'اولین کدم رو 14 سالگی زدم، حدود 9 سال پیش که با زبان ویژوال بیسیک بود و بعد حدودا 2 سال تو فیلد برنامه نویسی موبایل با زبان جاوا کار کردم و در نهایت با عشقی به اسم جاوا اسکریپت آشنا شدم و حدودا یه 7 سالی هست جاوا اسکریپت کد می‌زنم و به صورت Mern Stack فعالیت می‌کنم.',
+        socials: {
+            github: '',
+            linkedin: '',
+            telegram: 'https://t.me/aminkhoy78',
+            instagram: 'https://www.instagram.com/rad_front'
+        },
+        skills: ['Html', 'Css', 'JavaScript', 'React.js', 'Redux', 'Next.js', 'Node.js']
+    },
+    {
+        imgSrc: "./Pictures/ashkan-moghadas.png",
+        name: 'اشکان مقدس',
+        bio: 'تقریبا 8 سالی هست که تو حوزه هک و امنیت فعالیت میکنم علاقه اصلیم بحث تهاجمی (Offensive) هست ، 3 سالی هست که توی حوزه تیم قرمز (RedTeam) فعالیت میکنم و به نظرم همه حوزه های هک جذابه و نمیشه از دستش داد :)',
+        socials: {
+            github: 'github.com/ultrasecurity',
+            linkedin: '',
+            telegram: '',
+            instagram: ''
+        },
+        skills: []
+    },
+    {
+        imgSrc: "./Pictures/qadir-yolme.png",
+        name: 'قدیر یلمه',
+        bio: '',
+        socials: {
+            github: 'https://github.com/joshkar',
+            linkedin: '',
+            telegram: '',
+            instagram: 'https://instagram.com/qadiryolme'
+        },
+        skills: []
+    },
+    {
+        imgSrc: "./Pictures/mehrshad-barati.png",
+        name: 'مهرشاد براتی',
+        bio: 'مهرشاد براتی هستم برنامه نویس و توسعه دهنده فول استک وب و دانشجوی ارشد رشته کامپیوتر گرایش نرم افزار',
+        socials: {
+            github: '',
+            linkedin: '',
+            telegram: 'https://t.me/source_code_1',
+            instagram: 'https://instagram.com/mehrshad.barati2020?igshid=MzRlODBiNWFlZA=='
+        },
+        skills: []
+    },
+    {
+        imgSrc: "./Pictures/reza-dolati.png",
+        name: 'رضا دولتی',
+        bio: 'تقریبا 10 ساله در زمینه برنامه نویسی فعال هستم، 5 سال پیش اولین شرکت خودم رو تاسیس کردم، 1 سال پیش اولین فروشگاه اینترنتی خودم رو توسعه دادم. عاشق زبان برنامه نویسی پایتون هستم و در کنار پایتون زبان های دیگه ای رو هم کار میکنم. در حال حاضر، توسعه دهنده بک اند با جنگو و فارغ التحصیل رشته امنیت از دانشگاه سراسری تبریز هستم و 3 ساله در زمینه هوش مصنوعی هم فعالیت میکنم.',
+        socials: {
+            github: 'https://github.com/rezadolati01',
+            linkedin: '',
+            telegram: 'https://t.me/rezadolati01',
+            instagram: 'https://instagram.com/rezadolati01?igshid=MzRlODBiNWFlZA=='
+        },
+        skills: []
+    },
+    {
+        imgSrc: "./Pictures/armin-hooshmand.png",
+        name: 'آرمین هوشمند',
+        bio: 'برنامه نویس ارشد وب',
+        socials: {
+            github: 'https://github.com/RealMrHex',
+            linkedin: '',
+            telegram: 'https://t.me/MentionHex',
+            instagram: ''
+        },
+        skills: []
+    },
+    {
+        imgSrc: "./Pictures/hamidreza-ebadi.png",
+        name: 'حمیدرضا عبادی',
+        bio: 'توسعه دهنده فرانت اند سبزلرن <br> فعال در زمینه طراحی و توسعه وبسایت و طراحی محصول',
+        socials: {
+            github: '',
+            linkedin: 'http://www.linkedin.com/in/hamidreza-ebadi-3a6940223',
+            telegram: 'https://t.me/ebadidev',
+            instagram: 'https://instagram.com/ebadi.dev'
+        },
+        skills: ['Web Development']
+    },
+    {
+        imgSrc: "./Pictures/moein-baghsheikhi.png",
+        name: 'معین باغشیخی',
+        bio: '6 سال هست که برنامه نویسی رو شروع کردم؛ با فرانت استارت زدم و و حدود دو سال در زمینه برنامه نویسی فرانت و وردپرس فعالیت میکردم. بعد از اون رفتم سمت بکند و چهار سالی میشه که با PHP و NodeJS کد میزنم',
+        socials: {
+            github: 'https://github.com/moeinbaghsheikhi',
+            linkedin: '',
+            telegram: 'https://t.me/moeinbaghsheikhi',
+            instagram: 'https://www.instagram.com/moein_code/'
+        },
+        skills: ['HTML', 'CSS', 'Bootstrap', 'Tailwind', 'javascript', 'php', 'laravel', 'nodeJS', 'expressJS', 'NestJS', 'MySQL', 'Postgresql', 'MongoDB']
+    }
+]
+
 export {
     courses,
-    blogs
+    blogs,
+    teachers
 }

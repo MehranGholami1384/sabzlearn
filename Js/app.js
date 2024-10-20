@@ -1,6 +1,7 @@
 import {
     courses,
-    blogs
+    blogs,
+    teachers
 } from './database.js';
 $(document).ready(function () {
 
@@ -132,14 +133,14 @@ function mainFunction() {
                                     <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-2 course-info-hideable">${course.info}</p>
                                 </div>
                                 <div class="px-3 d-flex align-items-center justify-content-between">
-                                    <a href="#" class="text-fs-14px teacher-links">
+                                    <a href="./teacher.html" class="text-fs-14px teacher-links">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                             class="bi bi-person color-white1 opacity-75 transition" viewBox="0 0 16 16">
                                             <path
                                                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z">
                                             </path>
                                         </svg>
-                                        <span class="color-white1 opacity-70 transition">${course.teacher}</span>
+                                        <span class="color-white1 opacity-70 transition course-teacher-span">${course.teacher}</span>
                                     </a>
                                     <div>
                                         <span>
@@ -194,9 +195,13 @@ function mainFunction() {
                 $('.most-popular-courses-box').append(createLayout(template))
                 $('.most-popular-courses-box').find('.course-info-hideable').addClass('d-none')
             }
+            // if (course.teacher === 'محمدامین سعیدی راد') {
+            //     $('.teacher-courses-box').append(createLayou2(template))
+            // }
         })
 
         let searchCategoryParams = searchParams.get('category')
+        let searchTeacherParams = searchParams.get('teacher')
 
         function renderCourses() {
             let coursesCountArray = []
@@ -220,14 +225,14 @@ function mainFunction() {
                                         <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-2">${course.info}</p>
                                     </div>
                                     <div class="px-3 d-flex align-items-center justify-content-between">
-                                        <a href="#" class="text-fs-14px teacher-links">
+                                        <a href="./teacher.html" class="text-fs-14px teacher-links">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                                 class="bi bi-person color-white1 opacity-75 transition" viewBox="0 0 16 16">
                                                 <path
                                                     d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z">
                                                 </path>
                                             </svg>
-                                            <span class="color-white1 opacity-70 transition">${course.teacher}</span>
+                                            <span class="color-white1 opacity-70 transition course-teacher-span">${course.teacher}</span>
                                         </a>
                                         <div>
                                             <span>
@@ -324,10 +329,240 @@ function mainFunction() {
                         $('.courses-box').append(createLayou2(template));
                         break;
                 }
+
+                switch (searchTeacherParams) {
+                    case 'amin_saeedi_rad':
+                        if (course.teacher === 'محمدامین سعیدی راد') {
+                            $('.teacher-courses-box').append(createLayou2(template))
+                            $('title').html(`${course.teacher} - سبزلرن`)
+                        }
+                        break
+                    case 'reza_dolati':
+                        if (course.teacher === 'رضا دولتی') {
+                            $('.teacher-courses-box').append(createLayou2(template))
+                            $('title').html(`${course.teacher} - سبزلرن`)
+                        }
+                        break
+                    case 'mehrshad_barati':
+                        if (course.teacher === 'مهرشاد براتی') {
+                            $('.teacher-courses-box').append(createLayou2(template))
+                            $('title').html(`${course.teacher} - سبزلرن`)
+                        }
+                        break
+                    case 'moein_bagsheikhi':
+                        if (course.teacher === 'معین باغشیخی') {
+                            $('.teacher-courses-box').append(createLayou2(template))
+                            $('title').html(`${course.teacher} - سبزلرن`)
+                        }
+                        break
+                    case 'ashkan_moghadas':
+                        if (course.teacher === 'اشکان مقدس') {
+                            $('.teacher-courses-box').append(createLayou2(template))
+                            $('title').html(`${course.teacher} - سبزلرن`)
+                        }
+                        break
+                    case 'armin_hooshmand':
+                        if (course.teacher === 'آرمین هوشمند') {
+                            $('.teacher-courses-box').append(createLayou2(template))
+                            $('title').html(`${course.teacher} - سبزلرن`)
+                        }
+                        break
+                    case 'hamidreza_ebadi':
+                        if (course.teacher === 'حمیدرضا عبادی') {
+                            $('.teacher-courses-box').append(createLayou2(template))
+                            $('title').html(`${course.teacher} - سبزلرن`)
+                        }
+                        break
+                    case 'qadir_yolme':
+                        if (course.teacher === 'قدیر یلمه') {
+                            $('.teacher-courses-box').append(createLayou2(template))
+                            $('title').html(`${course.teacher} - سبزلرن`)
+                        }
+                        break
+                }
             });
         }
 
         renderCourses()
+
+        $('.course-teacher-span').each(function () {
+            let teacherLink = $(this).parent()[0]
+            let teacherName = $(this).text()
+
+            switch (teacherName) {
+                case 'محمدامین سعیدی راد':
+                    $(teacherLink).attr('href', './teacher.html?teacher=amin_saeedi_rad')
+                    break;
+                case 'رضا دولتی':
+                    $(teacherLink).attr('href', './teacher.html?teacher=reza_dolati')
+                    break;
+                case 'مهرشاد براتی':
+                    $(teacherLink).attr('href', './teacher.html?teacher=mehrshad_barati')
+                    break;
+                case 'معین باغشیخی':
+                    $(teacherLink).attr('href', './teacher.html?teacher=moein_bagsheikhi')
+                    break;
+                case 'اشکان مقدس':
+                    $(teacherLink).attr('href', './teacher.html?teacher=ashkan_moghadas')
+                    break;
+                case 'آرمین هوشمند':
+                    $(teacherLink).attr('href', './teacher.html?teacher=armin_hooshmand')
+                    break;
+                case 'حمیدرضا عبادی':
+                    $(teacherLink).attr('href', './teacher.html?teacher=hamidreza_ebadi')
+                    break;
+                case 'قدیر یلمه':
+                    $(teacherLink).attr('href', './teacher.html?teacher=qadir_yolme')
+                    break;
+            }
+        })
+
+        function renderTeachers() {
+            let socialLinks = []
+
+            function generateTeacherSocialsAndSkills(array, github, linkedin, telegram, instagram, skills) {
+                if (github) {
+                    let template = `<a href="${github}"
+                                        class="teacher-social-links border rounded-circle d-flex align-items-center justify-content-center transition">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                            class="bi bi-github color-green1" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                                        </svg>
+                                    </a>`
+                    array.push(template)
+                }
+                if (linkedin) {
+                    let template = `<a href="${linkedin}" class="teacher-social-links border rounded-circle d-flex align-items-center justify-content-center transition">
+                                        <svg width="20" class="fill-green1" enable-background="new 0 0 32 32"
+                                            id="Layer_1" version="1.0" viewBox="0 0 32 32" xml:space="preserve"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <g>
+                                                <rect height="23" width="7" y="9" />
+                                                <path
+                                                    d="M24.003,9C20,9,18.89,10.312,18,12V9h-7v23h7V19c0-2,0-4,3.5-4s3.5,2,3.5,4v13h7V19C32,13,31,9,24.003,9z" />
+                                                <circle cx="3.5" cy="3.5" r="3.5" />
+                                            </g>
+                                            <g />
+                                            <g />
+                                            <g />
+                                            <g />
+                                            <g />
+                                            <g />
+                                        </svg>
+                                    </a>`
+                    array.push(template)
+                }
+                if (telegram) {
+                    let template = `<a href="${telegram}"
+                                        class="teacher-social-links border rounded-circle d-flex align-items-center justify-content-center transition">
+                                        <svg class="fill-green1" width="25" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816ZM8.17695 14.4791L8.78333 16.6015L9.01614 15.321C9.05253 15.1209 9.14908 14.9366 9.29291 14.7928L11.5128 12.573L8.17695 14.4791Z" />
+                                        </svg>
+                                    </a>`
+                    array.push(template)
+                }
+                if (instagram) {
+                    let template = `<a href="${instagram}"
+                                        class="teacher-social-links border rounded-circle d-flex align-items-center justify-content-center transition">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                            class="bi bi-instagram color-green1" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                                        </svg>
+                                    </a>`
+                    array.push(template)
+                }
+
+                $(array).each(function (i, link) {
+                    $('.social-media-links-box').append(link)
+                })
+
+                if (skills.length) {
+                    let template
+                    $(skills).each(function (i, skill) {
+                        template = `<div class="col-12 d-flex align-items-center justify-content-end rounded bg-gray4 px-3 py-2">
+                                        <span class="fw-light">${skill}</span>
+                                    </div>`
+                        $('.teacher-skills-box').append(template)
+                    })
+                }
+            }
+
+            function generateTeacherInfoTemplate(imgSrc, name, bio) {
+                let template = `<div
+                                    class="d-flex gap-3 flex-column align-items-center justify-content-center color-white1 bg-black2 rounded-3 p-3">
+                                    <div>
+                                        <img class="rounded-circle" width="120" height="120"
+                                            src="${imgSrc}">
+                                    </div>
+                                    <p class="m-0 fs-5 fw-light">${name}</p>
+                                    <p class="m-0 fw-light text-fs-14px px-3 text-center lh-lg">${bio}</p>
+                                    <div class="d-flex align-items-center justify-content-center gap-2 col-12 social-media-links-box"></div>
+                                    <div class="w-100 teacher-skills-box d-flex flex-column gap-3"></div>
+                                </div>`
+                $('.teacher-information-box').append(template)
+            }
+
+            $(teachers).each(function (i, teacher) {
+
+                switch (searchTeacherParams) {
+                    case 'amin_saeedi_rad':
+                        if (teacher.name === 'محمدامین سعیدی راد') {
+                            generateTeacherInfoTemplate(teacher.imgSrc, teacher.name, teacher.bio)
+                            generateTeacherSocialsAndSkills(socialLinks, teacher.socials.github, teacher.socials.linkedin, teacher.socials.telegram, teacher.socials.instagram, teacher.skills)
+                        }
+                        break
+                    case 'reza_dolati':
+                        if (teacher.name === 'رضا دولتی') {
+                            generateTeacherInfoTemplate(teacher.imgSrc, teacher.name, teacher.bio)
+                            generateTeacherSocialsAndSkills(socialLinks, teacher.socials.github, teacher.socials.linkedin, teacher.socials.telegram, teacher.socials.instagram, teacher.skills)
+                        }
+                        break
+                    case 'mehrshad_barati':
+                        if (teacher.name === 'مهرشاد براتی') {
+                            generateTeacherInfoTemplate(teacher.imgSrc, teacher.name, teacher.bio)
+                            generateTeacherSocialsAndSkills(socialLinks, teacher.socials.github, teacher.socials.linkedin, teacher.socials.telegram, teacher.socials.instagram, teacher.skills)
+                        }
+                        break
+                    case 'moein_bagsheikhi':
+                        if (teacher.name === 'معین باغشیخی') {
+                            generateTeacherInfoTemplate(teacher.imgSrc, teacher.name, teacher.bio)
+                            generateTeacherSocialsAndSkills(socialLinks, teacher.socials.github, teacher.socials.linkedin, teacher.socials.telegram, teacher.socials.instagram, teacher.skills)
+                        }
+                        break
+                    case 'ashkan_moghadas':
+                        if (teacher.name === 'اشکان مقدس') {
+                            generateTeacherInfoTemplate(teacher.imgSrc, teacher.name, teacher.bio)
+                            generateTeacherSocialsAndSkills(socialLinks, teacher.socials.github, teacher.socials.linkedin, teacher.socials.telegram, teacher.socials.instagram, teacher.skills)
+                        }
+                        break
+                    case 'armin_hooshmand':
+                        if (teacher.name === 'آرمین هوشمند') {
+                            generateTeacherInfoTemplate(teacher.imgSrc, teacher.name, teacher.bio)
+                            generateTeacherSocialsAndSkills(socialLinks, teacher.socials.github, teacher.socials.linkedin, teacher.socials.telegram, teacher.socials.instagram, teacher.skills)
+                        }
+                        break
+                    case 'hamidreza_ebadi':
+                        if (teacher.name === 'حمیدرضا عبادی') {
+                            generateTeacherInfoTemplate(teacher.imgSrc, teacher.name, teacher.bio)
+                            generateTeacherSocialsAndSkills(socialLinks, teacher.socials.github, teacher.socials.linkedin, teacher.socials.telegram, teacher.socials.instagram, teacher.skills)
+                        }
+                        break
+                    case 'qadir_yolme':
+                        if (teacher.name === 'قدیر یلمه') {
+                            generateTeacherInfoTemplate(teacher.imgSrc, teacher.name, teacher.bio)
+                            generateTeacherSocialsAndSkills(socialLinks, teacher.socials.github, teacher.socials.linkedin, teacher.socials.telegram, teacher.socials.instagram, teacher.skills)
+                        }
+                        break
+                }
+            })
+        }
+
+        renderTeachers()
 
         $(blogs.reverse()).each(function (i, blog) {
             let template = `<div class="blog-post px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3 d-flex flex-column align-items-stretch">
@@ -388,7 +623,7 @@ function mainFunction() {
             if (i < 4) {
                 $('.blog-box').append(template)
             }
-            
+
             $('.blogs-box').append(template)
             $('.blogs-box').find('.blog-post').removeClass('col-12 col-sm-6 col-lg-4 col-xl-3').addClass('col-12 col-sm-6 col-xl-4')
         })
@@ -1167,6 +1402,14 @@ function mainFunction() {
         }
 
         loadPageContent()
+
+        $('.department-selection').change(function () {
+            if ($(this).val() === 'empty') {
+                $(this).removeClass('color-white1').addClass('color-gray7')
+            } else {
+                $(this).removeClass('color-gray7').addClass('color-white1')
+            }
+        })
 
         function englishToPersianNumbers2() {
             // $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
