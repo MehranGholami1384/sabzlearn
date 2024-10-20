@@ -857,8 +857,9 @@ function mainFunction() {
         priceModifier2()
 
         function hideCartBox() {
-            $('.cart-box').removeClass('active-cart-box');
-            $('.blur-overlay').removeClass('active-blur-overlay');
+            $('.cart-btn').removeClass('z-index-50')
+            $('.cart-box').removeClass('active-cart-box z-index-50');
+            $('.blur-overlay').removeClass('active-blur-overlay z-index-50');
         }
 
         $('.cart-btn').click((event) => {

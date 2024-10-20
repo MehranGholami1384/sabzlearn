@@ -142,6 +142,10 @@
     background-color: var(--color-green1) !important;
 }
 
+.bg-green2 {
+    background-color: var(--color-green2) !important;
+}
+
 .bg-green3 {
     background-color: var(--color-green3) !important;
 }

@@ -349,6 +349,10 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-green1) !important;
 }
 
+.see-cart-link:hover:hover {
+    background-color: var(--color-green2) !important;
+}
+
 .user-profile-box-logout-btn:hover,
 .account-logout-btn:hover,
 .account-user-profile-box-logout-btn:hover {
