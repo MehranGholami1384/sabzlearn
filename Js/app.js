@@ -329,8 +329,8 @@ function mainFunction() {
 
         renderCourses()
 
-        blogs.forEach(blog => {
-            let template = `<div class="px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3 d-flex flex-column align-items-stretch">
+        $(blogs.reverse()).each(function (i, blog) {
+            let template = `<div class="blog-post px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3 d-flex flex-column align-items-stretch">
                             <div class="bg-black2 h-100 col-12 rounded-4 d-flex flex-column align-items-stretch justify-content-between gap-3 position-relative shadow-lg">
                                 <div>
                                     <a href="#">
@@ -385,8 +385,15 @@ function mainFunction() {
                             </div>
                         </div>`
 
-            $('.blog-box').append(template)
+            if (i < 4) {
+                $('.blog-box').append(template)
+            }
+            
+            $('.blogs-box').append(template)
+            $('.blogs-box').find('.blog-post').removeClass('col-12 col-sm-6 col-lg-4 col-xl-3').addClass('col-12 col-sm-6 col-xl-4')
         })
+
+        $('.blogs-count').html(`${blogs.length} مقاله`)
 
         $('.owl-carousel').owlCarousel({
             loop: true,
@@ -435,12 +442,6 @@ function mainFunction() {
         }
 
         priceModifier3()
-
-        if (getLocalStorage('value')) {
-            $('.bottom-sheet-btn span').html(getLocalStorage('value'))
-        } else {
-            $('.bottom-sheet-btn span').html('همه دوره‌ها')
-        }
 
         $('.sort-btn').click(function () {
             $('.sort-btn').removeClass('active-sort')
@@ -1177,7 +1178,7 @@ function mainFunction() {
             //     }
             // });
 
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count').each(function () {
                 let $this = $(this);
                 if ($this.is('input')) {
                     $this.val($this.val().trim().toPersianDigit());

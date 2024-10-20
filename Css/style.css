@@ -507,11 +507,13 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* courses page */
 
-.courses-search-input::placeholder {
+.courses-search-input::placeholder, 
+.blogs-search-input::placeholder {
     color: var(--color-gray2) !important;
 }
 
-.courses-search-icon {
+.courses-search-icon,
+.blogs-search-icon {
     top: 30% !important;
     left: 30px !important;
 }
