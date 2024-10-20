@@ -10,7 +10,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: true,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/elec-1-768x432.webp',
@@ -24,7 +30,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: true,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/nodejs.webp',
@@ -38,7 +50,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/nestjs.webp',
@@ -52,7 +70,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/python-data.webp',
@@ -66,7 +90,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: true,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/api-php.webp',
@@ -80,7 +110,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: true,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/gold-exp.webp',
@@ -94,7 +130,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: true
     },
     {
         imgSrc: './Pictures/zero-hacker.webp',
@@ -108,7 +150,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: true,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/Course-thumbnail-Dashboard2-1-768x432.webp',
@@ -122,7 +170,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/Docker1-1-1-768x432.webp',
@@ -136,7 +190,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: true,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/python-2.webp',
@@ -150,7 +210,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: true,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/Com_template_html_css_flexbox-1-768x432.webp',
@@ -164,7 +230,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/bootstrap.webp',
@@ -178,7 +250,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/Freelancer32-1-768x432.webp',
@@ -192,7 +270,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: true
     },
     {
         imgSrc: './Pictures/Com_react-1-768x432.webp',
@@ -206,7 +290,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/mini-project-python.webp',
@@ -220,7 +310,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: true,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/tailwind.webp',
@@ -234,7 +330,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/nextjs.webp',
@@ -248,7 +350,13 @@ const courses = [{
         isLastCourses: true,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/Com_black_python-1-768x432.webp',
@@ -262,7 +370,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: true,
+        isPython: true,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/network-security.webp',
@@ -276,7 +390,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: true,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/react-libs.webp',
@@ -290,7 +410,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/redux.webp',
@@ -304,7 +430,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/git-github.webp',
@@ -318,7 +450,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: true,
         isLatestCourses: false,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: true,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/redis.webp',
@@ -332,7 +470,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/tel-bot-nodejs.webp',
@@ -346,7 +490,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/fastify.webp',
@@ -360,7 +510,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/api-1-768x432.webp',
@@ -374,7 +530,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/laravel-reverb.webp',
@@ -388,7 +550,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: false,
+        isPHP: true,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/webpack-1-768x432.webp',
@@ -402,7 +570,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/badusb-1-768x432.webp',
@@ -416,12 +590,18 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: true,
-        isMostPopularCourses: false
+        isMostPopularCourses: false,
+        isFrontEnd: false,
+        isSecurity: true,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/python.webp',
         title: "آموزش پایتون رایگان مقدماتی تا پیشرفته + پروژه های جذاب",
-        info: "",
+        info: "حیف نیست محبوب ترین زبان برنامه نویسی دنیا رو  ناقص و بی هدف یادبگیری؟ آموزش پایتون از زیر صفر و پایه…",
         teacher: "رضا دولتی",
         score: 5,
         students: 93726,
@@ -430,12 +610,18 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: true
+        isMostPopularCourses: true,
+        isFrontEnd: false,
+        isSecurity: false,
+        isPython: true,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/js.webp',
         title: "آموزش جاوا اسکریپت رایگان مقدماتی تا پیشرفته + مینی پروژه",
-        info: "",
+        info: "آموزش جاوا اسکریپت برای تمامی افرادی ک قصد ورود به زبان برنامه نویسی دارند مناسب می باشد . خصوصا برای…",
         teacher: "محمدامین سعیدی راد",
         score: 5,
         students: 71003,
@@ -444,12 +630,18 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: true
+        isMostPopularCourses: true,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/html.webp',
         title: "آموزش HTML رایگان مقدماتی تا پیشرفته",
-        info: "",
+        info: "آموزش HTML، اولین قدم شروع طراحی وبسایت است. HTML یه زبان نشانه گذاری هست که با کمک اون میتونی تگ…",
         teacher: "حمیدرضا عبادی",
         score: 5,
         students: 61886,
@@ -458,12 +650,18 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: true
+        isMostPopularCourses: true,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/css.webp',
         title: "آموزش Css رایگان مقدماتی تا پیشرفته",
-        info: "",
+        info: "حالا وقتشه که با دوره آموزش CSS به اسکلتی که با html ساختی پوست و گوشت بدی تا تبدیل به…",
         teacher: "حمیدرضا عبادی",
         score: 5,
         students: 54027,
@@ -472,12 +670,18 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: true
+        isMostPopularCourses: true,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/html-css.webp',
         title: "پروژه های خلاقانه با Html و Css(آپدیت  ۲۰۲۳)",
-        info: "",
+        info: "دوره  پروژه خلاقانه با HTML, CSS  با هدف تقویت CSS شما, با آموزش پروژه‌های پیشرفته و سطح بالا , طراحی…",
         teacher: "مهرشاد براتی",
         score: 5,
         students: 35839,
@@ -486,12 +690,18 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: true
+        isMostPopularCourses: true,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/css-grid.webp',
         title: "آموزش پروژه محور CSS Grid + پروژه لندینگ رستوران",
-        info: "",
+        info: "Css grid یک ماژول مربوط به css است . کارکردن با این ماژول بسیار جذاب است و با امکانات و…",
         teacher: "مهرشاد براتی",
         score: 5,
         students: 32365,
@@ -500,12 +710,18 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: true
+        isMostPopularCourses: true,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/flexbox.webp',
         title: "آموزش FlexBox پروژه محور + پروژه سایت هاستینگ",
-        info: "",
+        info: "اگر شما به حوزه طراحی و برنامه نویسی وب علاقه داشته باشید قطعا در مورد صفحه آرایی، ریسپانسیو سازی، فلکس…",
         teacher: "حمیدرضا عبادی",
         score: 5,
         students: 31895,
@@ -514,12 +730,18 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: true
+        isMostPopularCourses: true,
+        isFrontEnd: true,
+        isSecurity: false,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     },
     {
         imgSrc: './Pictures/black-js.webp',
         title: "آموزش جاوااسکریپت با گرایش امنیت | جاوااسکریپت سیاه",
-        info: "",
+        info: "جاوااسکریپت همواره در لیست محبوب ترین زبان های برنامه نویسی برای هکرها و امنیت کارهاست ! و من در این دوره…",
         teacher: "قدیر یلمه",
         score: 5,
         students: 31114,
@@ -528,7 +750,13 @@ const courses = [{
         isLastCourses: false,
         isPopularCourses: false,
         isLatestCourses: false,
-        isMostPopularCourses: true
+        isMostPopularCourses: true,
+        isFrontEnd: false,
+        isSecurity: true,
+        isPython: false,
+        isPHP: false,
+        isSkillUp: false,
+        isSoftSkill: false
     }
 ]
 

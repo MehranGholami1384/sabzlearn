@@ -26,6 +26,8 @@ function mainFunction() {
             localStorage.removeItem(key)
         }
 
+        let searchParams = new URLSearchParams(location.search)
+
         function slideToggle(className, elem, link) {
             let sideNavbarSubMenu = $(className);
 
@@ -127,7 +129,7 @@ function mainFunction() {
                                     <a href="#" class="d-inline-block color-white1 px-3 m-0 fw-bold course-title w-100">${course.title}</a>
                                 </div>
                                 <div>
-                                    <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-2">${course.info}</p>
+                                    <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-2 course-info-hideable">${course.info}</p>
                                 </div>
                                 <div class="px-3 d-flex align-items-center justify-content-between">
                                     <a href="#" class="text-fs-14px teacher-links">
@@ -190,36 +192,17 @@ function mainFunction() {
             }
             if (course.isMostPopularCourses) {
                 $('.most-popular-courses-box').append(createLayout(template))
+                $('.most-popular-courses-box').find('.course-info-hideable').addClass('d-none')
             }
         })
 
-        const coursesPerPage = 12;
+        let searchCategoryParams = searchParams.get('category')
 
-        function setActiveButton(button) {
-            $('.page-btn').removeClass('active-page-btn');
+        function renderCourses() {
+            let coursesCountArray = []
 
-            $(button).addClass('active-page-btn');
-        }
-
-        function renderCourses(page) {
-            let array = null
-            if (JSON.parse(getLocalStorage(getLocalStorage('show-type')))) {
-                array = JSON.parse(getLocalStorage(getLocalStorage('show-type')))
-            } else {
-                if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
-                    array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
-                } else {
-                    array = courses
-                }
-            }
-            const start = (page - 1) * coursesPerPage;
-            const end = start + coursesPerPage;
-            const currentCourses = array.slice(start, end);
-
-            $('.courses-box').empty();
-            setTimeout(function () {
-                currentCourses.forEach(course => {
-                    let template = `
+            courses.forEach(course => {
+                let template = `
                                 <div class="bg-black2 col-12 rounded-4 d-flex flex-column gap-3 justify-content-between h-100 position-relative shadow-lg">
                                     <div
                                         class="off-box color-white1 position-absolute bg-green1 px-3 py-1 rounded-pill top-0 end-0 mt-3 me-3">
@@ -286,56 +269,65 @@ function mainFunction() {
                                     </div>
                                 </div>
                             `
-                    $('.courses-box').append(createLayou2(template));
-                });
 
-                priceModifier4()
-                scoreModifier2()
-                englishToPersianNumbers2()
-                priceModifier5()
-                priceModifier2()
-            }, 100)
-        }
-
-        function setupPagination() {
-            let array = null
-            if (JSON.parse(getLocalStorage(getLocalStorage('show-type')))) {
-                array = JSON.parse(getLocalStorage(getLocalStorage('show-type')))
-            } else {
-                if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
-                    array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
-                } else {
-                    array = courses
+                switch (searchCategoryParams) {
+                    case 'front-end':
+                        if (course.isFrontEnd) {
+                            $('.courses-category, title').html('دوره‌های فرانت اند')
+                            coursesCountArray.push(course)
+                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
+                            $('.courses-box').append(createLayou2(template));
+                        }
+                        break;
+                    case 'security':
+                        if (course.isSecurity) {
+                            coursesCountArray.push(course)
+                            $('.courses-category, title').html('دوره‌های امنیت')
+                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
+                            $('.courses-box').append(createLayou2(template));
+                        }
+                        break;
+                    case 'python':
+                        if (course.isPython) {
+                            coursesCountArray.push(course)
+                            $('.courses-category, title').html('دوره‌های پایتون')
+                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
+                            $('.courses-box').append(createLayou2(template));
+                        }
+                        break;
+                    case 'php':
+                        if (course.isPHP) {
+                            coursesCountArray.push(course)
+                            $('.courses-category, title').html('دوره‌های پی اچ پی')
+                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
+                            $('.courses-box').append(createLayou2(template));
+                        }
+                        break;
+                    case 'skill-up':
+                        if (course.isSkillUp) {
+                            coursesCountArray.push(course)
+                            $('.courses-category, title').html('دوره‌های ارتقای مهارت‌ها')
+                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
+                            $('.courses-box').append(createLayou2(template));
+                        }
+                        break;
+                    case 'soft-skills':
+                        if (course.isSoftSkill) {
+                            coursesCountArray.push(course)
+                            $('.courses-category, title').html('دوره‌های مهارت‌های نرم')
+                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
+                            $('.courses-box').append(createLayou2(template));
+                        }
+                        break;
+                    default:
+                        $('.courses-count').html(`${courses.length} عنوان آموزشی`)
+                        $('.courses-box').append(createLayou2(template));
+                        break;
                 }
-            }
-            const pageCount = Math.ceil(array.length / coursesPerPage);
-            $('.btns-list-container').empty();
-
-            for (let i = 1; i <= pageCount; i++) {
-                $('.btns-list-container').append(`<button class="page-btn btn color-white1 px-3 py-2 rounded-3 bg-black2 transition" data-page="${i}">${i}</button>`);
-            }
-
-            $($('.page-btn')[0]).addClass('active-page-btn')
-
-            $('.page-btn').click(function () {
-                setActiveButton($(this))
-                const page = $(this).data('page');
-                renderCourses(page);
-
-                priceModifier4()
-                scoreModifier2()
-                englishToPersianNumbers2()
-                priceModifier5()
-                priceModifier2()
-
-                $('html, body').animate({
-                    scrollTop: $('.courses-container').offset().top
-                }, 100);
             });
         }
 
-        setupPagination();
-        renderCourses(1);
+        renderCourses()
 
         blogs.forEach(blog => {
             let template = `<div class="px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3 d-flex flex-column align-items-stretch">
@@ -427,14 +419,7 @@ function mainFunction() {
         })
 
         function scoreModifier() {
-            $('.course-score').each(function () {
-                let score = parseFloat($(this).text());
-                $(this).text(score.toFixed(1));
-            });
-        }
-
-        function scoreModifier2() {
-            $('.course-score-courses-page').each(function () {
+            $('.course-score, .course-score-courses-page').each(function () {
                 let score = parseFloat($(this).text());
                 $(this).text(score.toFixed(1));
             });
@@ -443,14 +428,7 @@ function mainFunction() {
         scoreModifier()
 
         function priceModifier3() {
-            $('.off-price, .main-price, .account-total-payment').each(function () {
-                let price = parseInt($(this).text());
-                $(this).text(price.toLocaleString('en-US'));
-            });
-        }
-
-        function priceModifier4() {
-            $('.off-price-courses-page, .main-price-courses-page').each(function () {
+            $('.off-price, .main-price, .account-total-payment, .off-price-courses-page, .main-price-courses-page').each(function () {
                 let price = parseInt($(this).text());
                 $(this).text(price.toLocaleString('en-US'));
             });
@@ -458,143 +436,27 @@ function mainFunction() {
 
         priceModifier3()
 
-        function coursesCountModifier() {
-            let array = null
-            if (JSON.parse(getLocalStorage(getLocalStorage('show-type')))) {
-                array = JSON.parse(getLocalStorage(getLocalStorage('show-type')))
-            } else {
-                if (JSON.parse(getLocalStorage(getLocalStorage('sort-type')))) {
-                    array = JSON.parse(getLocalStorage(getLocalStorage('sort-type')))
-                } else {
-                    array = courses
-                }
-            }
-
-            $('.courses-count').html(`${array.length} عنوان آموزشی`)
-        }
-
-        coursesCountModifier()
-
         if (getLocalStorage('value')) {
             $('.bottom-sheet-btn span').html(getLocalStorage('value'))
         } else {
             $('.bottom-sheet-btn span').html('همه دوره‌ها')
         }
 
-        $('.sort-btn').each(function () {
-            if ($(this).data('id') === getLocalStorage('sort-type')) {
-                $('.sort-btn').removeClass('active-sort')
-                $(this).addClass('active-sort')
-            } else if (!getLocalStorage('sort-type')) {
-                $('.sort-btn').removeClass('active-sort')
-                $('.sort-btn:first').addClass('active-sort')
-            }
-        })
-
         $('.sort-btn').click(function () {
             $('.sort-btn').removeClass('active-sort')
             $(this).addClass('active-sort')
-
-            let sort = $(this).data('id')
-            setLocalStorage('sort-type', sort)
-
-            if (sort === 'cheap') {
-                const sortedNonFreeCourses = courses
-                    .filter(course => course.offPercent < 100)
-                    .sort((a, b) => {
-                        const finalPriceA = a.price - (a.price * (a.offPercent / 100));
-                        const finalPriceB = b.price - (b.price * (b.offPercent / 100));
-
-                        return finalPriceA - finalPriceB;
-                    });
-
-                setLocalStorage(sort, JSON.stringify(sortedNonFreeCourses))
-            } else if (sort === 'default') {
-                setLocalStorage(sort, JSON.stringify(courses))
-            } else if (sort === 'expensive') {
-                const sortedCourses = courses
-                    .filter(course => course.offPercent < 100)
-                    .sort((a, b) => {
-                        const finalPriceA = a.price - (a.price * (a.offPercent / 100));
-                        const finalPriceB = b.price - (b.price * (b.offPercent / 100));
-
-                        return finalPriceB - finalPriceA;
-                    })
-                    .concat(courses.filter(course => course.offPercent === 100));
-
-                setLocalStorage(sort, JSON.stringify(sortedCourses))
-            } else if (sort === 'popular') {
-                const sortedCourses = courses.slice().sort((a, b) => b.students - a.students);
-                setLocalStorage(sort, JSON.stringify(sortedCourses))
-            }
-
-            coursesCountModifier()
-            setupPagination()
-            renderCourses(1);
-        })
-
-        $('.bottom-sheet-link').each(function () {
-            let icon = $(this).find('.bottom-sheet-icon')
-            if ($(this).data('id') === getLocalStorage('sort-type')) {
-                $('.bottom-sheet-link').removeClass('active-bottom-sheet-link')
-                $('.bottom-sheet-icon').removeClass('active-bottom-sheet-icon')
-                $(this).addClass('active-bottom-sheet-link')
-                icon.addClass('active-bottom-sheet-icon')
-            } else if (!getLocalStorage('sort-type')) {
-                $('.bottom-sheet-link').removeClass('active-bottom-sheet-link')
-                $('.bottom-sheet-icon').removeClass('active-bottom-sheet-icon')
-                $('.bottom-sheet-link:first').addClass('active-bottom-sheet-link')
-                $('.bottom-sheet-icon:first').addClass('active-bottom-sheet-icon')
-            }
         })
 
         $('.bottom-sheet-link').click(function () {
-            let icon = $(this).find('.bottom-sheet-icon')
             $('.bottom-sheet-link').removeClass('active-bottom-sheet-link')
             $('.bottom-sheet-icon').removeClass('active-bottom-sheet-icon')
             $(this).addClass('active-bottom-sheet-link')
+            let icon = $(this).find('.bottom-sheet-icon')
             icon.addClass('active-bottom-sheet-icon')
 
-            let sort = $(this).data('id')
             let value = $(this).data('value')
-            console.log(value)
-            setLocalStorage('sort-type', sort)
-            setLocalStorage('value', value)
-
-            if (sort === 'cheap') {
-                const sortedNonFreeCourses = courses
-                    .filter(course => course.offPercent < 100)
-                    .sort((a, b) => {
-                        const finalPriceA = a.price - (a.price * (a.offPercent / 100));
-                        const finalPriceB = b.price - (b.price * (b.offPercent / 100));
-
-                        return finalPriceA - finalPriceB;
-                    });
-
-                setLocalStorage(sort, JSON.stringify(sortedNonFreeCourses))
-            } else if (sort === 'default') {
-                setLocalStorage(sort, JSON.stringify(courses))
-            } else if (sort === 'expensive') {
-                const sortedCourses = courses
-                    .filter(course => course.offPercent < 100)
-                    .sort((a, b) => {
-                        const finalPriceA = a.price - (a.price * (a.offPercent / 100));
-                        const finalPriceB = b.price - (b.price * (b.offPercent / 100));
-
-                        return finalPriceB - finalPriceA;
-                    })
-                    .concat(courses.filter(course => course.offPercent === 100));
-
-                setLocalStorage(sort, JSON.stringify(sortedCourses))
-            } else if (sort === 'popular') {
-                const sortedCourses = courses.slice().sort((a, b) => b.students - a.students);
-                setLocalStorage(sort, JSON.stringify(sortedCourses))
-            }
 
             $('.bottom-sheet-btn span').html(value)
-            coursesCountModifier()
-            setupPagination()
-            renderCourses(1);
             closeBottomSheet()
 
             $('html, body').animate({
@@ -612,32 +474,12 @@ function mainFunction() {
             $('.toggle-marker').removeClass('active-toggle-marker')
         }
 
-        if (getLocalStorage('show-type')) {
-            activeOnlyFreeCourses($('.toggle-btn'))
-            activeOnlyFreeCourses($('.mobile-toggle-btn'))
-        }
-
         $('.toggle-btn').click(function () {
             let $this = $(this)
             if (!$this.hasClass('active-toggle-btn')) {
                 activeOnlyFreeCourses($this)
-
-                setLocalStorage('show-type', $this.data('id'))
-
-                const freeCourses = courses.filter(course => course.offPercent === 100);
-
-                setLocalStorage($this.data('id'), JSON.stringify(freeCourses))
-
-                coursesCountModifier()
-                setupPagination()
-                renderCourses(1);
             } else {
                 disableOnlyFreeCourses($this)
-                removeLocalStorageItem('show-type')
-
-                coursesCountModifier()
-                setupPagination()
-                renderCourses(1);
             }
         })
 
@@ -645,39 +487,21 @@ function mainFunction() {
             let $this = $(this)
             if (!$this.hasClass('active-toggle-btn')) {
                 activeOnlyFreeCourses($this)
-
-                setLocalStorage('show-type', $this.data('id'))
-
-                const freeCourses = courses.filter(course => course.offPercent === 100);
-
-                setLocalStorage($this.data('id'), JSON.stringify(freeCourses))
             } else {
                 disableOnlyFreeCourses($this)
-                removeLocalStorageItem('show-type')
             }
         })
 
         $('.remove-filters').click(function () {
             $('.filter').removeClass('open-filter')
             $('body').removeClass('no-scroll')
-
-            removeLocalStorageItem('show-type')
-            if (!getLocalStorage('show-type')) {
-                disableOnlyFreeCourses($('.toggle-btn'))
-                disableOnlyFreeCourses($('.mobile-toggle-btn'))
-            }
-            coursesCountModifier()
-            setupPagination()
-            renderCourses(1);
+            disableOnlyFreeCourses($('.toggle-btn'))
+            disableOnlyFreeCourses($('.mobile-toggle-btn'))
         })
 
         $('.apply-filters-btn').click(function () {
             $('.filter').removeClass('open-filter')
             $('body').removeClass('no-scroll')
-
-            coursesCountModifier()
-            setupPagination()
-            renderCourses(1);
         })
 
         $('.courses-category-filter-checkbox').change(function () {
@@ -727,21 +551,9 @@ function mainFunction() {
             closeBottomSheet()
         })
 
-        $('.bottom-sheet-link').click(function () {
-            $('.bottom-sheet-link').removeClass('active-bottom-sheet-link')
-            $('.bottom-sheet-icon').removeClass('active-bottom-sheet-icon')
-
-            $(this).addClass('active-bottom-sheet-link')
-            let icon = $(this).children()[0].children[1]
-            $(icon).addClass('active-bottom-sheet-icon')
-        })
-
         $('.open-filter-btn').click(function () {
             $('.filter').addClass('open-filter')
             $('body').addClass('no-scroll')
-            if (getLocalStorage('show-type')) {
-                activeOnlyFreeCourses($('.mobile-toggle-btn'))
-            }
         })
 
         $('.close-fitler-btn').click(function () {
@@ -789,73 +601,6 @@ function mainFunction() {
             return replaceString;
         };
 
-        function englishToPersianNumbers2() {
-            // $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
-            //     let $this = $(this);
-            //     if ($this.is('input')) {
-            //         $this.val(englishToPersianNumbers($this.val()));
-            //     } else {
-            //         $this.html(englishToPersianNumbers($this.text()));
-            //     }
-            // });
-
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
-                let $this = $(this);
-                if ($this.is('input')) {
-                    $this.val($this.val().trim().toPersianDigit());
-                } else {
-                    $this.html($this.text().trim().toPersianDigit());
-                }
-            });
-        }
-
-        englishToPersianNumbers2()
-
-        function priceModifier() {
-            $('.off-price').each(function () {
-                let $this = $(this);
-
-                if ($this.html() == '۰') {
-                    let $parent = $this.parent()
-                    $parent.html('<p class="m-0 color-green1 fw-bold off-price d-flex align-items-center justify-content-center col-12">رایگان!</p>')
-                }
-            })
-        }
-
-        function priceModifier5() {
-            $('.off-price-courses-page').each(function () {
-                let $this = $(this);
-
-                if ($this.html() == '۰') {
-                    let $parent = $this.parent()
-                    $parent.html('<p class="m-0 color-green1 fw-bold off-price d-flex align-items-center justify-content-center col-12">رایگان!</p>')
-                }
-            })
-        }
-
-        function priceModifier2() {
-            $('.off-box').each(function () {
-                let $this = $(this);
-
-                if ($this.html().trim() == '۰%') {
-                    $this.css('display', 'none')
-
-                    let mainPrice = $this.parent().children()[6].children[1].children[0]
-                    $(mainPrice).addClass('d-none')
-
-                    let students = $this.parent().children()[6].children[0]
-                    $(students).removeClass('pt-3')
-
-                    let info = $this.parent().children()[3]
-                    $(info).css('padding-bottom', '21px')
-                }
-            })
-        }
-
-        priceModifier()
-
-        priceModifier2()
-
         function hideCartBox() {
             $('.cart-btn').removeClass('z-index-50')
             $('.cart-box').removeClass('active-cart-box z-index-50');
@@ -863,7 +608,6 @@ function mainFunction() {
         }
 
         $('.cart-btn').click((event) => {
-            event.stopPropagation();
             $('.cart-btn').toggleClass('z-index-50')
             $('.cart-box').toggleClass('active-cart-box z-index-50');
             $('.blur-overlay').toggleClass('active-blur-overlay z-index-50');
@@ -882,7 +626,6 @@ function mainFunction() {
         })
 
         // auth page
-        let searchParams = new URLSearchParams(location.search)
         let searchActionParam = searchParams.get('action')
         let searchMethodParam = searchParams.get('method')
 
@@ -1074,7 +817,6 @@ function mainFunction() {
                 $('.error-custom-alert').addClass('active-custom-alert')
                 setTimeout(() => {
                     $('.error-custom-alert').removeClass('active-custom-alert')
-
                 }, 1200);
             } else {
                 $(this).addClass('d-flex align-items-center justify-content-center')
@@ -1422,6 +1164,62 @@ function mainFunction() {
         }
 
         loadPageContent()
+
+        function englishToPersianNumbers2() {
+            // $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
+            //     let $this = $(this);
+            //     if ($this.is('input')) {
+            //         $this.val(englishToPersianNumbers($this.val()));
+            //     } else {
+            //         $this.html(englishToPersianNumbers($this.text()));
+            //     }
+            // });
+
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
+                let $this = $(this);
+                if ($this.is('input')) {
+                    $this.val($this.val().trim().toPersianDigit());
+                } else {
+                    $this.html($this.text().trim().toPersianDigit());
+                }
+            });
+        }
+
+        englishToPersianNumbers2()
+
+        function priceModifier() {
+            $('.off-price, .off-price-courses-page').each(function () {
+                let $this = $(this);
+
+                if ($this.html() == '۰') {
+                    let $parent = $this.parent()
+                    $parent.html('<p class="m-0 color-green1 fw-bold off-price d-flex align-items-center justify-content-center col-12">رایگان!</p>')
+                }
+            })
+        }
+
+        function priceModifier2() {
+            $('.off-box').each(function () {
+                let $this = $(this);
+
+                if ($this.html().trim() == '۰%') {
+                    $this.css('display', 'none')
+
+                    let mainPrice = $this.parent().children()[6].children[1].children[0]
+                    $(mainPrice).addClass('d-none')
+
+                    let students = $this.parent().children()[6].children[0]
+                    $(students).removeClass('pt-3')
+
+                    let info = $this.parent().children()[3]
+                    $(info).css('padding-bottom', '21px')
+                }
+            })
+        }
+
+        priceModifier()
+
+        priceModifier2()
 
         resolve()
     })
