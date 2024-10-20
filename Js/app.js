@@ -639,7 +639,7 @@ function mainFunction() {
                         </div>
                         <div class="d-flex align-items-center justify-content-center my-3 gap-2">
                             <p class="m-0 color-white1">حساب کاربری ندارید؟</p>
-                            <a href="./auth.html?action=signup" class="color-green1">ثبت نام کنید</a>
+                            <a href="./auth.html?action=signup" class="color-green1 signup">ثبت نام کنید</a>
                         </div>
                         <form
                             class="form-control bg-black2 border-0 my-3 d-flex gap-4 px-3 px-sm-5 flex-column align-items-center justify-content-center">
@@ -669,7 +669,7 @@ function mainFunction() {
                                 class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition login-btn">ورود</button>
                         </form>
                         <div class="w-100 d-flex align-items-center justify-content-between px-3 px-sm-5 mb-3">
-                            <a href="./auth.html?action=login&method=phone_number" class="color-gray2">ورود با موبایل</a>
+                            <a href="./auth.html?action=login&method=phone_number" class="color-gray2 phone-number-login">ورود با موبایل</a>
                             <a href="#">
                                 <span class="color-gray2 text-decoration-underline">فراموشی رمز عبور</span>
                             </a>
@@ -683,7 +683,7 @@ function mainFunction() {
                         </div>
                         <div class="d-flex align-items-center justify-content-center my-3 gap-2">
                             <p class="m-0 color-white1">حساب کاربری ندارید؟</p>
-                            <a href="./auth.html?action=signup" class="color-green1">ثبت نام کنید</a>
+                            <a href="./auth.html?action=signup" class="color-green1 signup">ثبت نام کنید</a>
                         </div>
                         <form
                             class="form-control bg-black2 border-0 my-3 d-flex gap-4 px-3 px-sm-5 flex-column align-items-center justify-content-center">
@@ -702,7 +702,7 @@ function mainFunction() {
                                 class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition login-btn">ادامه</button>
                         </form>
                         <div class="w-100 d-flex align-items-center justify-content-between px-3 px-sm-5 mb-3">
-                            <a href="./auth.html?action=login&method=email" class="color-gray2">ورود با ایمیل</a>
+                            <a href="./auth.html?action=login&method=email" class="color-gray2 email-login">ورود با ایمیل</a>
                             <a href="./terms.html">
                                 <span class="color-gray2 text-decoration-underline">حریم خصوصی</span>
                             </a>
@@ -718,7 +718,7 @@ function mainFunction() {
                             </div>
                             <div class="d-flex align-items-center justify-content-center mt-3 gap-2">
                                 <p class="m-0 color-white1">قبلا ثبت نام کرده اید؟</p>
-                                <a href="./auth.html?action=login&method=phone_number" class="color-green1">وارد شوید</a>
+                                <a href="./auth.html?action=login&method=phone_number" class="color-green1 phone-number-login">وارد شوید</a>
                             </div>
                             <form
                                 class="form-control bg-black2 border-0 my-3 d-flex gap-3 px-3 px-sm-5 flex-column align-items-center justify-content-center">
@@ -781,7 +781,7 @@ function mainFunction() {
                             </div>
                             <div class="d-flex align-items-center justify-content-center my-3 gap-2">
                                 <p class="m-0 color-white1">حساب کاربری ندارید؟</p>
-                                <a href="./auth.html?action=signup" class="color-green1">ثبت نام کنید</a>
+                                <a href="./auth.html?action=signup" class="color-green1 signup">ثبت نام کنید</a>
                             </div>
                             <form
                                 class="form-control bg-black2 border-0 my-3 d-flex gap-4 px-3 px-sm-5 flex-column align-items-center justify-content-center">
@@ -800,7 +800,7 @@ function mainFunction() {
                                     class="w-100 btn color-white1 bg-green1 py-3 rounded-pill submit-auth-btn transition login-btn">ادامه</button>
                             </form>
                             <div class="w-100 d-flex align-items-center justify-content-between px-3 px-sm-5 mb-3">
-                                <a href="./auth.html?action=login&method=email" class="color-gray2">ورود با ایمیل</a>
+                                <a href="./auth.html?action=login&method=email" class="color-gray2 email-login">ورود با ایمیل</a>
                                 <a href="./terms.html">
                                     <span class="color-gray2 text-decoration-underline">حریم خصوصی</span>
                                 </a>
@@ -972,6 +972,8 @@ function mainFunction() {
                     logout()
                 }, 1000);
             })
+
+            $('.footer-add-new-ticket-link').attr('href', './account.html?page=tickets')
         } else {
             $('.navbar-wrapper').append(`<a href="./auth.html?action=login&method=phone_number"
                         class="btn bg-black3 rounded-circle h-52px px-3 pointer d-flex align-items-center justify-content-center d-xl-none login-signup-btn">
