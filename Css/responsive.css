@@ -102,6 +102,10 @@
     .change-password-btn {
         width: 100% !important;
     }
+
+    .empty-cart-message {
+        font-size: 16px !important;
+    }
 }
 
 @media only screen and (max-width: 575.5px) {
@@ -178,11 +182,9 @@
         left: -123.5px !important;
     }
 
+    .my-courses-width,
+    .see-courses-link,
     .recent-courses-width {
-        width: 100% !important;
-    }
-
-    .my-courses-width {
         width: 100% !important;
     }
 }

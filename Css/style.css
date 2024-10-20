@@ -788,3 +788,9 @@ svg.close-account-modal-btn:hover {
     width: 100px !important;
     height: 45px !important;
 }
+
+/* cart page */
+
+.see-courses-link {
+    width: 300px !important;
+}
