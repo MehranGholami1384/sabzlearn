@@ -680,7 +680,7 @@
                         </div>
                         <div class="col-12 d-none d-md-flex px-3 flex-column gap-3">
                             <div
-                                class="d-flex align-items-center justify-content-between color-white1 bg-black2 rounded-3 py-4 px-3">
+                                class="d-flex align-items-center justify-content-between color-white1 bg-black2 rounded-3 py-4 px-3 only-free-courses-switch">
                                 <div>
                                     <span>فقط دوره‌های رایگان</span>
                                 </div>
@@ -692,7 +692,7 @@
                                 </div>
                             </div>
                             <div
-                                class="d-flex align-items-center justify-content-between color-white1 bg-black2 rounded-3 py-4 px-3">
+                                class="d-flex align-items-center justify-content-between color-white1 bg-black2 rounded-3 py-4 px-3 pre-sale-courses-switch">
                                 <div>
                                     <span>در حال پیش فروش</span>
                                 </div>
@@ -902,7 +902,7 @@
         </div>
     </div>
     <div
-        class="w-100 filter transition overflow-auto h-100 bg-black2 position-fixed top-0 d-flex flex-column align-items-center justify-content-between">
+        class="w-100 filter transition overflow-auto h-100 bg-black2 position-fixed top-0 d-flex d-md-none flex-column align-items-center justify-content-between">
         <div class="w-100">
             <div class="px-3 bg-gray4">
                 <div class="color-white1 d-flex align-items-center justify-content-between py-4">
@@ -927,7 +927,7 @@
             </div>
             <div class="col-12 px-3 my-3">
                 <div
-                    class="d-flex align-items-center justify-content-between color-white1 bg-black2 py-4 px-3 border-bottom border-secondary border-opacity-25">
+                    class="d-flex align-items-center justify-content-between color-white1 bg-black2 py-4 px-3 border-bottom border-secondary border-opacity-25 only-free-courses-switch">
                     <div>
                         <span>فقط دوره‌های رایگان</span>
                     </div>
@@ -939,7 +939,7 @@
                     </div>
                 </div>
                 <div
-                    class="d-flex align-items-center justify-content-between color-white1 bg-black2 py-4 px-3 border-bottom border-secondary border-opacity-25 pre-sale-mobile-box">
+                    class="d-flex align-items-center justify-content-between color-white1 bg-black2 py-4 px-3 border-bottom border-secondary border-opacity-25  pre-sale-courses-switch">
                     <div>
                         <span>در حال پیش فروش</span>
                     </div>
@@ -984,7 +984,7 @@
                                     اند</label>
                             </div>
                             <span
-                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">28</span>
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px"></span>
                         </div>
                         <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
@@ -995,7 +995,7 @@
                                     مهارت‌ها</label>
                             </div>
                             <span
-                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">14</span>
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px"></span>
                         </div>
                         <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
@@ -1006,7 +1006,7 @@
                                     اند</label>
                             </div>
                             <span
-                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">12</span>
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px"></span>
                         </div>
                         <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
@@ -1017,7 +1017,7 @@
                                     class="pointer col select-none fw-light text-fs-14px">امنیت</label>
                             </div>
                             <span
-                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">9</span>
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px"></span>
                         </div>
                         <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
@@ -1027,7 +1027,7 @@
                                 <label for="python" class="pointer col select-none fw-light text-fs-14px">پایتون</label>
                             </div>
                             <span
-                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">6</span>
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px"></span>
                         </div>
                         <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
@@ -1038,7 +1038,7 @@
                                     نرم</label>
                             </div>
                             <span
-                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">6</span>
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px"></span>
                         </div>
                         <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
@@ -1048,7 +1048,7 @@
                                 <label for="php" class="pointer col select-none fw-light text-fs-14px">پی اچ پی</label>
                             </div>
                             <span
-                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">5</span>
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px"></span>
                         </div>
                         <div class="w-100 d-flex align-items-center justify-content-between pointer position-relative">
                             <div class="d-flex align-items-center justify-content-center gap-2 w-100">
@@ -1058,7 +1058,7 @@
                                 <label for="ai" class="pointer col select-none fw-light text-fs-14px">هوش مصنوعی</label>
                             </div>
                             <span
-                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px">1</span>
+                                class="front-end-courses-count filter-courses-count fw-light color-gray3 text-fs-14px"></span>
                         </div>
                     </div>
                 </div>

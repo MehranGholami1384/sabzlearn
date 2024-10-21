@@ -316,6 +316,13 @@ function mainFunction() {
                             $('.courses-box').append(createLayou2(template));
                         }
                         break;
+                    case 'free-courses':
+                        if (course.offPercent === 100) {
+                            coursesCountArray.push(course)
+                            $('.courses-category, title').html('دوره‌های رایگان')
+                            $('.courses-box').append(createLayou2(template));
+                        }
+                        break;
                     default:
                         $('.courses-box').append(createLayou2(template));
                         break;
@@ -328,8 +335,13 @@ function mainFunction() {
                 }
 
                 if (searchCategoryParams) {
-                    $('.category-courses-box').remove()
-                    $('.pre-sale-mobile-box').removeClass('border-bottom border-secondary border-opacity-25')
+                    if (searchCategoryParams === 'free-courses') {
+                        $('.only-free-courses-switch').remove()
+                        $('.pre-sale-courses-switch').remove()
+                    } else {
+                        $('.category-courses-box').remove()
+                        $('.pre-sale-courses-switch').removeClass('border-bottom border-secondary border-opacity-25')
+                    }
                 }
 
                 switch (searchTeacherParams) {
