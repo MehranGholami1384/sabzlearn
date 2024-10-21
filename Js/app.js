@@ -327,6 +327,11 @@ function mainFunction() {
                     $('.courses-count').html(`${courses.length} عنوان آموزشی`)
                 }
 
+                if (searchCategoryParams) {
+                    $('.category-courses-box').remove()
+                    $('.pre-sale-mobile-box').removeClass('border-bottom border-secondary border-opacity-25')
+                }
+
                 switch (searchTeacherParams) {
                     case 'amin_saeedi_rad':
                         if (course.teacher === 'محمدامین سعیدی راد') {
@@ -680,7 +685,6 @@ function mainFunction() {
                         }
                         break;
                     default:
-                        $('.blogs-category, title').html('مقالات')
                         $('.blogs-box').append(template)
                 }
 
@@ -766,31 +770,31 @@ function mainFunction() {
             }, 100);
         })
 
-        function activeOnlyFreeCourses(elem) {
+        function activeOnlyFreeCourses(elem, toggleMarkerClass) {
             elem.addClass('active-toggle-btn')
-            $('.toggle-marker').addClass('active-toggle-marker')
+            $(toggleMarkerClass).addClass('active-toggle-marker')
         }
 
-        function disableOnlyFreeCourses(elem) {
+        function disableOnlyFreeCourses(elem, toggleMarkerClass) {
             elem.removeClass('active-toggle-btn')
-            $('.toggle-marker').removeClass('active-toggle-marker')
+            $(toggleMarkerClass).removeClass('active-toggle-marker')
         }
 
-        $('.toggle-btn').click(function () {
+        $('.free-courses-toggle-btn, .free-courses-mobile-toggle-btn').click(function () {
             let $this = $(this)
             if (!$this.hasClass('active-toggle-btn')) {
-                activeOnlyFreeCourses($this)
+                activeOnlyFreeCourses($('.free-courses-toggle-btn, .free-courses-mobile-toggle-btn'), '.free-courses-toggle-marker')
             } else {
-                disableOnlyFreeCourses($this)
+                disableOnlyFreeCourses($('.free-courses-toggle-btn, .free-courses-mobile-toggle-btn'), '.free-courses-toggle-marker')
             }
         })
 
-        $('.mobile-toggle-btn').click(function () {
+        $('.pre-sale-toggle-btn, .pre-sale-mobile-toggle-btn').click(function () {
             let $this = $(this)
             if (!$this.hasClass('active-toggle-btn')) {
-                activeOnlyFreeCourses($this)
+                activeOnlyFreeCourses($('.pre-sale-toggle-btn, .pre-sale-mobile-toggle-btn'), '.pre-sale-toggle-marker')
             } else {
-                disableOnlyFreeCourses($this)
+                disableOnlyFreeCourses($('.pre-sale-toggle-btn, .pre-sale-mobile-toggle-btn'), '.pre-sale-toggle-marker')
             }
         })
 

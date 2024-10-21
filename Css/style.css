@@ -538,8 +538,7 @@ textarea::-webkit-scrollbar-thumb:hover {
     color: var(--color-blue1) !important;
 }
 
-.toggle-btn,
-.mobile-toggle-btn {
+.toggle-btn {
     width: 50px !important;
     height: 25px !important;
 }
