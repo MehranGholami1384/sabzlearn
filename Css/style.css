@@ -61,6 +61,13 @@ textarea::-webkit-scrollbar-thumb:hover {
     -webkit-box-orient: vertical;
 }
 
+.line-clamp-3 {
+    -webkit-line-clamp: 3 !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+}
+
 .line-clamp-2 {
     -webkit-line-clamp: 2 !important;
     overflow: hidden !important;
@@ -360,7 +367,8 @@ textarea::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-green1) !important;
 }
 
-.see-cart-link:hover:hover {
+.see-cart-link:hover:hover,
+.add-course-to-cart-btn:hover {
     background-color: var(--color-green2) !important;
 }
 
@@ -819,4 +827,36 @@ svg.close-account-modal-btn:hover {
 .teacher-social-links:hover svg * {
     background-color: var(--color-green1) !important;
     fill: var(--color-white1) !important;
+}
+
+/* course page */
+
+.add-course-to-cart-btn {
+    width: 190px !important;
+}
+
+.course-breadcrumb::-webkit-scrollbar {
+    display: none !important;
+}
+
+.course-breadcrumb-item::after,
+.course-breadcrumb-item::before {
+    position: absolute !important;
+    left: 0;
+    height: 2.5rem;
+    width: 5px;
+    background-color: var(--color-black1) !important;
+    content: '';
+}
+
+.course-breadcrumb-item::after {
+    top: -19px !important;
+    transform: rotate(35deg) !important;
+    transform-origin: top !important;
+}
+
+.course-breadcrumb-item::before {
+    bottom: -19px !important;
+    transform: rotate(-35deg) !important;
+    transform-origin: bottom !important;
 }

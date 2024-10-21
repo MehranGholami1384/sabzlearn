@@ -81,6 +81,10 @@
     .recent-courses-width {
         width: 100% !important;
     }
+
+    .bg-black2-lg {
+        background-color: var(--color-black2) !important;
+    }
 }
 
 @media only screen and (max-width: 767.5px) {
@@ -186,6 +190,10 @@
     .see-courses-link,
     .recent-courses-width {
         width: 100% !important;
+    }
+
+    .add-course-to-cart-btn {
+        width: calc(100% - 20px) !important;
     }
 }
 

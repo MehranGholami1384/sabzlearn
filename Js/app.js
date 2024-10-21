@@ -276,52 +276,59 @@ function mainFunction() {
                 switch (searchCategoryParams) {
                     case 'front-end':
                         if (course.isFrontEnd) {
-                            $('.courses-category, title').html('دوره‌های فرانت اند')
                             coursesCountArray.push(course)
                             $('.courses-box').append(createLayou2(template));
                         }
+                        $('.courses-category, title').html('دوره‌های فرانت اند')
                         break;
                     case 'security':
                         if (course.isSecurity) {
                             coursesCountArray.push(course)
-                            $('.courses-category, title').html('دوره‌های امنیت')
                             $('.courses-box').append(createLayou2(template));
                         }
+                        $('.courses-category, title').html('دوره‌های امنیت')
                         break;
                     case 'python':
                         if (course.isPython) {
                             coursesCountArray.push(course)
-                            $('.courses-category, title').html('دوره‌های پایتون')
                             $('.courses-box').append(createLayou2(template));
                         }
+                        $('.courses-category, title').html('دوره‌های پایتون')
                         break;
                     case 'php':
                         if (course.isPHP) {
                             coursesCountArray.push(course)
-                            $('.courses-category, title').html('دوره‌های پی اچ پی')
                             $('.courses-box').append(createLayou2(template));
                         }
+                        $('.courses-category, title').html('دوره‌های پی اچ پی')
                         break;
                     case 'skill-up':
                         if (course.isSkillUp) {
                             coursesCountArray.push(course)
-                            $('.courses-category, title').html('دوره‌های ارتقای مهارت‌ها')
                             $('.courses-box').append(createLayou2(template));
                         }
+                        $('.courses-category, title').html('دوره‌های ارتقای مهارت‌ها')
                         break;
                     case 'soft-skills':
                         if (course.isSoftSkill) {
                             coursesCountArray.push(course)
-                            $('.courses-category, title').html('دوره‌های مهارت‌های نرم')
                             $('.courses-box').append(createLayou2(template));
                         }
+                        $('.courses-category, title').html('دوره‌های مهارت‌های نرم')
                         break;
                     case 'free-courses':
                         if (course.offPercent === 100) {
                             coursesCountArray.push(course)
-                            $('.courses-category, title').html('دوره‌های رایگان')
                             $('.courses-box').append(createLayou2(template));
                         }
+                        $('.courses-category, title').html('دوره‌های رایگان')
+                        break;
+                    case 'back-end':
+                        if (course.title === 'back-end-course') {
+                            coursesCountArray.push(course)
+                            $('.courses-box').append(createLayou2(template));
+                        }
+                        $('.courses-category, title').html('دوره‌های بک اند')
                         break;
                     default:
                         $('.courses-box').append(createLayou2(template));
@@ -752,7 +759,7 @@ function mainFunction() {
         scoreModifier()
 
         function priceModifier3() {
-            $('.off-price, .main-price, .account-total-payment, .off-price-courses-page, .main-price-courses-page').each(function () {
+            $('.off-price, .main-price, .account-total-payment, .off-price-courses-page, .main-price-courses-page, .course-off-price').each(function () {
                 let price = parseInt($(this).text());
                 $(this).text(price.toLocaleString('en-US'));
             });
@@ -1411,6 +1418,7 @@ function mainFunction() {
                 $('title').html(pageTitle)
                 $(link).addClass('active-account-link')
 
+                $('.content-area').empty()
                 $('.content-area').load(pageContent, function (response, status, xhr) {
                     if (status == "error") {
                         console.log("Error: " + xhr.status + " " + xhr.statusText);
@@ -1503,7 +1511,7 @@ function mainFunction() {
             //     }
             // });
 
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count').each(function () {
                 let $this = $(this);
                 if ($this.is('input')) {
                     $this.val($this.val().trim().toPersianDigit());
@@ -1516,7 +1524,7 @@ function mainFunction() {
         englishToPersianNumbers2()
 
         function priceModifier() {
-            $('.off-price, .off-price-courses-page').each(function () {
+            $('.off-price, .off-price-courses-page, .course-off-price').each(function () {
                 let $this = $(this);
 
                 if ($this.html() == '۰') {
