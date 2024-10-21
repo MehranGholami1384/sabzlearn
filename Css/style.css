@@ -63,9 +63,9 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 .line-clamp-2 {
     -webkit-line-clamp: 2 !important;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
 }
 
 .line-clamp-1 {

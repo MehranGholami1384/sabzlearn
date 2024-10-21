@@ -577,7 +577,7 @@ function mainFunction() {
                                 </div>
                                 <div>
                                     <a href="#"
-                                        class="d-inline-block color-white1 px-3 m-0 fw-bold course-title w-100">${blog.title}</a>
+                                        class="d-inline-block color-white1 px-3 m-0 fw-bold blog-title w-100 line-clamp-2">${blog.title}</a>
                                 </div>
                                 <div>
                                     <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-4">${blog.info}</p>
