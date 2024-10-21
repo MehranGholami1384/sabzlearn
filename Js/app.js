@@ -1502,9 +1502,58 @@ function mainFunction() {
         })
 
         // course page -----------------------------------------------------------------------------------------------
+        $('.add-course-to-cart-btn').click(function () {
+            let isAddedToCart = getLocalStorage('cart')
+
+            if (isAddedToCart) {
+                $('.error-custom-alert').addClass('active-custom-alert')
+                setTimeout(() => {
+                    $('.error-custom-alert').removeClass('active-custom-alert')
+                }, 1200);
+            } else {
+                $('.success-custom-alert-content').html('به سبد خرید شما اضافه شد.')
+                setLocalStorage('cart', true)
+                $('.success-custom-alert').addClass('active-custom-alert')
+                setTimeout(() => {
+                    $('.success-custom-alert').removeClass('active-custom-alert')
+
+                    $('.cart-courses-count').removeClass('d-none')
+                    $('.not-empty-cart-boxes').removeClass('d-none')
+                    $('.cart-box-courses-count').html('1 دوره').html($('.cart-box-courses-count').text().trim().toPersianDigit())
+                    $('.empty-cart-box-text').addClass('d-none')
+                }, 1200);
+            }
+        })
+
+        $('.remove-course-from-cart').click(function () {
+            $('.success-custom-alert-content').html('از سبد خرید شما حذف شد.')
+            removeLocalStorageItem('cart')
+            $('.success-custom-alert').addClass('active-custom-alert')
+            setTimeout(() => {
+                $('.success-custom-alert').removeClass('active-custom-alert')
+
+                $('.cart-courses-count').addClass('d-none')
+                $('.not-empty-cart-boxes').addClass('d-none')
+                $('.cart-box-courses-count').html('0 دوره').html($('.cart-box-courses-count').text().trim().toPersianDigit())
+                $('.empty-cart-box-text').removeClass('d-none')
+            }, 1200);
+        })
+
+        let isAddedToCart = getLocalStorage('cart')
+
+        if (isAddedToCart) {
+            $('.cart-box-courses-count').html('1 دوره')
+            $('.empty-cart-box-text').addClass('d-none')
+            $('.not-empty-cart-boxes').removeClass('d-none')
+        } else {
+            $('.cart-courses-count').addClass('d-none')
+            $('.cart-box-courses-count').html('0 دوره')
+        }
+
         $('.copy-link-btn').click(function () {
             navigator.clipboard.writeText('https://sty.ink/nodejs')
 
+            $('.success-custom-alert-content').html('لینک با موفقیت کپی شد.')
             $('.success-custom-alert').addClass('active-custom-alert')
             setTimeout(() => {
                 $('.success-custom-alert').removeClass('active-custom-alert')
@@ -1522,7 +1571,7 @@ function mainFunction() {
             //     }
             // });
 
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate, .cart-courses-count').each(function () {
                 let $this = $(this);
                 if ($this.is('input')) {
                     $this.val($this.val().trim().toPersianDigit());

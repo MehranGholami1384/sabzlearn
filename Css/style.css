@@ -878,3 +878,15 @@ svg.close-account-modal-btn:hover {
 .copy-link-btn:hover {
     transform: scale(1.1) !important;
 }
+
+.cart-courses-count {
+    width: 19px !important;
+    height: 19px !important;
+    font-size: 10px !important;
+    top: 15% !important;
+    right: -30% !important;
+}
+
+.remove-course-from-cart:hover {
+    color: var(--color-red1) !important;
+}
