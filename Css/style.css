@@ -860,3 +860,21 @@ svg.close-account-modal-btn:hover {
     transform: rotate(-35deg) !important;
     transform-origin: bottom !important;
 }
+
+.course-see-teacher-profile-link {
+    border-color: var(--color-green1) !important;
+
+}
+
+.course-see-teacher-profile-link:hover {
+    background-color: var(--color-green1) !important;
+    color: var(--color-white1) !important;
+}
+
+.copy-link-box {
+    border: 1px dashed var(--color-blue1) !important;
+}
+
+.copy-link-btn:hover {
+    transform: scale(1.1) !important;
+}

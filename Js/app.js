@@ -121,13 +121,13 @@ function mainFunction() {
                                     class="off-box color-white1 position-absolute bg-green1 px-3 py-1 rounded-pill top-0 end-0 mt-3 me-3">
                                     ${course.offPercent}%</div>
                                 <div>
-                                    <a href="#">
+                                    <a href="./course.html">
                                         <img class="w-100 object-fit-cover rounded-4" height="170"
                                             src="${course.imgSrc}">
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="#" class="d-inline-block color-white1 px-3 m-0 fw-bold course-title w-100">${course.title}</a>
+                                    <a href="./course.html" class="d-inline-block color-white1 px-3 m-0 fw-bold course-title w-100">${course.title}</a>
                                 </div>
                                 <div>
                                     <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-2 course-info-hideable">${course.info}</p>
@@ -193,7 +193,7 @@ function mainFunction() {
             }
             if (course.isMostPopularCourses) {
                 $('.most-popular-courses-box').append(createLayout(template))
-                $('.most-popular-courses-box').find('.course-info-hideable').addClass('d-none')
+                $('.most-popular-courses-box').find('.course-info-hideable').remove()
             }
         })
 
@@ -211,13 +211,13 @@ function mainFunction() {
                                         class="off-box color-white1 position-absolute bg-green1 px-3 py-1 rounded-pill top-0 end-0 mt-3 me-3">
                                         ${course.offPercent}%</div>
                                     <div>
-                                        <a href="#">
+                                        <a href="./course.html">
                                             <img class="w-100 object-fit-cover rounded-4" height="170"
                                                 src="${course.imgSrc}">
                                         </a>
                                     </div>
                                     <div>
-                                        <a href="#" class="d-inline-block color-white1 px-3 m-0 fw-bold course-title w-100">${course.title}</a>
+                                        <a href="./course.html" class="d-inline-block color-white1 px-3 m-0 fw-bold course-title w-100">${course.title}</a>
                                     </div>
                                     <div>
                                         <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-2">${course.info}</p>
@@ -750,7 +750,7 @@ function mainFunction() {
         })
 
         function scoreModifier() {
-            $('.course-score, .course-score-courses-page').each(function () {
+            $('.course-score, .course-score-courses-page, .course-page-course-score').each(function () {
                 let score = parseFloat($(this).text());
                 $(this).text(score.toFixed(1));
             });
@@ -1377,12 +1377,12 @@ function mainFunction() {
                 template = `<div class="recent-courses-width my-2">
                                                 <div class="bg-gray5 col-12 rounded-4 d-flex flex-column gap-3 justify-content-between h-100 position-relative shadow-lg">
                                                     <div>
-                                                        <a href="#">
+                                                        <a href="./course.html">
                                                             <img class="w-100 object-fit-cover rounded-4" height="170" src="${array[i].imgSrc}">
                                                         </a>
                                                     </div>
                                                     <div>
-                                                        <a href="#" class="d-inline-block color-white1 px-2 m-0 fw-bold course-title w-100">${array[i].title}</a>
+                                                        <a href="./course.html" class="d-inline-block color-white1 px-2 m-0 fw-bold course-title w-100">${array[i].title}</a>
                                                     </div>
                                                     <div class="px-2">
                                                         <hr class="color-gray2 m-0">
@@ -1501,6 +1501,17 @@ function mainFunction() {
             }
         })
 
+        // course page -----------------------------------------------------------------------------------------------
+        $('.copy-link-btn').click(function () {
+            navigator.clipboard.writeText('https://sty.ink/nodejs')
+
+            $('.success-custom-alert').addClass('active-custom-alert')
+            setTimeout(() => {
+                $('.success-custom-alert').removeClass('active-custom-alert')
+            }, 1200);
+        })
+        // course page -----------------------------------------------------------------------------------------------
+
         function englishToPersianNumbers2() {
             // $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
             //     let $this = $(this);
@@ -1511,7 +1522,7 @@ function mainFunction() {
             //     }
             // });
 
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate').each(function () {
                 let $this = $(this);
                 if ($this.is('input')) {
                     $this.val($this.val().trim().toPersianDigit());
