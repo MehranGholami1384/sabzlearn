@@ -195,12 +195,10 @@ function mainFunction() {
                 $('.most-popular-courses-box').append(createLayout(template))
                 $('.most-popular-courses-box').find('.course-info-hideable').addClass('d-none')
             }
-            // if (course.teacher === 'محمدامین سعیدی راد') {
-            //     $('.teacher-courses-box').append(createLayou2(template))
-            // }
         })
 
         let searchCategoryParams = searchParams.get('category')
+        let searchBlogCategoryParams = searchParams.get('blog-category')
         let searchTeacherParams = searchParams.get('teacher')
 
         function renderCourses() {
@@ -280,7 +278,6 @@ function mainFunction() {
                         if (course.isFrontEnd) {
                             $('.courses-category, title').html('دوره‌های فرانت اند')
                             coursesCountArray.push(course)
-                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
                             $('.courses-box').append(createLayou2(template));
                         }
                         break;
@@ -288,7 +285,6 @@ function mainFunction() {
                         if (course.isSecurity) {
                             coursesCountArray.push(course)
                             $('.courses-category, title').html('دوره‌های امنیت')
-                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
                             $('.courses-box').append(createLayou2(template));
                         }
                         break;
@@ -296,7 +292,6 @@ function mainFunction() {
                         if (course.isPython) {
                             coursesCountArray.push(course)
                             $('.courses-category, title').html('دوره‌های پایتون')
-                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
                             $('.courses-box').append(createLayou2(template));
                         }
                         break;
@@ -304,7 +299,6 @@ function mainFunction() {
                         if (course.isPHP) {
                             coursesCountArray.push(course)
                             $('.courses-category, title').html('دوره‌های پی اچ پی')
-                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
                             $('.courses-box').append(createLayou2(template));
                         }
                         break;
@@ -312,7 +306,6 @@ function mainFunction() {
                         if (course.isSkillUp) {
                             coursesCountArray.push(course)
                             $('.courses-category, title').html('دوره‌های ارتقای مهارت‌ها')
-                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
                             $('.courses-box').append(createLayou2(template));
                         }
                         break;
@@ -320,14 +313,18 @@ function mainFunction() {
                         if (course.isSoftSkill) {
                             coursesCountArray.push(course)
                             $('.courses-category, title').html('دوره‌های مهارت‌های نرم')
-                            $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
                             $('.courses-box').append(createLayou2(template));
                         }
                         break;
                     default:
-                        $('.courses-count').html(`${courses.length} عنوان آموزشی`)
                         $('.courses-box').append(createLayou2(template));
                         break;
+                }
+
+                if (coursesCountArray.length) {
+                    $('.courses-count').html(`${coursesCountArray.length} عنوان آموزشی`)
+                } else {
+                    $('.courses-count').html(`${courses.length} عنوان آموزشی`)
                 }
 
                 switch (searchTeacherParams) {
@@ -508,7 +505,6 @@ function mainFunction() {
             }
 
             $(teachers).each(function (i, teacher) {
-
                 switch (searchTeacherParams) {
                     case 'amin_saeedi_rad':
                         if (teacher.name === 'محمدامین سعیدی راد') {
@@ -564,71 +560,141 @@ function mainFunction() {
 
         renderTeachers()
 
-        $(blogs.reverse()).each(function (i, blog) {
-            let template = `<div class="blog-post px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3 d-flex flex-column align-items-stretch">
-                            <div class="bg-black2 h-100 col-12 rounded-4 d-flex flex-column align-items-stretch justify-content-between gap-3 position-relative shadow-lg">
-                                <div>
-                                    <a href="#">
-                                        <div class="blog-img-wrapper position-relative">
-                                            <img class="w-100 object-fit-cover rounded-top-4" height="170"
-                                                src="${blog.imgSrc}">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="#"
-                                        class="d-inline-block color-white1 px-3 m-0 fw-bold blog-title w-100 line-clamp-2">${blog.title}</a>
-                                </div>
-                                <div>
-                                    <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-4">${blog.info}</p>
-                                </div>
-                                <div class="px-3 d-flex align-items-center justify-content-between">
-                                    <a href="#" class="text-fs-14px teacher-links">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                            class="bi bi-person color-white1 opacity-75 transition" viewBox="0 0 16 16">
-                                            <path
-                                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z">
-                                            </path>
-                                        </svg>
-                                        <span class="color-white1 opacity-70 transition text-fs-12px text-fs-13px-md">${blog.author}</span>
-                                    </a>
+        function renderBlogs() {
+            let blogsCount = []
+            $(blogs.reverse()).each(function (i, blog) {
+                let template = `<div class="blog-post px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3 d-flex flex-column align-items-stretch">
+                                <div class="bg-black2 h-100 col-12 rounded-4 d-flex flex-column align-items-stretch justify-content-between gap-3 position-relative shadow-lg">
                                     <div>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-calendar color-white1 opacity-70"
-                                                viewBox="0 0 16 16">
+                                        <a href="#">
+                                            <div class="blog-img-wrapper position-relative">
+                                                <img class="w-100 object-fit-cover rounded-top-4" height="170"
+                                                    src="${blog.imgSrc}">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#"
+                                            class="d-inline-block color-white1 px-3 m-0 fw-bold blog-title w-100 line-clamp-2">${blog.title}</a>
+                                    </div>
+                                    <div>
+                                        <p class="color-white1 px-3 m-0 text-fs-14px opacity-70 line-clamp-4">${blog.info}</p>
+                                    </div>
+                                    <div class="px-3 d-flex align-items-center justify-content-between">
+                                        <p class="text-fs-14px teacher-links m-0 pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                                class="bi bi-person color-white1 opacity-75 transition" viewBox="0 0 16 16">
                                                 <path
-                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z">
+                                                </path>
                                             </svg>
-                                            <span class="color-white1 opacity-70 text-fs-12px text-fs-13px-md blog-date" dir="ltr"><span class="blog-year">${blog.dateYear}</span>/<span class="blog-month">${blog.dateMonth}</span>/<span class="blog-date">${blog.dateDay}</span></span>
-                                        </span>
+                                            <span class="color-white1 opacity-70 transition text-fs-12px text-fs-13px-md">${blog.author}</span>
+                                        </p>
+                                        <div>
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-calendar color-white1 opacity-70"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                                </svg>
+                                                <span class="color-white1 opacity-70 text-fs-12px text-fs-13px-md blog-date" dir="ltr"><span class="blog-year">${blog.dateYear}</span>/<span class="blog-month">${blog.dateMonth}</span>/<span class="blog-date">${blog.dateDay}</span></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="px-3">
+                                        <hr class="color-gray1 m-0">
+                                    </div>
+                                    <div class="px-3 pb-3 d-flex align-items-center justify-content-center">
+                                        <a href="#" class="read-blog-links">
+                                            <span class="color-white1 transition ms-2">مطالعه مقاله</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                                class="bi bi-arrow-left-circle-fill color-white1 transition" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                            </svg>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="px-3">
-                                    <hr class="color-gray1 m-0">
-                                </div>
-                                <div class="px-3 pb-3 d-flex align-items-center justify-content-center">
-                                    <a href="#" class="read-blog-links">
-                                        <span class="color-white1 transition ms-2">مطالعه مقاله</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            class="bi bi-arrow-left-circle-fill color-white1 transition" viewBox="0 0 16 16">
-                                            <path
-                                                d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>`
+                            </div>`
 
-            if (i < 4) {
-                $('.blog-box').append(template)
-            }
+                if (i < 4) {
+                    $('.blog-box').append(template)
+                }
 
-            $('.blogs-box').append(template)
-            $('.blogs-box').find('.blog-post').removeClass('col-12 col-sm-6 col-lg-4 col-xl-3').addClass('col-12 col-sm-6 col-xl-4')
-        })
+                switch (searchBlogCategoryParams) {
+                    case "html":
+                        if (blog.isHtml) {
+                            blogsCount.push(blog)
+                            $('.blogs-category, title').html('مقالات اچ تی ام ال')
+                            $('.blogs-box').append(template)
+                        }
+                        break;
+                    case "bootstrap":
+                        if (blog.isBootstrap) {
+                            blogsCount.push(blog)
+                            $('.blogs-category, title').html('مقالات بوت استرپ')
+                            $('.blogs-box').append(template)
+                        }
+                        break;
+                    case "security":
+                        if (blog.isSecurity) {
+                            blogsCount.push(blog)
+                            $('.blogs-category, title').html('مقالات تست نفوذ و امنیت')
+                            $('.blogs-box').append(template)
+                        }
+                        break;
+                    case "jquery":
+                        if (blog.isJquery) {
+                            blogsCount.push(blog)
+                            $('.blogs-category, title').html('مقالات جی کوئری')
+                            $('.blogs-box').append(template)
+                        }
+                        break;
+                    case "react-js":
+                        if (blog.isReact) {
+                            blogsCount.push(blog)
+                            $('.blogs-category, title').html('مقالات ری‌اکت جی اس')
+                            $('.blogs-box').append(template)
+                        }
+                        break;
+                    case "css":
+                        if (blog.isCss) {
+                            blogsCount.push(blog)
+                            $('.blogs-category, title').html('مقالات سی اس اس')
+                            $('.blogs-box').append(template)
+                        }
+                        break;
+                    case "web-design":
+                        if (blog.isWebDesign) {
+                            blogsCount.push(blog)
+                            $('.blogs-category, title').html('مقالات طراحی سایت')
+                            $('.blogs-box').append(template)
+                        }
+                        break;
+                    case "vue-js":
+                        if (blog.isVue) {
+                            blogsCount.push(blog)
+                            $('.blogs-category, title').html('مقالات ویو جی اس')
+                            $('.blogs-box').append(template)
+                        }
+                        break;
+                    default:
+                        $('.blogs-category, title').html('مقالات')
+                        $('.blogs-box').append(template)
+                }
 
-        $('.blogs-count').html(`${blogs.length} مقاله`)
+                if (blogsCount.length) {
+                    $('.blogs-count').html(`${blogsCount.length} مقاله`)
+                } else {
+                    $('.blogs-count').html(`${blogs.length} مقاله`)
+                }
+
+                $('.blogs-box').find('.blog-post').removeClass('col-12 col-sm-6 col-lg-4 col-xl-3').addClass('col-12 col-sm-6 col-xl-4')
+            })
+        }
+
+        renderBlogs()
 
         $('.owl-carousel').owlCarousel({
             loop: true,
