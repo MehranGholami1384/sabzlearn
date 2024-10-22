@@ -907,7 +907,7 @@ function mainFunction() {
             });
         }
 
-        $('.blog-month, .ticket-date-month, .ticket-date-day').each(function () {
+        $('.blog-month, .ticket-date-month, .ticket-date-day, .course-last-update-month, .course-last-update-day').each(function () {
             let $this = $(this)
             if (+$this.html() < 10) {
                 $this.html(`0${+$this.html()}`)
@@ -1571,7 +1571,7 @@ function mainFunction() {
             //     }
             // });
 
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate, .cart-courses-count').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate, .cart-courses-count, .course-duration, .course-last-update').each(function () {
                 let $this = $(this);
                 if ($this.is('input')) {
                     $this.val($this.val().trim().toPersianDigit());

@@ -697,7 +697,8 @@
                             <div class="not-empty-cart-boxes px-2 px-sm-3 d-none">
                                 <hr class="w-100 color-white1">
                             </div>
-                            <div class="not-empty-cart-boxes d-flex color-white1 align-items-center justify-content-between px-2 px-sm-3 d-none">
+                            <div
+                                class="not-empty-cart-boxes d-flex color-white1 align-items-center justify-content-between px-2 px-sm-3 d-none">
                                 <span>مبلغ قابل پرداخت:</span>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <p class="m-0 course-off-price">2310000</p>
@@ -804,21 +805,75 @@
                     </div>
                 </div>
                 <div class="row d-flex w-100 color-white1 mx-auto mt-4 gap-4 gap-lg-0">
-                    <div class="col-12 col-lg-8 px-0 px-lg-3 d-flex flex-column gap-4">
-                        <div class="w-100 rounded-4">
-                            <div
-                                class="w-100 p-3 bg-black2 rounded-4 d-flex d-lg-none flex-column align-items-center justify-content-center gap-4">
-                                <p class="m-0 fs-5">لینک کوتاه آموزش</p>
+                    <div class="col-12 col-lg-8 px-0 px-lg-3 d-flex flex-column gap-3">
+                        <div class="w-100 d-flex flex-row flex-md-column gap-3">
+                            <div class="d-flex flex-column flex-md-row w-100 gap-3">
                                 <div
-                                    class="color-blue1 bg-blue4 w-100 copy-link-box d-flex align-items-center justify-content-between p-3 rounded-3">
-                                    <div title="کپی کردن لینک">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
-                                            class="bi bi-copy pointer copy-link-btn transition" viewBox="0 0 16 16">
-                                            <path class="pe-none" fill-rule="evenodd"
-                                                d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
-                                        </svg>
+                                    class="w-33 bg-gray4 p-3 d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-sm-start gap-3 rounded-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor"
+                                        class="bi bi-info-circle color-green1" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path
+                                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                    </svg>
+                                    <div class="d-flex flex-column">
+                                        <span class="course-page-students-count fw-bold text-center text-sm-end mb-2 text-fs-sm-14px">وضعیت دوره</span>
+                                        <span class="opacity-70 text-fs-14px text-center text-sm-end">تکمیل شده</span>
                                     </div>
-                                    <span class="fs-5">sty.ink/nodejs</span>
+                                </div>
+                                <div
+                                    class="w-33 bg-gray4 p-3 d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-sm-start gap-3 rounded-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-clock color-green1" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                                      </svg>
+                                    <div class="d-flex flex-column">
+                                        <span class="course-page-students-count fw-bold text-center text-sm-end mb-2 text-fs-sm-14px">مدت زمان دوره</span>
+                                        <span class="opacity-70 text-fs-14px course-duration text-center text-sm-end">128 ساعت</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-33 bg-gray4 p-3 d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-sm-start gap-3 rounded-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-calendar4-week color-green1" viewBox="0 0 16 16">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+                                        <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                                      </svg>
+                                    <div class="d-flex flex-column">
+                                        <span class="course-page-students-count fw-bold text-center text-sm-end mb-2  text-fs-sm-14px">آخرین بروزرسانی</span>
+                                        <span class="opacity-70 text-fs-14px course-last-update text-center text-sm-end"><span class="course-last-update-year">1403</span>/<span class="course-last-update-month">7</span>/<span class="course-last-update-day">19</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column flex-md-row w-100 gap-3">
+                                <div
+                                    class="w-33 bg-gray4 p-3 d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-sm-start gap-3 rounded-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-people color-green1" viewBox="0 0 16 16">
+                                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+                                      </svg>
+                                    <div class="d-flex flex-column">
+                                        <span class="course-page-students-count fw-bold text-center text-sm-end mb-2 text-fs-sm-14px">روش پشتیبانی</span>
+                                        <span class="opacity-70 text-fs-14px text-center text-sm-end">گروه تلگرامی</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-33 bg-gray4 p-3 d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-sm-start gap-3 rounded-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-briefcase color-green1" viewBox="0 0 16 16">
+                                        <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"/>
+                                      </svg>
+                                    <div class="d-flex flex-column">
+                                        <span class="course-page-students-count fw-bold text-center text-sm-end mb-2 text-fs-sm-14px">پیش نیاز</span>
+                                        <span class="opacity-70 text-fs-14px text-center text-sm-end">ندارد</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-33 bg-gray4 p-3 d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-sm-start gap-3 rounded-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" fill="currentColor" class="bi bi-camera-video color-green1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"/>
+                                      </svg>
+                                    <div class="d-flex flex-column">
+                                        <span class="course-page-students-count fw-bold text-center text-sm-end mb-2 text-fs-sm-14px">نوع مشاهده</span>
+                                        <span class="opacity-70 text-fs-14px text-center text-sm-end">به صورت آنلاین</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -967,7 +1022,7 @@
                 <div
                     class="my-3 my-xl-0 color-white1 col-12 col-xl-5 d-flex flex-column align-items-start align-items-sm-center align-items-xl-start justify-content-start gap-3">
                     <p class="m-0 fs-4 fw-bold">درباره سبزلرن</p>
-                    <p class="m-0 opacity-70 about-site-text">شروع هرچیزی سخته، ولی وقتی مسیر درستی رو انتخاب کنی، با
+                    <p class="m-0 opacity-70 about-site-text">شروع هرچیزی سخته، ولی وقتی مسیر درستی رو انتخاب کنی،با
                         خیال
                         راحت و بدون استرس میتونی از مسیر لذت ببری. ما در سبزلرن، توی سفر به دنیای برنامه نویسی کنارت
                         هستیم تا باهم رشد کنیم و از نتیجه زحمات مون لذت ببریم.

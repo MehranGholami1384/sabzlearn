@@ -890,3 +890,7 @@ svg.close-account-modal-btn:hover {
 .remove-course-from-cart:hover {
     color: var(--color-red1) !important;
 }
+
+.w-33 {
+    width: 33.3% !important;
+}

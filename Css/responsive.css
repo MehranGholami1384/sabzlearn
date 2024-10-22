@@ -110,6 +110,10 @@
     .empty-cart-message {
         font-size: 16px !important;
     }
+
+    .w-33 {
+        width: 100% !important;
+    }
 }
 
 @media only screen and (max-width: 575.5px) {
@@ -219,5 +223,9 @@
     .my-courses-box,
     .all-tickets-box {
         width: 100% !important;
+    }
+
+    .text-fs-sm-14px {
+        font-size: 14px !important;
     }
 }
