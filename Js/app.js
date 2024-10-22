@@ -848,6 +848,24 @@ function mainFunction() {
             }
         }
 
+        function courseEpisodesSlideToggle(className, icon, btn) {
+            let sideNavbarSubMenu = $(className);
+
+            if (sideNavbarSubMenu.is(':visible')) {
+                sideNavbarSubMenu.slideUp(150, function () {
+                    sideNavbarSubMenu.css('display', 'none');
+                    $(icon).addClass('deg0').removeClass('deg180')
+                });
+                setTimeout(() => {
+                    $(btn).removeClass('bg-green1')
+                }, 200);
+            } else {
+                sideNavbarSubMenu.css('display', 'flex').hide().slideDown(150);
+                $(icon).addClass('deg180').removeClass('deg0')
+                $(btn).addClass('bg-green1')
+            }
+        }
+
         $('.category-filter-slide-chevron-down').click(function () {
             categorySlideToggle($('.category-filter-slide'), $(this))
         })
@@ -907,7 +925,7 @@ function mainFunction() {
             });
         }
 
-        $('.blog-month, .ticket-date-month, .ticket-date-day, .course-last-update-month, .course-last-update-day').each(function () {
+        $('.blog-month, .ticket-date-month, .ticket-date-day, .course-last-update-month, .course-last-update-day, .course-episode-duration-minute, .course-episode-duration-second').each(function () {
             let $this = $(this)
             if (+$this.html() < 10) {
                 $this.html(`0${+$this.html()}`)
@@ -1569,23 +1587,24 @@ function mainFunction() {
             switch ($('.see-more-course-info-text').text()) {
                 case 'مشاهده کمتر مطالب':
                     $('.see-more-course-info-text').text('مشاهده بیشتر مطالب')
-                    $('.see-more-course-info-icon').removeClass('deg180')
                     break;
                 default:
                     $('.see-more-course-info-text').text('مشاهده کمتر مطالب')
-                    $('.see-more-course-info-icon').addClass('deg180')
             }
 
-            if ($('.hideable-course-info-content').hasClass('d-none')) {
-                $('.hideable-course-info-content').removeClass('d-none')
-            } else {
-                $('.hideable-course-info-content').addClass('d-none')
-            }
+            categorySlideToggle('.hideable-course-info-content', '.see-more-course-info-icon')
+        })
+
+        $('.topic-head').click(function () {
+            let $this = $(this)
+            let slide = $(this).next()[0]
+            let icon = $(this).children()[1].children[1]
+            courseEpisodesSlideToggle(slide, icon, $this)
         })
         // course page -----------------------------------------------------------------------------------------------
 
         function englishToPersianNumbers2() {
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate, .cart-courses-count, .course-duration, .course-last-update').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate, .cart-courses-count, .course-duration, .course-last-update, .course-episode-duration, .course-episode').each(function () {
                 let $this = $(this);
                 if ($this.is('input')) {
                     $this.val($this.val().trim().toPersianDigit());
