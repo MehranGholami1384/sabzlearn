@@ -50,6 +50,10 @@ textarea::-webkit-scrollbar-thumb:hover {
     font-size: 18px !important;
 }
 
+.text-fs-20px {
+    font-size: 20px !important;
+}
+
 .opacity-70 {
     opacity: 0.7 !important;
 }
@@ -368,7 +372,8 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .see-cart-link:hover:hover,
-.add-course-to-cart-btn:hover {
+.add-course-to-cart-btn:hover,
+.see-more-course-info-btn:hover {
     background-color: var(--color-green2) !important;
 }
 
@@ -893,4 +898,11 @@ svg.close-account-modal-btn:hover {
 
 .w-33 {
     width: 33.3% !important;
+}
+
+.course-info-shadow-overlay {
+    content: '';
+    background: linear-gradient(to bottom, #242a3800, #242a38cc 74.19%, #242a38);
+    inset: 0 !important;
+    z-index: 10 !important;
 }

@@ -1559,18 +1559,32 @@ function mainFunction() {
                 $('.success-custom-alert').removeClass('active-custom-alert')
             }, 1200);
         })
+
+        $('.see-more-course-info-btn').click(function (event) {
+            event.preventDefault()
+
+            $('.course-info-shadow-overlay').toggleClass('invisible opacity-0')
+            $('.course-info-shadow-overlay-title').toggleClass('opacity-50')
+
+            switch ($('.see-more-course-info-text').text()) {
+                case 'مشاهده کمتر مطالب':
+                    $('.see-more-course-info-text').text('مشاهده بیشتر مطالب')
+                    $('.see-more-course-info-icon').removeClass('deg180')
+                    break;
+                default:
+                    $('.see-more-course-info-text').text('مشاهده کمتر مطالب')
+                    $('.see-more-course-info-icon').addClass('deg180')
+            }
+
+            if ($('.hideable-course-info-content').hasClass('d-none')) {
+                $('.hideable-course-info-content').removeClass('d-none')
+            } else {
+                $('.hideable-course-info-content').addClass('d-none')
+            }
+        })
         // course page -----------------------------------------------------------------------------------------------
 
         function englishToPersianNumbers2() {
-            // $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input').each(function () {
-            //     let $this = $(this);
-            //     if ($this.is('input')) {
-            //         $this.val(englishToPersianNumbers($this.val()));
-            //     } else {
-            //         $this.html(englishToPersianNumbers($this.text()));
-            //     }
-            // });
-
             $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate, .cart-courses-count, .course-duration, .course-last-update').each(function () {
                 let $this = $(this);
                 if ($this.is('input')) {
