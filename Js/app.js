@@ -29,7 +29,7 @@ function mainFunction() {
 
         let searchParams = new URLSearchParams(location.search)
 
-        function slideToggle(className, elem, link) {
+        function customSlideToggle(className, elem, link) {
             let sideNavbarSubMenu = $(className);
 
             if (sideNavbarSubMenu.is(':visible')) {
@@ -56,27 +56,27 @@ function mainFunction() {
         }
 
         $('.front-end-chevron-down').on('click', function () {
-            slideToggle('.front-end-side-navbar', $(this), '.front-end-side-navbar-link')
+            customSlideToggle('.front-end-side-navbar', $(this), '.front-end-side-navbar-link')
         });
 
         $('.security-chevron-down').on('click', function () {
-            slideToggle('.security-side-navbar', $(this), '.security-side-navbar-link')
+            customSlideToggle('.security-side-navbar', $(this), '.security-side-navbar-link')
         });
 
         $('.python-chevron-down').on('click', function () {
-            slideToggle('.python-side-navbar', $(this), '.python-side-navbar-link')
+            customSlideToggle('.python-side-navbar', $(this), '.python-side-navbar-link')
         });
 
         $('.php-chevron-down').on('click', function () {
-            slideToggle('.php-side-navbar', $(this), '.php-side-navbar-link')
+            customSlideToggle('.php-side-navbar', $(this), '.php-side-navbar-link')
         });
 
         $('.skills-chevron-down').on('click', function () {
-            slideToggle('.skills-side-navbar', $(this), '.skills-side-navbar-link')
+            customSlideToggle('.skills-side-navbar', $(this), '.skills-side-navbar-link')
         });
 
         $('.articles-chevron-down').on('click', function () {
-            slideToggle('.articles-side-navbar', $(this), '.articles-side-navbar-link')
+            customSlideToggle('.articles-side-navbar', $(this), '.articles-side-navbar-link')
         });
 
         $('.burger-menu-btn').click(function () {
@@ -848,24 +848,6 @@ function mainFunction() {
             }
         }
 
-        function courseEpisodesSlideToggle(className, icon, btn) {
-            let sideNavbarSubMenu = $(className);
-
-            if (sideNavbarSubMenu.is(':visible')) {
-                sideNavbarSubMenu.slideUp(150, function () {
-                    sideNavbarSubMenu.css('display', 'none');
-                    $(icon).addClass('deg0').removeClass('deg180')
-                });
-                setTimeout(() => {
-                    $(btn).removeClass('bg-green1')
-                }, 200);
-            } else {
-                sideNavbarSubMenu.css('display', 'flex').hide().slideDown(150);
-                $(icon).addClass('deg180').removeClass('deg0')
-                $(btn).addClass('bg-green1')
-            }
-        }
-
         $('.category-filter-slide-chevron-down').click(function () {
             categorySlideToggle($('.category-filter-slide'), $(this))
         })
@@ -1578,8 +1560,9 @@ function mainFunction() {
             }, 1200);
         })
 
-        $('.see-more-course-info-btn').click(function (event) {
-            event.preventDefault()
+        $('.topic-body').slideUp(0)
+
+        $('.see-more-course-info-btn').click(function () {
 
             $('.course-info-shadow-overlay').toggleClass('invisible opacity-0')
             $('.course-info-shadow-overlay-title').toggleClass('opacity-50')
@@ -1592,14 +1575,27 @@ function mainFunction() {
                     $('.see-more-course-info-text').text('مشاهده کمتر مطالب')
             }
 
-            categorySlideToggle('.hideable-course-info-content', '.see-more-course-info-icon')
+            $('.hideable-course-info-content').slideToggle(100);
+            $('.see-more-course-info-icon').toggleClass('deg180')
         })
 
-        $('.topic-head').click(function () {
+        $('.topic-head').click(function (e) {
             let $this = $(this)
-            let slide = $(this).next()[0]
-            let icon = $(this).children()[1].children[1]
-            courseEpisodesSlideToggle(slide, icon, $this)
+            let icon = $(this).find('.topic-chevron-down-icon')
+            let slide = $($this).parent().find('.topic-body')
+
+            $($this).toggleClass('bg-green1')
+            $(icon).toggleClass('deg180')
+
+            if ($(slide).is(':visible')) {
+                $(slide).slideUp(200, function () {
+                    $(slide).css('display', 'none')
+                });
+            } else {
+                $(slide).slideDown(200, function () {
+                    $(slide).css('display', 'flex')
+                });
+            }
         })
         // course page -----------------------------------------------------------------------------------------------
 
