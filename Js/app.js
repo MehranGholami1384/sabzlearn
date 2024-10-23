@@ -46,13 +46,13 @@ function mainFunction() {
         }
 
         function openSideNavbar() {
-            $('.side-navbar').addClass('open-side-navbar')
-            $('.overlay').addClass('active-overlay')
+            $('.side-navbar').addClass('open-side-navbar z-index-50')
+            $('.overlay').addClass('active-overlay z-index-50')
         }
 
         function closeSideNavbar() {
-            $('.side-navbar').removeClass('open-side-navbar')
-            $('.overlay').removeClass('active-overlay')
+            $('.side-navbar').removeClass('open-side-navbar z-index-50')
+            $('.overlay').removeClass('active-overlay z-index-50')
         }
 
         $('.front-end-chevron-down').on('click', function () {
