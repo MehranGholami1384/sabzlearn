@@ -325,7 +325,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 .cart-box {
     top: 140% !important;
     left: 0 !important;
-    width: 350px !important;
+    width: 400px !important;
     visibility: hidden !important;
     opacity: 0 !important;
 }

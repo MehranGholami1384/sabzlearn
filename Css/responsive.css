@@ -114,6 +114,10 @@
     .w-33 {
         width: 100% !important;
     }
+
+    .cart-box {
+        left: -65px !important;
+    }
 }
 
 @media only screen and (max-width: 575.5px) {
@@ -161,11 +165,6 @@
     .sabzlearn-footer-logo2 {
         width: 80px !important;
         height: 40px !important;
-    }
-
-    .cart-box {
-        width: 290px !important;
-        left: -65px !important;
     }
 
     .text-fs-18px {
@@ -231,5 +230,15 @@
 
     .text-fs-sm-14px {
         font-size: 14px !important;
+    }
+
+    .cart-box {
+        width: 350px !important;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .cart-box {
+        width: 295px !important;
     }
 }
