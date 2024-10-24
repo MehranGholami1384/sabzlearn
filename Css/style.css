@@ -916,7 +916,8 @@ svg.close-account-modal-btn:hover {
 }
 
 .course-episode-container:not(.course-episode-container:first-of-type) {
-    border-top: 1px solid var(--color-gray2) !important;
+    /* border-top: 1px solid var(--color-gray2) !important; */
+    border-top: 1px solid var(--color-gray9) !important;
 }
 
 .related-courses a span {
