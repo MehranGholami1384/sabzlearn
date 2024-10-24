@@ -324,7 +324,7 @@ function mainFunction() {
                         $('.courses-category, title').html('دوره‌های رایگان')
                         break;
                     case 'back-end':
-                        if (course.title === 'back-end-course') {
+                        if (course.isBackEnd) {
                             coursesCountArray.push(course)
                             $('.courses-box').append(createLayou2(template));
                         }

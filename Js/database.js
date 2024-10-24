@@ -16,7 +16,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: true,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/elec-1-768x432.webp',
@@ -36,7 +37,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: true,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/nodejs.webp',
@@ -56,7 +58,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: true
     },
     {
         imgSrc: './Pictures/nestjs.webp',
@@ -76,7 +79,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: true
     },
     {
         imgSrc: './Pictures/python-data.webp',
@@ -96,7 +100,8 @@ const courses = [{
         isPython: true,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/api-php.webp',
@@ -116,7 +121,8 @@ const courses = [{
         isPython: false,
         isPHP: true,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: true
     },
     {
         imgSrc: './Pictures/gold-exp.webp',
@@ -136,7 +142,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: true
+        isSoftSkill: true,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/zero-hacker.webp',
@@ -156,7 +163,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/Course-thumbnail-Dashboard2-1-768x432.webp',
@@ -176,7 +184,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/Docker1-1-1-768x432.webp',
@@ -196,7 +205,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: true,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/python-2.webp',
@@ -216,7 +226,8 @@ const courses = [{
         isPython: true,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/Com_template_html_css_flexbox-1-768x432.webp',
@@ -236,7 +247,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/bootstrap.webp',
@@ -256,7 +268,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/Freelancer32-1-768x432.webp',
@@ -276,7 +289,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: true
+        isSoftSkill: true,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/Com_react-1-768x432.webp',
@@ -296,7 +310,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/mini-project-python.webp',
@@ -316,7 +331,8 @@ const courses = [{
         isPython: true,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/tailwind.webp',
@@ -336,7 +352,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/nextjs.webp',
@@ -356,7 +373,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/Com_black_python-1-768x432.webp',
@@ -376,7 +394,8 @@ const courses = [{
         isPython: true,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/network-security.webp',
@@ -396,7 +415,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/react-libs.webp',
@@ -416,7 +436,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/redux.webp',
@@ -436,7 +457,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/git-github.webp',
@@ -456,7 +478,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: true,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/redis.webp',
@@ -476,7 +499,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: true
     },
     {
         imgSrc: './Pictures/tel-bot-nodejs.webp',
@@ -496,7 +520,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: true
     },
     {
         imgSrc: './Pictures/fastify.webp',
@@ -516,7 +541,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: true
     },
     {
         imgSrc: './Pictures/api-1-768x432.webp',
@@ -536,7 +562,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: true
     },
     {
         imgSrc: './Pictures/laravel-reverb.webp',
@@ -556,7 +583,8 @@ const courses = [{
         isPython: false,
         isPHP: true,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: true
     },
     {
         imgSrc: './Pictures/webpack-1-768x432.webp',
@@ -576,7 +604,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/badusb-1-768x432.webp',
@@ -596,7 +625,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/python.webp',
@@ -616,7 +646,8 @@ const courses = [{
         isPython: true,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: true
     },
     {
         imgSrc: './Pictures/js.webp',
@@ -636,7 +667,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/html.webp',
@@ -656,7 +688,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/css.webp',
@@ -676,7 +709,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/html-css.webp',
@@ -696,7 +730,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/css-grid.webp',
@@ -716,7 +751,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/flexbox.webp',
@@ -736,7 +772,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     },
     {
         imgSrc: './Pictures/black-js.webp',
@@ -756,7 +793,8 @@ const courses = [{
         isPython: false,
         isPHP: false,
         isSkillUp: false,
-        isSoftSkill: false
+        isSoftSkill: false,
+        isBackEnd: false
     }
 ]
 
