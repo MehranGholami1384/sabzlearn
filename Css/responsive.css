@@ -200,7 +200,16 @@
     }
 
     .course-episode-container {
-        font-size: 14px !important; 
+        font-size: 14px !important;
+    }
+
+    .comment-text {
+        font-size: 14px !important;
+    }
+
+    .comment-username,
+    .comment-teacher-name {
+        max-width: 129px !important;
     }
 }
 

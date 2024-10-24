@@ -907,7 +907,7 @@ function mainFunction() {
             });
         }
 
-        $('.blog-month, .ticket-date-month, .ticket-date-day, .course-last-update-month, .course-last-update-day, .course-episode-duration-minute, .course-episode-duration-second').each(function () {
+        $('.blog-month, .ticket-date-month, .ticket-date-day, .course-last-update-month, .course-last-update-day, .course-episode-duration-minute, .course-episode-duration-second, .comment-month, .comment-day').each(function () {
             let $this = $(this)
             if (+$this.html() < 10) {
                 $this.html(`0${+$this.html()}`)
@@ -1597,10 +1597,22 @@ function mainFunction() {
                 });
             }
         })
+
+        $('.comment-username').each(function (i, value) {
+            $.get('https://randomuser.me/api/', function (data) {
+                $(value).html(`${data.results[0].name.first} ${data.results[0].name.last}`)
+            })
+        })
+
+        $('.comment-user-profile-img').each(function (i, value) {
+            $.get('https://randomuser.me/api/', function (data) {
+                $(value).attr('src', data.results[0].picture.medium)
+            })
+        })
         // course page -----------------------------------------------------------------------------------------------
 
         function englishToPersianNumbers2() {
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate, .cart-courses-count, .course-duration, .course-last-update, .course-episode-duration, .course-episode').each(function () {
+            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate, .cart-courses-count, .course-duration, .course-last-update, .course-episode-duration, .course-episode, .comment-year, .comment-month, .comment-day').each(function () {
                 let $this = $(this);
                 if ($this.is('input')) {
                     $this.val($this.val().trim().toPersianDigit());

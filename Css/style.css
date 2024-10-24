@@ -922,3 +922,29 @@ svg.close-account-modal-btn:hover {
 .related-courses a span {
     max-width: 370px !important;
 }
+
+.add-new-comment-btn:hover {
+    background-color: var(--color-green2) !important;
+}
+
+.answer-to-comment-btn {
+    border-color: var(--color-blue1) !important;
+}
+
+.answer-to-comment-btn:hover {
+    background-color: var(--color-blue1) !important;
+    color: var(--color-white1) !important;
+}
+
+.comment-teacher-img-box {
+    border-color: var(--color-blue1) !important;
+}
+
+.comment-text {
+    font-family: 'Vazir-Light' !important;
+}
+
+.comment-username,
+.comment-teacher-name {
+    max-width: 250px !important;
+}
