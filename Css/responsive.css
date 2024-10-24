@@ -1,3 +1,19 @@
+@media only screen and (min-width: 2000px) {
+
+    main,
+    header div.px-2.px-xl-3.px-sm-5.py-3.d-flex.align-items-center.justify-content-between {
+        margin: auto !important;
+    }
+
+    main {
+        max-width: 2000px !important;
+    }
+
+    footer div, header div.px-2.px-xl-3.px-sm-5.py-3.d-flex.align-items-center.justify-content-between {
+        max-width: 2200px !important;
+    }
+}
+
 @media only screen and (max-width: 1400px) {
     .recent-courses-width {
         width: 100% !important;
