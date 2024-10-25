@@ -347,7 +347,7 @@ function mainFunction() {
                         $('.pre-sale-courses-switch').remove()
                     } else {
                         $('.category-courses-box').remove()
-                        $('.pre-sale-courses-switch').removeClass('border-bottom border-secondary border-opacity-25')
+                        $('.purchased-courses-switch').removeClass('border-bottom border-secondary border-opacity-25')
                     }
                 }
 
@@ -814,6 +814,15 @@ function mainFunction() {
                 activeOnlyFreeCourses($('.pre-sale-toggle-btn, .pre-sale-mobile-toggle-btn'), '.pre-sale-toggle-marker')
             } else {
                 disableOnlyFreeCourses($('.pre-sale-toggle-btn, .pre-sale-mobile-toggle-btn'), '.pre-sale-toggle-marker')
+            }
+        })
+
+        $('.purchased-toggle-btn, .purchased-mobile-toggle-btn').click(function () {
+            let $this = $(this)
+            if (!$this.hasClass('active-toggle-btn')) {
+                activeOnlyFreeCourses($('.purchased-toggle-btn, .purchased-mobile-toggle-btn'), '.purchased-toggle-marker')
+            } else {
+                disableOnlyFreeCourses($('.purchased-toggle-btn, .purchased-mobile-toggle-btn'), '.purchased-toggle-marker')
             }
         })
 
