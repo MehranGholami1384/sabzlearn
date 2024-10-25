@@ -941,6 +941,10 @@ function mainFunction() {
                     $(this).text($(this).text().toPersianDigit());
                 }
             });
+
+            $("input").each(function() {
+                $(this).val($(this).val().toPersianDigit());
+            });
         }
 
         function hideCartBox() {
@@ -1500,7 +1504,7 @@ function mainFunction() {
                             }
                         })
 
-                        englishToPersianNumbers2()
+                        convertAllDigitsToPersian()
                     }
                 })
             } else {
