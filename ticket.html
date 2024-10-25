@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="no-scroll">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Css/app.css">
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="./Css/responsive.css">
+    <link rel="stylesheet" href="./Css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./Css/owl.theme.default.min.css">
+    <link rel="shortcut icon" href="./Pictures/sabzlearn-favicon.png" type="image/x-icon">
+    <title>تیکت #109 - پنل کاربری</title>
+</head>
+
+<body class="bg-gray5 position-relative no-scroll">
+
+    <div
+        class="loading-overlay w-100 h-100 position-fixed flex-column gap-3 align-items-center justify-content-center no-scroll top-0 end-0">
+        <div class="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p class="color-white1 fs-5">در حال بارگذاری . . .</p>
+    </div>
+
+    <div
+        class="success-custom-alert transition bg-black2 w-300px position-fixed d-flex flex-column align-items-center justify-content-center shadow-lg">
+        <div class="d-flex align-items-center justify-content-start w-100 gap-4 pe-3 pt-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" fill="currentColor"
+                class="bi bi-check-circle-fill color-green1" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </svg>
+            <p class="d-flex flex-column align-items-start justify-content-center gap-1 color-white1 m-0">
+                <span class="fs-5 fw-bold">موفق</span>
+                <span>تغییرات پروفایل شما با موفقیت ذخیره شد.</span>
+            </p>
+        </div>
+        <hr class="w-100 border-3 color-green1 opacity-100 mb-0 d-block">
+    </div>
+
+    <div
+        class="error-custom-alert transition bg-black2 w-300px position-fixed d-flex flex-column align-items-center justify-content-center shadow-lg">
+        <div class="d-flex align-items-center justify-content-start w-100 gap-4 pe-3 pt-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" fill="currentColor"
+                class="bi bi-x-circle-fill color-red1" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+            </svg>
+            <p class="d-flex flex-column align-items-start justify-content-center gap-1 color-white1 m-0">
+                <span class="fs-5 fw-bold">خطا</span>
+                <span>خطای غیر منتظره‌ای رخ داد.</span>
+            </p>
+        </div>
+        <hr class="w-100 border-3 color-red1 opacity-100 mb-0 d-block">
+    </div>
+
+    <div
+        class="account-logout-modal d-flex flex-column rounded-4 gap-2 align-items-start justify-content-center p-3 pe-0 pe-sm-3 pt-1 pt-sm-3 position-fixed start-50 translate-middle bg-black4 color-white1 shadow-lg transition">
+        <div class="col-12 d-flex align-items-center justify-content-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" fill="currentColor"
+                class="bi bi-x color-white1 opacity-70 pointer close-account-modal-btn transition" viewBox="0 0 16 16">
+                <path class="pe-none"
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+            </svg>
+        </div>
+        <div>
+            <p class="pe-3">آیا مطمئن هستید که می‌خواهید خارج شوید؟</p>
+        </div>
+        <div class="d-flex align-items-center justify-content-end col-12 gap-3">
+            <button class="btn color-white1 bg-red1 account-modal-yes-btn transition">بله</button>
+            <button class="btn color-white1 bg-green1 account-modal-no-btn transition">بستن</button>
+        </div>
+    </div>
+
+    <div class="account-logout-modal-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event transition"></div>
+    <div class="account-user-profile-box-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event z-2 transition">
+    </div>
+
+    <div class="account-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event transition z-2"></div>
+    <div class="account-notif-box-overlay position-fixed top-0 end-0 w-100 h-100 pointer-event transition">
+    </div>
+
+    <main>
+        <section class="col-12 d-flex align-items-center justify-content-center">
+            <div class="col-12 col-lg-11 d-flex align-items-start justify-content-center my-0 my-lg-5">
+                <div
+                    class="account-aside-navbar col-7 col-sm-6 col-md-5 col-lg-3 mt-0 mt-lg-3 h-100 color-white1 d-flex align-items-start align-items-lg-center justify-content-center p-3 p-lg-0 ps-lg-2 position-lg-fixed top-0 z-3 transition">
+                    <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+                        <a href="./"
+                            class="w-100 d-flex align-items-center justify-content-between justify-content-lg-start mb-3">
+                            <img class="object-fit-cover account-home-img" width="200"
+                                src="./Pictures/sabzlearn-logo-4.png" alt="Sabzlearn Logo 3">
+                            <button
+                                class="close-account-aside-navbar-btn d-block d-lg-none btn bg-black3 shadow-lg rounded-circle h-52px px-3 pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-x color-white1 pe-none" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                                </svg>
+                            </button>
+                        </a>
+                        <a href="./account.html"
+                            class="mb-2 mb-1 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-links transition active-account-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-house" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                            </svg>
+                            <span>پیشخوان</span>
+                        </a>
+                        <a href="./account.html?page=my-courses" data-title="دوره‌های من - پنل کاربری"
+                            data-search="my-courses" data-href="./my-courses.html"
+                            class="account-aside-navbar-links my-2 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-links transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-folder" viewBox="0 0 16 16">
+                                <path
+                                    d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z" />
+                            </svg>
+                            <span>دوره‌های من</span>
+                        </a>
+                        <a href="./account.html?page=tickets" data-title="تیکت‌ها - پنل کاربری" data-search="tickets"
+                            data-href="./tickets.html"
+                            class="account-aside-navbar-links my-2 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-links transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>تیکت‌ها</span>
+                        </a>
+                        <a href="./account.html?page=account-details" data-title="جزئیات حساب - پنل کاربری"
+                            data-search="account-details" data-href="./account-details.html"
+                            class="account-aside-navbar-links my-2 mb-2 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-links transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-person" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                            </svg>
+                            <span>جزئیات حساب</span>
+                        </a>
+                        <a
+                            class="mt-2 color-white1 text-decoration-none w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-logout-btn pointer transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                class="bi bi-box-arrow-right color-white1" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                            </svg>
+                            <span>خروج</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9 color-white1 d-flex align-items-center justify-content-center pe-0 pe-lg-2">
+                    <div class="col-12 py-3 bg-black7 rounded-5 radius-none">
+                        <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+                            <div class="col-12 d-flex align-items-center justify-content-between px-3">
+                                <div class="d-none d-lg-block">
+                                    <span class="fs-4"><span class="fs-3 user-fullname-span">Mehran Gholami</span> عزیز؛
+                                        خوش
+                                        اومدی 🙌</span>
+                                </div>
+                                <div class="d-block d-lg-none">
+                                    <button
+                                        class="account-burger-menu-btn btn p-0 pointer color-white1 d-flex align-items-center justify-content-center gap-1 border-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                            class="bi bi-list" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                                        </svg>
+                                        <span>پیشخوان</span>
+                                    </button>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center gap-2 gap-sm-3">
+                                    <button
+                                        class="btn bg-gray5 account-notif-btn border-0 rounded-circle pointer w-52px h-52px w-h-sm-48px position-relative transition">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor" class="bi bi-bell color-white1 opacity-50 pe-none"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                                        </svg>
+                                        <div
+                                            class="bg-gray5 rounded-4 color-white1 overflow-hidden position-absolute account-notif-box z-3 transition pointer-event cursor-initial py-3">
+                                            <div class="d-flex align-items-center justify-content-between px-3">
+                                                <p class="fs-5 m-0">اعلان‌ها</p>
+                                            </div>
+                                            <div class="col-12 px-3">
+                                                <hr class="col-12">
+                                            </div>
+                                            <div class="px-3">
+                                                <p class="m-0 py-3 rounded-4 cursor-text bg-gray6">اعلان جدیدی وجود
+                                                    ندارد.</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button
+                                        class="btn bg-gray5 border-0 rounded-circle pointer w-52px h-52px w-h-sm-48px">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor" class="bi bi-sun color-white1 opacity-50"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="account-user-profile-btn p-0 border-0 rounded-circle pointer transition position-relative"
+                                        style="width: 56px; height: 56px;">
+                                        <div
+                                            class="bg-gray5 start-0 shadow-lg rounded-4 color-white1 position-absolute w-300px account-user-profile-box z-3 transition pointer-event cursor-initial p-3 d-flex flex-column align-items-start justify-content-center w-280px">
+                                            <div
+                                                class="d-flex align-items-center justify-content-start gap-4 border-bottom w-100 pb-3 border-secondary border-opacity-25">
+                                                <a href="./account.html"
+                                                    class="rounded-circle pointer z-3 transition overflow-hidden">
+                                                    <img width="56" height="56"
+                                                        class="user-profile-picture object-fit-cover"
+                                                        alt="Profile Picture">
+                                                </a>
+                                                <div
+                                                    class="d-flex flex-column align-items-start justify-content-center gap-2">
+                                                    <span
+                                                        class="user-profile-username line-clamp-1 w-150px text-end"></span>
+                                                    <span class="color-blue5 text-fs-14px balance">موجودی: 0
+                                                        تومان</span>
+                                                </div>
+                                            </div>
+                                            <a href="./account.html"
+                                                class="mt-2 mb-1 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-user-profile-box-links transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                                                </svg>
+                                                <span>پیشخوان</span>
+                                            </a>
+                                            <a href="./account.html?page=my-courses"
+                                                data-title="دوره‌های من - پنل کاربری" data-search="my-courses"
+                                                data-href="./my-courses.html"
+                                                class="my-1 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-user-profile-box-links transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z" />
+                                                </svg>
+                                                <span>دوره‌های من</span>
+                                            </a>
+                                            <a href="./account.html?page=tickets" data-title="تیکت‌ها - پنل کاربری"
+                                                data-search="tickets" data-href="./tickets.html"
+                                                class="my-1 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-user-profile-box-links transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                                                </svg>
+                                                <span>تیکت‌ها</span>
+                                            </a>
+                                            <a href="./account.html?page=account-details"
+                                                data-title="جزئیات حساب - پنل کاربری" data-search="account-details"
+                                                data-href="./account-details.html"
+                                                class="mt-1 mb-2 w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-user-profile-box-links transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                                                </svg>
+                                                <span>جزئیات حساب</span>
+                                            </a>
+                                            <div class="w-100 pt-2 border-top border-secondary border-opacity-25">
+                                                <a
+                                                    class="color-white1 text-decoration-none w-100 d-flex align-content-center justify-content-start gap-2 p-2 rounded account-user-profile-box-logout-btn pointer transition">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                                        fill="currentColor" class="bi bi-box-arrow-right color-white1"
+                                                        viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd"
+                                                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                                                    </svg>
+                                                    <span>خروج</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <hr class="color-gray1 opacity-25 col-12 d-block d-lg-none">
+                            <div class="col-12 px-3 mt-3 d-flex align-items-center justify-content-center">
+                                <div
+                                    class="ticket-box shadow-lg bg-gray5 rounded-4 col-10 col-sm-12 d-flex align-items-center justify-content-center flex-column">
+                                    <div
+                                        class="col-12 d-flex align-items-center justify-content-between p-3 px-2 px-sm-3 rounded-4">
+                                        <p class="m-0 fs-5">
+                                            <span class="m-0">
+                                                تیکت شماره
+                                                <span class="ticket-number">1</span>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="px-2 px-sm-3 w-100">
+                                        <hr class="color-gray2 mt-0">
+                                    </div>
+                                    <div
+                                        class="col-12 d-flex flex-column align-items-start justify-content-center px-3 pb-3 gap-5">
+                                        <div
+                                            class="col-12 col-xl-8 col-lg-9 col-sm-10 p-3 bg-gray6 rounded-5 ticket-message">
+                                            <p class="m-0 fs-5 user-fullname-span">Mehran Gholami</p>
+                                            <div class="text-fs-12px color-gray1 d-flex gap-1">
+                                                <p class="m-0">
+                                                    <span class="ticket-time-hour">6</span>:<span
+                                                        class="ticket-time-minute">30</span>
+                                                </p>
+                                                <p class="m-0">
+                                                    <span class="ticket-date-year">1403</span>/<span
+                                                        class="all-tickets-date-month">1</span>/<span
+                                                        class="all-tickets-date-day">1</span>
+                                                </p>
+                                            </div>
+                                            <p class="m-0 font-vazir-light mt-3 lh-lg">
+                                                سلام. من یک مشکلی توی دوره‌ٔ شما دارم. بخش دوم ویدیو بارگذاری نمی‌شه و
+                                                خطای "عدم دسترسی" می‌ده. لطفاً راهنمایی کنید تا بتونم ادامه بدم. ممنون
+                                                از پشتیبانی شما.
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="col-12 col-xl-8 col-lg-9 col-sm-10 p-3 bg-gray6 rounded-5 admin-ticket-message">
+                                            <p class="m-0 fs-5 w-100 d-flex align-items-center justify-content-end">
+                                                Admin</p>
+                                            <div
+                                                class="text-fs-12px color-gray1 w-100 d-flex align-items-center justify-content-end gap-1">
+                                                <p class="m-0">
+                                                    <span class="ticket-time-hour">12</span>:<span
+                                                        class="ticket-time-minute">30</span>
+                                                </p>
+                                                <p class="m-0">
+                                                    <span class="ticket-date-year">1403</span>/<span
+                                                        class="all-tickets-date-month">1</span>/<span
+                                                        class="all-tickets-date-day">2</span>
+                                                </p>
+                                            </div>
+                                            <p class="m-0 font-vazir-light mt-3 lh-lg">
+                                                سلام دوست عزیز،
+                                                <br>
+                                                از اینکه مشکلتون رو با ما در میون گذاشتید، ممنونیم. خطای "عدم دسترسی"
+                                                ممکنه به دلیل کش مرورگر یا مشکلات موقتی سرور باشه. لطفاً ابتدا کش
+                                                مرورگرتون رو پاک کنید و دوباره وارد حساب کاربری‌تون بشید. اگر مشکل
+                                                همچنان پابرجا بود، لطفاً به ما اطلاع بدید تا بررسی بیشتری انجام بدیم.
+                                                <br>
+                                                سپاس از صبوری شما و امیدواریم بتونیم به زودی این مشکل رو حل کنیم.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./Js/jquery.min.js"></script>
+    <script src="./Js/owl.carousel.min.js"></script>
+    <script src="./Js/bootstrap.bundle.min.js"></script>
+    <script src="./Js/database.js" type="module"></script>
+    <script src="./Js/app.js" type="module" defer></script>
+</body>
+
+</html>

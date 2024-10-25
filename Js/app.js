@@ -590,7 +590,7 @@ function mainFunction() {
                 let template = `<div class="blog-post px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3 d-flex flex-column align-items-stretch">
                                 <div class="bg-black2 h-100 col-12 rounded-4 d-flex flex-column align-items-stretch justify-content-between gap-3 position-relative shadow-lg">
                                     <div>
-                                        <a href="#">
+                                        <a href="./blog.html">
                                             <div class="blog-img-wrapper position-relative">
                                                 <img class="w-100 object-fit-cover rounded-top-4" height="170"
                                                     src="${blog.imgSrc}">
@@ -598,7 +598,7 @@ function mainFunction() {
                                         </a>
                                     </div>
                                     <div>
-                                        <a href="#"
+                                        <a href="./blog.html"
                                             class="d-inline-block color-white1 px-3 m-0 fw-bold blog-title w-100 line-clamp-2">${blog.title}</a>
                                     </div>
                                     <div>
@@ -630,7 +630,7 @@ function mainFunction() {
                                         <hr class="color-gray1 m-0">
                                     </div>
                                     <div class="px-3 pb-3 d-flex align-items-center justify-content-center">
-                                        <a href="#" class="read-blog-links">
+                                        <a href="./blog.html" class="read-blog-links">
                                             <span class="color-white1 transition ms-2">مطالعه مقاله</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                                 class="bi bi-arrow-left-circle-fill color-white1 transition" viewBox="0 0 16 16">
@@ -934,6 +934,14 @@ function mainFunction() {
             }
             return replaceString;
         };
+
+        function convertAllDigitsToPersian() {
+            $("*:not(script):not(style)").each(function() {
+                if ($(this).children().length === 0) {
+                    $(this).text($(this).text().toPersianDigit());
+                }
+            });
+        }
 
         function hideCartBox() {
             $('.cart-btn').removeClass('z-index-50')
@@ -1653,18 +1661,24 @@ function mainFunction() {
         })
         // course page -----------------------------------------------------------------------------------------------
 
-        function englishToPersianNumbers2() {
-            $('.off-price, .main-price, .course-students, .course-score, .off-box, .courses-count, .blog-year, .blog-month, .blog-date, .telephone, .cart-box-courses-count, .courses-count, .filter-courses-count, .main-price-courses-page, .off-price-courses-page, .course-score-courses-page, .balance, .account-total-payment, .account-courses-count, .account-total-tickets, .account-balance, .account-view-rate, .ticket-number, .ticket-date-year, .ticket-date-month, .ticket-date-day, .my-registered-courses, .all-tickets, .open-tickets, .closed-tickets, .ticket-time-hour, .ticket-time-minute, .all-tickets-date-month, .all-tickets-date-day, .ticket-id, .account-details-phone-input, .account-details-username-input, .account-details-email-input, .blogs-count, .course-off-price, .roadmaps-courses-count, .course-page-students-count, .course-page-course-score, .course-complete-rate, .cart-courses-count, .course-duration, .course-last-update, .course-episode-duration, .course-episode, .comment-year, .comment-month, .comment-day').each(function () {
-                let $this = $(this);
-                if ($this.is('input')) {
-                    $this.val($this.val().trim().toPersianDigit());
-                } else {
-                    $this.html($this.text().trim().toPersianDigit());
-                }
-            });
-        }
+        // blog page -----------------------------------------------------------------------------------------------
+        $('.copy-blog-link-btn').click(function () {
+            navigator.clipboard.writeText('https://sty.ink/blog')
 
-        englishToPersianNumbers2()
+            $('.success-custom-alert-content').html('لینک با موفقیت کپی شد.')
+            $('.success-custom-alert').addClass('active-custom-alert')
+            setTimeout(() => {
+                $('.success-custom-alert').removeClass('active-custom-alert')
+            }, 1200);
+        })
+
+        $('.share-blog-slide-btn').click(function () {
+            $('.share-blog-slide-body').slideToggle(100)
+            $('.share-blog-slide-chevron-down').toggleClass('deg180')
+        }) 
+        // blog page -----------------------------------------------------------------------------------------------
+
+        convertAllDigitsToPersian()
 
         function priceModifier() {
             $('.off-price, .off-price-courses-page, .course-off-price').each(function () {

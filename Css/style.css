@@ -877,6 +877,11 @@ svg.close-account-modal-btn:hover {
     transform-origin: bottom !important;
 }
 
+.course-breadcrumb-item:last-of-type::after,
+.course-breadcrumb-item:last-of-type::before {
+    content: none !important;
+}
+
 .course-see-teacher-profile-link {
     border-color: var(--color-green1) !important;
 

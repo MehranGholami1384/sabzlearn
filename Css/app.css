@@ -54,6 +54,7 @@
     --color-gray7: #94a3b8;
     --color-gray8: #d5d1db;
     --color-gray9: #ffffff1a;
+    --color-gray10: #d1d5db;
     --color-blue1: #0ea5e9;
     --color-blue2: #0284c7;
     --color-blue3: #0284c733;
@@ -121,6 +122,10 @@
 
 .color-gray8 {
     color: var(--color-gray8) !important;
+}
+
+.color-gray10 {
+    color: var(--color-gray10) !important;
 }
 
 .color-yellow1 {
