@@ -815,6 +815,16 @@ svg.close-account-modal-btn:hover {
     height: 45px !important;
 }
 
+.ticket-message {
+    border-top-right-radius: 0 !important;
+}
+
+.admin-ticket-message {
+    background-color: var(--color-blue6) !important;
+    align-self: flex-end !important;
+    border-top-left-radius: 0 !important;
+}
+
 /* cart page */
 
 .see-courses-link {

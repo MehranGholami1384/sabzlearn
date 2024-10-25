@@ -1502,6 +1502,8 @@ function mainFunction() {
                 } else if (window.location.href.endsWith('add-ticket.html')) {
                     $('title').html('ارسال تیکت - پنل کاربری')
                     $(`a.account-links[href="./account.html?page=tickets"]`).addClass('active-account-link')
+                } else if (window.location.href.endsWith('ticket.html')) {
+                    $(`a.account-links[href="./account.html?page=tickets"]`).addClass('active-account-link')
                 }
             }
         }
