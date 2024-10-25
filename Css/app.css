@@ -347,3 +347,7 @@ a:focus {
 .font-vazir-light {
     font-family: 'Vazir-Light' !important;
 }
+
+.cursor-not-allowed {
+    cursor: not-allowed !important;
+}

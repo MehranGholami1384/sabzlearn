@@ -785,7 +785,8 @@ svg.close-account-modal-btn:hover {
 
 .account-details-current-password-input::placeholder,
 .add-ticket-topic::placeholder,
-.add-ticket-text::placeholder {
+.add-ticket-text::placeholder,
+.discount-code-input::placeholder {
     color: var(--color-gray7) !important;
 }
 
@@ -953,4 +954,12 @@ svg.close-account-modal-btn:hover {
 .course-page-remove-course-from-cart-btn {
     right: 10%;
     top: 8%;
+}
+
+.apply-discount-code-btn:hover {
+    background-color: var(--color-blue2) !important;
+}
+
+.purchase-btn:hover {
+    background-color: var(--color-green2) !important;
 }

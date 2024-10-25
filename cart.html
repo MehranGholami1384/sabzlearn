@@ -725,7 +725,7 @@
 
     <main>
         <section class="my-5">
-            <div class="col-11 col-sm-10 color-white1 mx-auto">
+            <div class="col-11 col-sm-10 color-white1 mx-auto cart-empty-content">
                 <div
                     class="col-12 bg-black2 py-3 py-md-5 px-3 px-sm-5 gap-4 rounded-4 d-flex flex-column align-items-center justify-content-center cart-page-empty-cart-container">
                     <svg class="mt-5" width="210" height="192" viewBox="0 0 210 192" fill="none"
@@ -887,7 +887,7 @@
                         دوره‌ها</a>
                 </div>
             </div>
-            <div class="col-11 col-xl-10 color-white1 mx-auto">
+            <div class="col-11 col-xl-10 color-white1 mx-auto cart-main-content">
                 <div class="w-100 d-flex align-items-start justify-content-center flex-wrap flex-md-nowrap gap-4">
                     <div class="col-12 col-md-8 bg-black2 rounded-4">
                         <div class="d-flex align-items-center justify-content-start w-100 bg-green1 p-3 rounded-top-4">
@@ -952,13 +952,15 @@
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="w-100 bg-black2 mb-3 rounded-4">
-                            <div class="d-flex align-items-center justify-content-start w-100 bg-green1 p-3 rounded-top-4">
+                            <div
+                                class="d-flex align-items-center justify-content-start w-100 bg-green1 p-3 rounded-top-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
                                     class="bi bi-credit-card" viewBox="0 0 16 16">
                                     <path
                                         d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z">
                                     </path>
-                                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"></path>
+                                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z">
+                                    </path>
                                 </svg>
                                 <span class="fs-5 me-2 fw-bold">اطلاعات پرداخت</span>
                             </div>
@@ -990,7 +992,8 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="w-100 d-flex align-items-center justify-content-between border-bottom border-secondary border-opacity-25 pb-3">
+                                <div
+                                    class="w-100 d-flex align-items-center justify-content-between border-bottom border-secondary border-opacity-25 pb-3">
                                     <span>موجودی کیف پول</span>
                                     <div class="d-flex align-items-center justify-content-center">
                                         <p class="main-price m-0">0</p>
@@ -1014,22 +1017,50 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <button class="w-100 btn border-0 h-52px color-white1 d-inline-flex align-items-center justify-content-center bg-green1 rounded-pill transition">
-                                    <span class="pe-1 not-login-purchase-btn">ورود و ادامه</span>
+                                <div class="w-100 d-flex align-items-center justify-content-start gap-2 agree-terms-checkbox-container">
+                                    <div
+                                        class="d-flex align-items-center justify-content-start gap-2 pointer position-relative">
+                                        <input class="courses-category-filter-checkbox" value="front-end-category"
+                                            type="checkbox" id="front-end-checkbox">
+                                        <div class="checkbox-marker bg-gray4 radius-2px transition"></div>
+                                        <label for="front-end-checkbox"
+                                            class="pointer col select-none color-gray1">قوانین را مطالعه نموده
+                                            ام.</label>
+                                    </div>
+                                    <a href="./terms.html" class="color-blue1 text-fs-14px">(مشاهده)</a>
+                                </div>
+                                <button
+                                    class="w-100 purchase-btn btn border-0 h-52px color-white1 d-inline-flex align-items-center justify-content-center bg-green1 rounded-pill transition">
+                                    <a href="./auth.html?action=login&method=phone_number" class="pe-1 purchase-btn-text">ورود و ادامه</a>
                                 </button>
                             </div>
                         </div>
-                        <div class="d-flex gap-4 flex-column align-items-center justify-content-between color-white1 bg-black2 rounded-4 py-4 px-3">
-                            <div class="d-flex align-items-center justify-content-between col-12 discount-code-slide-btn">
-                                    <span class="color-gray1">کد تخفیف دارید؟</span>
+                        <div
+                            class="d-flex gap-4 flex-column align-items-center justify-content-between color-white1 bg-black2 rounded-4 py-4 px-3">
+                            <div
+                                class="d-flex align-items-center justify-content-between col-12 discount-code-slide-btn pointer">
+                                <span class="color-gray1">کد تخفیف دارید؟</span>
                                 <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-down  discount-code-slide-chevron-down pointer pointer-event transition" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"></path>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-chevron-down  discount-code-slide-chevron-down pointer pointer-event transition"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708">
+                                        </path>
                                     </svg>
                                 </div>
                             </div>
-                            <div class="col-12 flex-column align-items-start justify-content-center gap-4 discount-code-slide-body pt-3 border-top border-secondary border-opacity-25">
-                               <span>برای وارد کردن کد تخفیف اول وارد شدید</span>
+                            <div
+                                class="col-12 flex-column align-items-start justify-content-center gap-4 discount-code-slide-body pt-3 border-top border-secondary border-opacity-25">
+                                <span class="not-login-discount-btn-text">برای وارد کردن کد تخفیف اول وارد شدید</span>
+                                <div class="position-relative apply-discount-box">
+                                    <input type="text"
+                                        class="form-control p-3 discount-code-input bg-gray4 border-0 shadow-none color-white1"
+                                        placeholder="کد تخفیف را وارد کنید">
+                                    <button style="left: 55px; top: 50%;"
+                                        class="btn translate-middle border-0 bg-blue1 rounded-pill color-white1 text-fs-14px position-absolute apply-discount-code-btn transition">اعمال
+                                        تخفیف</button>
+                                </div>
                             </div>
                         </div>
                     </div>

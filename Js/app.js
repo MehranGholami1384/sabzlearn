@@ -1299,9 +1299,13 @@ function mainFunction() {
             })
 
             $('.footer-add-new-ticket-link').attr('href', './account.html?page=tickets')
+            $('.not-login-discount-btn-text').remove()
+            $('.purchase-btn-text').remove()
+            $('.purchase-btn').append(`<span>تکمیل خرید</span>`)
+            $('.purchase-btn').addClass('disabled cursor-not-allowed pe-auto')
         } else {
             $('.navbar-wrapper').append(`<a href="./auth.html?action=login&method=phone_number"
-                        class="btn bg-black3 rounded-circle h-52px px-3 pointer d-flex align-items-center justify-content-center d-xl-none login-signup-btn">
+                class="btn bg-black3 rounded-circle h-52px px-3 pointer d-flex align-items-center justify-content-center d-xl-none login-signup-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             class="bi bi-box-arrow-right color-white1" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -1319,6 +1323,8 @@ function mainFunction() {
                         </svg>
                         <span class="color-white1 px-3">ورود | عضویت</span>
                     </a>`)
+            $('.apply-discount-box').remove()
+            $('.agree-terms-checkbox-container').remove()
         }
 
         $('.account-burger-menu-btn').click(function () {
@@ -1536,6 +1542,10 @@ function mainFunction() {
                 $('.not-empty-cart-boxes').addClass('d-none')
                 $('.cart-box-courses-count').html('0 دوره').html($('.cart-box-courses-count').text().trim().toPersianDigit())
                 $('.empty-cart-box-text').removeClass('d-none')
+
+                if (window.location.href.endsWith('cart.html')) {
+                    window.location.reload()
+                }
             }, 1200);
         })
 
@@ -1545,9 +1555,11 @@ function mainFunction() {
             $('.cart-box-courses-count').html('1 دوره')
             $('.empty-cart-box-text, .cart-page-empty-cart-container').addClass('d-none')
             $('.not-empty-cart-boxes').removeClass('d-none')
+            $('.cart-empty-content').remove()
         } else {
             $('.cart-courses-count').addClass('d-none')
             $('.cart-box-courses-count').html('0 دوره')
+            $('.cart-main-content').remove()
         }
 
         $('.copy-link-btn').click(function () {
@@ -1614,7 +1626,19 @@ function mainFunction() {
 
         $('.discount-code-slide-btn').click(function () {
             $('.discount-code-slide-chevron-down').toggleClass('deg180')
-            $('.discount-code-slide-body').slideToggle(0)
+            $('.discount-code-slide-body').slideToggle(100)
+        })
+        
+        $('.purchase-btn').click(function () {
+            console.log('purchase')
+        })
+
+        $('.courses-category-filter-checkbox').change(function () {
+            $('.purchase-btn').toggleClass('disabled cursor-not-allowed pe-auto')
+        })
+
+        $('.checkbox-marker').click(function () {
+            $('.purchase-btn').toggleClass('disabled cursor-not-allowed pe-auto')
         })
         // course page -----------------------------------------------------------------------------------------------
 
