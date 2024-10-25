@@ -34,6 +34,14 @@
         width: 590px !important;
         height: 380px !important;
     }
+
+    .related-blogs{
+        width: 100% !important;
+    }
+
+    .related-blogs-container {
+        flex-direction: column !important;
+    }
 }
 
 @media only screen and (max-width: 1199.5px) {
@@ -258,6 +266,11 @@
 
     .course-page-remove-course-from-cart-btn {
         right: 0% !important;
+    }
+
+    .related-blogs-img {
+        width: 100% !important;
+        height: 150px !important;
     }
 }
 
