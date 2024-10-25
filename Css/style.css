@@ -949,3 +949,8 @@ svg.close-account-modal-btn:hover {
 .comment-teacher-name {
     max-width: 250px !important;
 }
+
+.course-page-remove-course-from-cart-btn {
+    right: 10%;
+    top: 8%;
+}

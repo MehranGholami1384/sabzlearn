@@ -1543,7 +1543,7 @@ function mainFunction() {
 
         if (isAddedToCart) {
             $('.cart-box-courses-count').html('1 دوره')
-            $('.empty-cart-box-text').addClass('d-none')
+            $('.empty-cart-box-text, .cart-page-empty-cart-container').addClass('d-none')
             $('.not-empty-cart-boxes').removeClass('d-none')
         } else {
             $('.cart-courses-count').addClass('d-none')
@@ -1608,6 +1608,13 @@ function mainFunction() {
             $.get('https://randomuser.me/api/', function (data) {
                 $(value).attr('src', data.results[0].picture.medium)
             })
+        })
+
+        $('.discount-code-slide-body').slideUp(0)
+
+        $('.discount-code-slide-btn').click(function () {
+            $('.discount-code-slide-chevron-down').toggleClass('deg180')
+            $('.discount-code-slide-body').slideToggle(0)
         })
         // course page -----------------------------------------------------------------------------------------------
 

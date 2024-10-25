@@ -343,3 +343,7 @@ a:focus {
 .max-w-550px {
     max-width: 550px !important;
 }
+
+.font-vazir-light {
+    font-family: 'Vazir-Light' !important;
+}
