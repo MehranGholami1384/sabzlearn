@@ -11,6 +11,19 @@ body::-webkit-scrollbar {
     width: 0.5em;
 }
 
+.lesson-topic-container::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+.lesson-topic-container::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray4) !important;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
 textarea::-webkit-scrollbar {
     width: 0.7em;
 }

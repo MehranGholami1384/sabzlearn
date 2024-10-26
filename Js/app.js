@@ -121,7 +121,7 @@ function mainFunction() {
                                     class="off-box color-white1 position-absolute bg-green1 px-3 py-1 rounded-pill top-0 end-0 mt-3 me-3">
                                     ${course.offPercent}%</div>
                                 <div>
-                                    <a href="./course.html">
+                                    <a title="${course.title}" href="./course.html">
                                         <img class="w-100 object-fit-cover rounded-4" height="170"
                                             src="${course.imgSrc}">
                                     </a>
@@ -211,7 +211,7 @@ function mainFunction() {
                                         class="off-box color-white1 position-absolute bg-green1 px-3 py-1 rounded-pill top-0 end-0 mt-3 me-3">
                                         ${course.offPercent}%</div>
                                     <div>
-                                        <a href="./course.html">
+                                        <a title="${course.title}" href="./course.html">
                                             <img class="w-100 object-fit-cover rounded-4" height="170"
                                                 src="${course.imgSrc}">
                                         </a>
@@ -590,7 +590,7 @@ function mainFunction() {
                 let template = `<div class="blog-post px-3 col-12 col-sm-6 col-lg-4 col-xl-3 my-3 d-flex flex-column align-items-stretch">
                                 <div class="bg-black2 h-100 col-12 rounded-4 d-flex flex-column align-items-stretch justify-content-between gap-3 position-relative shadow-lg">
                                     <div>
-                                        <a href="./blog.html">
+                                        <a title="${blog.title}" href="./blog.html">
                                             <div class="blog-img-wrapper position-relative">
                                                 <img class="w-100 object-fit-cover rounded-top-4" height="170"
                                                     src="${blog.imgSrc}">
@@ -916,7 +916,7 @@ function mainFunction() {
             });
         }
 
-        $('.blog-month, .ticket-date-month, .ticket-date-day, .course-last-update-month, .course-last-update-day, .course-episode-duration-minute, .course-episode-duration-second, .comment-month, .comment-day').each(function () {
+        $('.blog-month, .ticket-date-month, .ticket-date-day, .course-last-update-month, .course-last-update-day, .course-episode-duration-minute, .course-episode-duration-second, .comment-month, .comment-day, .all-tickets-date-year, .all-tickets-date-month, .all-tickets-date-day').each(function () {
             let $this = $(this)
             if (+$this.html() < 10) {
                 $this.html(`0${+$this.html()}`)
@@ -1404,7 +1404,7 @@ function mainFunction() {
                 template = `<div class="recent-courses-width my-2">
                                                 <div class="bg-gray5 col-12 rounded-4 d-flex flex-column gap-3 justify-content-between h-100 position-relative shadow-lg">
                                                     <div>
-                                                        <a href="./course.html">
+                                                        <a title="${array[i].title}" href="./course.html">
                                                             <img class="w-100 object-fit-cover rounded-4" height="170" src="${array[i].imgSrc}">
                                                         </a>
                                                     </div>
@@ -1455,7 +1455,7 @@ function mainFunction() {
                             $(valueOfElement).removeClass('recent-courses-width').addClass('my-courses-width')
                         });
 
-                        $('.ticket-time-minute, .ticket-time-hour, .all-tickets-date-day, .all-tickets-date-month, .all-tickets-date-day').each(function () {
+                        $('.ticket-time-minute, .ticket-time-hour, .all-tickets-date-year, .all-tickets-date-month, .all-tickets-date-day').each(function () {
                             let $this = $(this)
                             if (+$this.html() < 10) {
                                 $this.html(`0${+$this.html()}`)
@@ -1675,6 +1675,8 @@ function mainFunction() {
                 $('.success-custom-alert').removeClass('active-custom-alert')
             }, 1200);
         })
+
+        $('.share-blog-slide-body').slideDown(0)
 
         $('.share-blog-slide-btn').click(function () {
             $('.share-blog-slide-body').slideToggle(100)
