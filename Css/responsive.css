@@ -236,7 +236,9 @@
 
     .my-courses-width,
     .see-courses-link,
-    .recent-courses-width {
+    .recent-courses-width,
+    .download-video-btn,
+    .have-a-question-link {
         width: 100% !important;
     }
 

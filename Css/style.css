@@ -386,7 +386,8 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 .see-cart-link:hover:hover,
 .add-course-to-cart-btn:hover,
-.see-more-course-info-btn:hover {
+.see-more-course-info-btn:hover,
+.download-video-btn:hover {
     background-color: var(--color-green2) !important;
 }
 
