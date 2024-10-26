@@ -1350,6 +1350,7 @@ function mainFunction() {
             $('.agree-terms-checkbox-container').remove()
             $('.logged-in-course-title-box').remove()
             $('.lesson-comments-box').remove()
+            $('.download-all-videos-box').remove()
         }
 
         $('.account-burger-menu-btn').click(function () {

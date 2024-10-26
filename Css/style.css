@@ -1034,4 +1034,9 @@ svg.close-account-modal-btn:hover {
 
 .question-closed-message-box {
     border-color: var(--color-red1) !important;
+    border-width: 1.6px !important;
+}
+
+.download-all-videos-btn:hover {
+    background-color: var(--color-blue2) !important;
 }
