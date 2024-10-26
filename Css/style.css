@@ -1027,3 +1027,11 @@ svg.close-account-modal-btn:hover {
     background-color: var(--color-green1) !important;
     color: var(--color-white1) !important;
 }
+
+.lesson-comment-user-profile-img-box {
+    border-color: var(--color-yellow1) !important;
+}
+
+.question-closed-message-box {
+    border-color: var(--color-red1) !important;
+}

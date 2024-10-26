@@ -1294,9 +1294,11 @@ function mainFunction() {
             if (JSON.parse(getLocalStorage('user'))) {
                 let user = JSON.parse(getLocalStorage('user'))
                 $('.user-profile-picture').attr('src', user.profilePicture)
+                $('.lesson-comment-user-profile-img').attr('src', user.profilePicture)
                 $('.account-user-profile-btn').css('background-image', `url(${user.profilePicture})`)
                 $('.user-profile-username').html(`${user.firstName} ${user.lastName}`)
                 $('.user-fullname-span').html(`${user.firstName} ${user.lastName}`)
+                $('.lesson-comment-username').html(`${user.firstName} ${user.lastName}`)
             }
 
             function logout() {
@@ -1322,6 +1324,8 @@ function mainFunction() {
             $('.purchase-btn-text').remove()
             $('.purchase-btn').append(`<span>تکمیل خرید</span>`)
             $('.purchase-btn').addClass('disabled cursor-not-allowed pe-auto')
+            $('.not-login-course-title-price-box').remove()
+            $('.not-asked-question-text').remove()
         } else {
             $('.navbar-wrapper').append(`<a href="./auth.html?action=login&method=phone_number"
                 class="btn bg-black3 rounded-circle h-52px px-3 pointer d-flex align-items-center justify-content-center d-xl-none login-signup-btn">
@@ -1344,6 +1348,8 @@ function mainFunction() {
                     </a>`)
             $('.apply-discount-box').remove()
             $('.agree-terms-checkbox-container').remove()
+            $('.logged-in-course-title-box').remove()
+            $('.lesson-comments-box').remove()
         }
 
         $('.account-burger-menu-btn').click(function () {
