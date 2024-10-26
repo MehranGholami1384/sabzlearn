@@ -4,13 +4,11 @@ import {
     teachers
 } from './database.js';
 $(document).ready(function () {
-
     mainFunction().then(() => {
         $('.loading-overlay').fadeOut(500, function () {
             $('html, body').removeClass('no-scroll')
         });
     })
-
 });
 
 function mainFunction() {
@@ -1683,6 +1681,13 @@ function mainFunction() {
             $('.share-blog-slide-chevron-down').toggleClass('deg180')
         }) 
         // blog page -----------------------------------------------------------------------------------------------
+
+        // lesson page -----------------------------------------------------------------------------------------------
+        $('.upload-file-text').click(function () {
+            let fileInput = document.querySelector('.upload-file-input')
+            fileInput.click()
+        })
+        // lesson page -----------------------------------------------------------------------------------------------
 
         convertAllDigitsToPersian()
 

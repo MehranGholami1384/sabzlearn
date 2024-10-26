@@ -238,7 +238,8 @@
     .see-courses-link,
     .recent-courses-width,
     .download-video-btn,
-    .have-a-question-link {
+    .have-a-question-link,
+    .send-question-btn {
         width: 100% !important;
     }
 

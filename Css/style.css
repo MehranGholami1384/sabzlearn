@@ -992,3 +992,38 @@ svg.close-account-modal-btn:hover {
 .purchase-btn:hover {
     background-color: var(--color-green2) !important;
 }
+
+/* lesson page */
+
+#editor::placeholder {
+    color: var(--color-gray1) !important;
+}
+
+.ck-editor.ck-rounded-corners {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    -webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    -ms-border-radius: 10px !important;
+    -o-border-radius: 10px !important;
+}
+
+.ck-editor * {
+    background-color: var(--color-gray4) !important;
+    color: var(--color-white1) !important;
+    border: none !important;
+}
+
+.ck.ck-content.ck-editor__editable {
+    height: 200px !important;
+    border-top: 1px solid var(--color-gray1) !important;
+}
+
+.send-question-btn {
+    border-color: var(--color-green1) !important;
+}
+
+.send-question-btn:hover {
+    background-color: var(--color-green1) !important;
+    color: var(--color-white1) !important;
+}
