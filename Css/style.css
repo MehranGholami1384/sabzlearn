@@ -244,13 +244,6 @@ textarea::-webkit-scrollbar-thumb:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px !important;
 }
 
-.navbar-links:hover .sub-menu {
-    visibility: visible;
-    opacity: 1;
-    z-index: 20;
-}
-
-.navbar-links:hover,
 .sub-menu-links:hover {
     color: var(--color-green1) !important;
 }

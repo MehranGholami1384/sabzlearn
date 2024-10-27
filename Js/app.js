@@ -25,6 +25,21 @@ function mainFunction() {
             localStorage.removeItem(key)
         }
 
+        $('.sub-menu').removeClass('transition2')
+
+        $('.navbar-links').mouseenter(function () {
+            let subMenu = $(this).find('.sub-menu') 
+            console.log(subMenu)
+            $(this).addClass('color-green1')
+            $(subMenu).addClass('visible opacity-100 z-index-50')
+        });
+
+        $('.navbar-links').mouseleave(function () { 
+            let subMenu = $(this).find('.sub-menu') 
+            $(this).removeClass('color-green1')
+            $(subMenu).removeClass('visible opacity-100 z-index-50')
+        });
+
         let searchParams = new URLSearchParams(location.search)
 
         function customSlideToggle(className, elem, link) {
