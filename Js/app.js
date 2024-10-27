@@ -1463,6 +1463,15 @@ function mainFunction() {
                 let pageTitle = $(link).data('title')
 
                 $('title').html(pageTitle)
+
+                $('.account-page-name').html(pageTitle)
+                let pageNameContent = $('.account-page-name').text()
+                let targetText = ' - پنل کاربری'
+                if (pageNameContent.includes(targetText)) {
+                    pageNameContent = pageNameContent.replace(' - پنل کاربری', '')
+                    $('.account-page-name').html(pageNameContent)
+                }
+
                 $(link).addClass('active-account-link')
 
                 $('.content-area').empty()
@@ -1536,6 +1545,9 @@ function mainFunction() {
                     $(`a.account-links[href="./account.html?page=tickets"]`).addClass('active-account-link')
                 } else if (window.location.href.endsWith('ticket.html')) {
                     $(`a.account-links[href="./account.html?page=tickets"]`).addClass('active-account-link')
+                }
+                if (window.location.href.endsWith('add-ticket.html') || window.location.href.endsWith('ticket.html')) {
+                    $('.account-page-name').html('تیکت‌ها')
                 }
             }
         }
