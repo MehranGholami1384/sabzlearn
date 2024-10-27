@@ -29,7 +29,6 @@ function mainFunction() {
 
         $('.navbar-links').mouseenter(function () {
             let subMenu = $(this).find('.sub-menu') 
-            console.log(subMenu)
             $(this).addClass('color-green1')
             $(subMenu).addClass('visible opacity-100 z-index-50')
         });
@@ -1586,7 +1585,9 @@ function mainFunction() {
             }
         })
 
-        $('.remove-course-from-cart').click(function () {
+        $('.remove-course-from-cart, .course-page-remove-course-from-cart-btn').click(function (event) {
+            event.preventDefault()
+            
             $('.success-custom-alert-content').html('از سبد خرید شما حذف شد.')
             removeLocalStorageItem('cart')
             $('.success-custom-alert').addClass('active-custom-alert')
@@ -1758,6 +1759,8 @@ function mainFunction() {
         priceModifier()
 
         priceModifier2()
+
+        console.log($('.course-page-remove-course-from-cart-btn'))
 
         resolve()
     })
