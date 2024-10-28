@@ -1732,6 +1732,9 @@
             .create(document.querySelector('#editor'))
             .then(editor => {
                 window.editor = editor
+                $('.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred').keyup(function () {
+                    $($(this).children()[0]).css('white-space', 'pre-wrap')
+                })
             })
             .catch(error => {
                 console.error(error);

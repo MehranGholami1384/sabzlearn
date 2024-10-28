@@ -1760,8 +1760,6 @@ function mainFunction() {
 
         priceModifier2()
 
-        console.log($('.course-page-remove-course-from-cart-btn'))
-
         resolve()
     })
 }

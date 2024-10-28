@@ -1008,8 +1008,12 @@ svg.close-account-modal-btn:hover {
 }
 
 .ck.ck-content.ck-editor__editable {
-    height: 200px !important;
-    border-top: 1px solid var(--color-gray1) !important;
+    min-height: 250px !important;
+    border-top: 1px solid var(--color-gray4) !important;
+}
+
+.ck.ck-content.ck-editor__editable:focus {
+    border-color: var(--color-black2) !important;
 }
 
 .ck.ck-powered-by {
