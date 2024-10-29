@@ -1709,11 +1709,16 @@ function mainFunction() {
             }, 1200);
         })
 
-        $('.share-blog-slide-body').slideDown(0)
+        $('.share-blog-slide-body, .blog-headlines-slide-body').slideDown(0)
 
         $('.share-blog-slide-btn').click(function () {
             $('.share-blog-slide-body').slideToggle(100)
             $('.share-blog-slide-chevron-down').toggleClass('deg180')
+        }) 
+
+        $('.blog-headlines-slide-btn').click(function () {
+            $('.blog-headlines-slide-body').slideToggle(100)
+            $('.blog-headlines-slide-chevron-down').toggleClass('deg180')
         }) 
         // blog page -----------------------------------------------------------------------------------------------
 
